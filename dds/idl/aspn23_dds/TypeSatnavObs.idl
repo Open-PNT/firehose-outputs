@@ -1,0 +1,47 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_TYPESATNAVOBS__
+#define __ASPN23_DDS_TYPESATNAVOBS__
+
+#include <aspn23_dds/TypeIntegrity.idl>
+#include <aspn23_dds/TypeSatnavSatelliteSystem.idl>
+#include <aspn23_dds/TypeSatnavSignalDescriptor.idl>
+
+module aspn23_dds {
+    enum TypeSatnavObsPseudorangeRateTypeValue {
+        ASPN23_TYPE_SATNAV_OBS_PSEUDORANGE_RATE_TYPE_PSR_RATE_DOPPLER,
+        ASPN23_TYPE_SATNAV_OBS_PSEUDORANGE_RATE_TYPE_PSR_RATE_DELTA_RANGE
+    };
+    enum TypeSatnavObsIonoCorrectionSourceValue {
+        ASPN23_TYPE_SATNAV_OBS_IONO_CORRECTION_SOURCE_UNKNOWN,
+        ASPN23_TYPE_SATNAV_OBS_IONO_CORRECTION_SOURCE_MODELED,
+        ASPN23_TYPE_SATNAV_OBS_IONO_CORRECTION_SOURCE_MEASURED
+    };
+    
+    @topic
+    struct TypeSatnavObs {
+        aspn23_dds::TypeSatnavSatelliteSystem satellite_system;
+        aspn23_dds::TypeSatnavSignalDescriptor signal_descriptor;
+        int16 prn;
+        double frequency;
+        @optional double pseudorange;
+        @optional float pseudorange_variance;
+        TypeSatnavObsPseudorangeRateTypeValue pseudorange_rate_type;
+        @optional double pseudorange_rate;
+        @optional float pseudorange_rate_variance;
+        @optional double carrier_phase;
+        @optional float carrier_phase_variance;
+        @optional float c_n0;
+        int32 lock_count;
+        TypeSatnavObsIonoCorrectionSourceValue iono_correction_source;
+        boolean iono_correction_applied;
+        boolean tropo_correction_applied;
+        boolean signal_bias_correction_applied;
+        uint8 num_integrity;
+        sequence<aspn23_dds::TypeIntegrity> integrity;
+    };
+};
+
+#endif

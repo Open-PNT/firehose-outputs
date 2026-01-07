@@ -1,0 +1,53 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+package aspn23_lcm;
+
+// LNAV Ephemeris describing GPS satellite locations. Definitions and usage are covered in
+// ICD-GPS-200L, Section 20.3.3.4 and following.
+struct metadata_GPS_Lnav_ephemeris {
+
+    // Non ASPN. Do not use. Extra field encoding the struct name to disambiguate LCM type fingerprint hashes.
+    int8_t icd_metadata_GPS_Lnav_ephemeris;
+
+    // Description: Standard ASPN metadata header.
+    // Units: none
+    type_metadataheader info;
+
+    // Description: Time at which the measurement is considered to be valid.
+    // Units: none
+    type_timestamp time_of_validity;
+
+    // Description: Full GPS week number calculated from the Modulo 1024 WN in Subframe 1 and the
+    // number of GPS week rollovers
+    // Units: weeks
+    int32_t week_number;
+
+    // Description: Satellite PRN number.
+    // Units: none
+    int32_t prn;
+
+    // Description: GNSS broadcast parameters required to calculate sv clock corrections.
+    // Units: none
+    type_satnav_clock clock;
+
+    // Description: Keplerian orbit parameters required to calculate satellite position.
+    // Units: none
+    type_kepler_orbit orbit;
+
+    // Description: Group delay differential between L1 and L2.
+    // Units: s
+    double t_gd;
+
+    // Description: Issue of Data Clock. 10 bit value from Subframe 1
+    // Units: none
+    int32_t iodc;
+
+    // Description: Issue of Data Ephemeris. 8 bits repeated in Subframe 2 and Subframe 3. Should match
+    // the 8 LSBs of the IODC.
+    // Units: none
+    int16_t iode;
+
+
+}

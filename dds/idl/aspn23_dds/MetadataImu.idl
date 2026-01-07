@@ -1,0 +1,28 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_METADATAIMU__
+#define __ASPN23_DDS_METADATAIMU__
+
+#include <aspn23_dds/TypeMetadataheader.idl>
+#include <aspn23_dds/TypeMounting.idl>
+#include <aspn23_dds/TypeTimestamp.idl>
+
+module aspn23_dds {
+    enum MetadataImuErrorModelValue {
+        ASPN23_METADATA_IMU_ERROR_MODEL_BASIC
+    };
+    
+    @topic
+    struct MetadataImu {
+        aspn23_dds::TypeMetadataheader info;
+        aspn23_dds::TypeTimestamp time_of_validity;
+        aspn23_dds::TypeMounting mounting;
+        MetadataImuErrorModelValue error_model;
+        uint16 num_error_model_params;
+        sequence<double> error_model_params;
+    };
+};
+
+#endif

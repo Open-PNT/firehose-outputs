@@ -1,0 +1,49 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+package aspn23_lcm;
+
+// GALILEO Ephemeris describing satellite locations. Definitions and usage are covered in OS SIS ICD,
+// Issue 2.0, January 2021, Section 4.2, 4.3, and 5.1.
+struct metadata_Galileo_ephemeris {
+
+    // Non ASPN. Do not use. Extra field encoding the struct name to disambiguate LCM type fingerprint hashes.
+    int8_t icd_metadata_Galileo_ephemeris;
+
+    // Description: Standard ASPN metadata header.
+    // Units: none
+    type_metadataheader info;
+
+    // Description: Time at which the measurement is considered to be valid.
+    // Units: none
+    type_timestamp time_of_validity;
+
+    // Enumerated field which describes the GALILEO message type used to define clock correction
+    // parameters.
+    int8_t nav_msg_type;
+
+    // I/NAV ephemeris.
+    const int8_t NAV_MSG_TYPE_INAV = 0;
+
+    // F/NAV ephemeris.
+    const int8_t NAV_MSG_TYPE_FNAV = 1;
+
+    // Description: Satellite PRN number.
+    // Units: none
+    int32_t prn;
+
+    // Description: GNSS broadcast parameters required to calculate sv clock corrections.
+    // Units: none
+    type_satnav_clock clock;
+
+    // Description: Keplerian orbit parameters required to calculate satellite position.
+    // Units: none
+    type_kepler_orbit orbit;
+
+    // Description: Broadcast group delay (E1-E5b if F/Nav, E1-E5b if I/NAV)
+    // Units: s
+    double bgd;
+
+
+}

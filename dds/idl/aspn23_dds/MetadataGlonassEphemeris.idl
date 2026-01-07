@@ -1,0 +1,36 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_METADATAGLONASSEPHEMERIS__
+#define __ASPN23_DDS_METADATAGLONASSEPHEMERIS__
+
+#include <aspn23_dds/TypeMetadataheader.idl>
+#include <aspn23_dds/TypeTimestamp.idl>
+
+module aspn23_dds {
+    
+    @topic
+    struct MetadataGlonassEphemeris {
+        aspn23_dds::TypeMetadataheader info;
+        aspn23_dds::TypeTimestamp time_of_validity;
+        int32 slot_number;
+        int32 freq_o;
+        int32 n_t;
+        double t_k;
+        double t_b;
+        double gamma_n;
+        double tau_n;
+        double sv_pos_x;
+        double sv_vel_x;
+        double sv_accel_x;
+        double sv_pos_y;
+        double sv_vel_y;
+        double sv_accel_y;
+        double sv_pos_z;
+        double sv_vel_z;
+        double sv_accel_z;
+    };
+};
+
+#endif

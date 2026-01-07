@@ -1,0 +1,24 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_TYPESATNAVTIME__
+#define __ASPN23_DDS_TYPESATNAVTIME__
+
+module aspn23_dds {
+    enum TypeSatnavTimeTimeReferenceValue {
+        ASPN23_TYPE_SATNAV_TIME_TIME_REFERENCE_TIME_GPS,
+        ASPN23_TYPE_SATNAV_TIME_TIME_REFERENCE_TIME_GALILEO,
+        ASPN23_TYPE_SATNAV_TIME_TIME_REFERENCE_TIME_BEIDOU,
+        ASPN23_TYPE_SATNAV_TIME_TIME_REFERENCE_TIME_GLONASS
+    };
+    
+    @topic
+    struct TypeSatnavTime {
+        uint16 week_number;
+        double seconds_of_week;
+        TypeSatnavTimeTimeReferenceValue time_reference;
+    };
+};
+
+#endif

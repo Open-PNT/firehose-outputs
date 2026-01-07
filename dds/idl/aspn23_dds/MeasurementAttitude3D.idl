@@ -1,0 +1,37 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_MEASUREMENTATTITUDE3D__
+#define __ASPN23_DDS_MEASUREMENTATTITUDE3D__
+
+#include <aspn23_dds/TypeHeader.idl>
+#include <aspn23_dds/TypeIntegrity.idl>
+#include <aspn23_dds/TypeTimestamp.idl>
+
+module aspn23_dds {
+    enum MeasurementAttitude3DReferenceFrameValue {
+        ASPN23_MEASUREMENT_ATTITUDE_3D_REFERENCE_FRAME_ECI,
+        ASPN23_MEASUREMENT_ATTITUDE_3D_REFERENCE_FRAME_ECEF,
+        ASPN23_MEASUREMENT_ATTITUDE_3D_REFERENCE_FRAME_NED
+    };
+    enum MeasurementAttitude3DErrorModelValue {
+        ASPN23_MEASUREMENT_ATTITUDE_3D_ERROR_MODEL_NONE
+    };
+    
+    @topic
+    struct MeasurementAttitude3D {
+        aspn23_dds::TypeHeader header;
+        aspn23_dds::TypeTimestamp time_of_validity;
+        MeasurementAttitude3DReferenceFrameValue reference_frame;
+        double quaternion[4];
+        sequence<double> tilt_error_covariance;
+        MeasurementAttitude3DErrorModelValue error_model;
+        uint16 num_error_model_params;
+        sequence<double> error_model_params;
+        uint8 num_integrity;
+        sequence<aspn23_dds::TypeIntegrity> integrity;
+    };
+};
+
+#endif

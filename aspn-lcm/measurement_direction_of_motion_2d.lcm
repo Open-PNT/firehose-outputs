@@ -1,0 +1,77 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+package aspn23_lcm;
+
+// Direction of motion represented in a two-dimensional reference frame as defined by the enum.
+struct measurement_direction_of_motion_2d {
+
+    // Non ASPN. Do not use. Extra field encoding the struct name to disambiguate LCM type fingerprint hashes.
+    int8_t icd_measurement_direction_of_motion_2d;
+
+    // Description: Standard ASPN measurement header.
+    // Units: none
+    type_header header;
+
+    // Description: Time at which the measurement is considered to be valid.
+    // Units: none
+    type_timestamp time_of_validity;
+
+    // Specifies measurement reference.
+    int8_t reference;
+
+    // Direction of motion expressed in the two-dimensional North-East plane of the locally level NED
+    // frame as the angle between the N-axis and the direction of motion. Positive angle is defined as a
+    // rotation towards the E-axis. See also NED coordinate frame definition for N, E, and D definitions.
+    const int8_t REFERENCE_NE = 0;
+
+    // Direction of motion expressed in the two-dimensional North-Down plane of the locally level NED
+    // frame as the angle between the N-axis and the direction of motion. Positive angle is defined as a
+    // rotation towards the D-axis. See also NED coordinate frame definition for N, E, and D definitions.
+    const int8_t REFERENCE_ND = 1;
+
+    // Direction of motion expressed in the two-dimensional East-Down plane of the locally level NED
+    // frame as the angle between the E-axis and the direction of motion. Positive angle is defined as a
+    // rotation towards the D-axis. See also NED coordinate frame definition for N, E, and D definitions.
+    const int8_t REFERENCE_ED = 2;
+
+    // Direction of motion expressed in the sensor frame as the angle between the sensor frame x-axis
+    // and the direction of motion. Positive angle is defined as a rotation towards the sensor frame
+    // y-axis. (Sensor frame is two dimensional, x and y, as defined in mounting.)
+    const int8_t REFERENCE_SENSOR = 3;
+
+    // Description: Observations as specified in the reference enum.
+    // Units: rad
+    double obs;
+
+    // Description: Measurement error variance.
+    // Units: rad^2
+    double variance;
+
+    // Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
+    int8_t error_model;
+
+    // No additional error model provided (num_error_model_params = 0).
+    const int8_t ERROR_MODEL_NONE = 0;
+
+    // Description: Number of parameters required for the error model chosen.
+    // Units: none
+    int32_t num_error_model_params;
+
+    // Description: Error model parameters that characterize the optional error model.
+    // Units: various
+    double error_model_params[num_error_model_params];
+
+    // Description: Number of integrity values.
+    // Units: none
+    int16_t num_integrity;
+
+    // Description: Measurement integrity. Includes the integrity method used and an integrity value
+    // (which is to be interpreted based upon the integrity method). The intent of allowing num_integrity >
+    // 1 is to report multiple integrity values based on multiple integrity methods.
+    // Units: none
+    type_integrity integrity[num_integrity];
+
+
+}

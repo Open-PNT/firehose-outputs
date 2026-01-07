@@ -1,0 +1,12 @@
+[wrap-git]
+directory = pybind11
+
+url = https://github.com/pybind/pybind11.git
+# v3.0.0
+revision = ed5057ded698e305210269dafa57574ecf964483
+depth = 1
+
+patch_directory = pybind11
+
+[provide]
+dependency_names = pybind11

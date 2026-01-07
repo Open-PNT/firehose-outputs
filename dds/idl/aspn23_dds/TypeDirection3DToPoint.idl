@@ -1,0 +1,39 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_TYPEDIRECTION3DTOPOINT__
+#define __ASPN23_DDS_TYPEDIRECTION3DTOPOINT__
+
+#include <aspn23_dds/TypeImageFeature.idl>
+#include <aspn23_dds/TypeIntegrity.idl>
+#include <aspn23_dds/TypeRemotePoint.idl>
+
+module aspn23_dds {
+    enum TypeDirection3DToPointReferenceFrameValue {
+        ASPN23_TYPE_DIRECTION_3D_TO_POINT_REFERENCE_FRAME_AZ_EL,
+        ASPN23_TYPE_DIRECTION_3D_TO_POINT_REFERENCE_FRAME_PIXEL,
+        ASPN23_TYPE_DIRECTION_3D_TO_POINT_REFERENCE_FRAME_NORMALIZED_IMAGE,
+        ASPN23_TYPE_DIRECTION_3D_TO_POINT_REFERENCE_FRAME_SINE_SPACE
+    };
+    enum TypeDirection3DToPointErrorModelValue {
+        ASPN23_TYPE_DIRECTION_3D_TO_POINT_ERROR_MODEL_NONE
+    };
+    
+    @topic
+    struct TypeDirection3DToPoint {
+        aspn23_dds::TypeRemotePoint remote_point;
+        TypeDirection3DToPointReferenceFrameValue reference_frame;
+        double obs[2];
+        sequence<double> covariance;
+        boolean has_observation_characteristics;
+        aspn23_dds::TypeImageFeature observation_characteristics;
+        TypeDirection3DToPointErrorModelValue error_model;
+        uint16 num_error_model_params;
+        sequence<double> error_model_params;
+        uint8 num_integrity;
+        sequence<aspn23_dds::TypeIntegrity> integrity;
+    };
+};
+
+#endif

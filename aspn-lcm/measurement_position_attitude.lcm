@@ -1,0 +1,95 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+package aspn23_lcm;
+
+// Position and attitude, also known as pose. Position is relative to a user-defined reference frame.
+// Attitude expressed as a quaternion, a four element vector representation, the elements of which are
+// functions of the orientation of the vector and the magnitude of the rotation.
+struct measurement_position_attitude {
+
+    // Non ASPN. Do not use. Extra field encoding the struct name to disambiguate LCM type fingerprint hashes.
+    int8_t icd_measurement_position_attitude;
+
+    // Description: Standard ASPN measurement header.
+    // Units: none
+    type_header header;
+
+    // Description: Time at which the measurement is considered to be valid.
+    // Units: none
+    type_timestamp time_of_validity;
+
+    // Defines measurement reference.
+    int8_t reference_frame;
+
+    // Sensor position and attitude relative to the earth-centered, inertial (ECi) frame. Position is
+    // expressed where p1, p2, and p3 are the x, y, and z components of ECI position in meters,
+    // respectively. Attitude is expressed as a four-element quaternion. Error covariance is given using
+    // x-axis position error component (meters), y-axis position error component (meters), z-axis position
+    // error component (meters), tilt error about the x-axis (rad), tilt error about the y-axis (rad), and
+    // tilt error about the z-axis (rad). See also ECi coordinate frame definition for x, y, and z
+    // definitions.
+    const int8_t REFERENCE_FRAME_ECI = 0;
+
+    // Sensor position, and attitude relative to the WGS-84 reference. Position is expressed where p1
+    // is the geodetic latitude in radians, p2 is the longitude in radians, and p3 is the geodetic altitude
+    // (or height above the WGS-84 ellipsoid) in meters. Attitude is the sensor frame rotation relative to
+    // the local level frame expressed as a four-element quaternion. Error covariance is given using
+    // north-south position error (meters), east-west position error (meters), geodetic altitude error
+    // (meters), tilt error about the north axis (rad), tilt error about the east axis (rad), and tilt
+    // error about the down axis (rad).
+    const int8_t REFERENCE_FRAME_GEODETIC = 1;
+
+    // Description: First position term as defined in enum.
+    // Units: rad
+    double p1;
+
+    // Description: First position term as defined in enum.
+    // Units: rad
+    double p2;
+
+    // Description: First position term as defined in enum.
+    // Units: m
+    double p3;
+
+    // Description: Four element quaternion, q = [a, b, c, d], where a = cos(phi/2), b =
+    // (phi_x/phi)*sin(phi/2), c = (phi_y/phi)*sin(phi/2), and d = (phi_z/phi)*sin(phi/2). In this
+    // description, the vector [phi_x, phi_y, phi_z] represents the rotation vector that describes the
+    // frame rotation to be applied to the "reference" frame (ECI, ECEF, or NED) to rotate it into the axes
+    // that describe the measured attitude, and the value phi is the magnitude of the [phi_x, phi_y, phi_z]
+    // vector.
+    // See "conventions" documentation for more detailed information.
+    // Units: none
+    double quaternion[4];
+
+    // Description: Measurement error variance or covariance depending on measurement dimension.
+    // Units: various
+    double covariance[6][6];
+
+    // Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
+    int8_t error_model;
+
+    // No additional error model provided (num_error_model_params = 0).
+    const int8_t ERROR_MODEL_NONE = 0;
+
+    // Description: Number of parameters required for the error model chosen.
+    // Units: none
+    int32_t num_error_model_params;
+
+    // Description: Error model parameters that characterize the optional error model.
+    // Units: various
+    double error_model_params[num_error_model_params];
+
+    // Description: Number of integrity values.
+    // Units: none
+    int16_t num_integrity;
+
+    // Description: Measurement integrity. Includes the integrity method used and an integrity value
+    // (which is to be interpreted based upon the integrity method). The intent of allowing num_integrity >
+    // 1 is to report multiple integrity values based on multiple integrity methods.
+    // Units: none
+    type_integrity integrity[num_integrity];
+
+
+}

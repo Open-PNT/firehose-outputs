@@ -1,0 +1,29 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_METADATAGPSLNAVEPHEMERIS__
+#define __ASPN23_DDS_METADATAGPSLNAVEPHEMERIS__
+
+#include <aspn23_dds/TypeKeplerOrbit.idl>
+#include <aspn23_dds/TypeMetadataheader.idl>
+#include <aspn23_dds/TypeSatnavClock.idl>
+#include <aspn23_dds/TypeTimestamp.idl>
+
+module aspn23_dds {
+    
+    @topic
+    struct MetadataGpsLnavEphemeris {
+        aspn23_dds::TypeMetadataheader info;
+        aspn23_dds::TypeTimestamp time_of_validity;
+        uint16 week_number;
+        int32 prn;
+        aspn23_dds::TypeSatnavClock clock;
+        aspn23_dds::TypeKeplerOrbit orbit;
+        double t_gd;
+        uint16 iodc;
+        uint8 iode;
+    };
+};
+
+#endif

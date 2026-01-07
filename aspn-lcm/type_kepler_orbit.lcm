@@ -1,0 +1,78 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+package aspn23_lcm;
+
+// Keplerian orbit parameters required to calculate satellite position
+struct type_kepler_orbit {
+
+    // Non ASPN. Do not use. Extra field encoding the struct name to disambiguate LCM type fingerprint hashes.
+    int8_t icd_type_kepler_orbit;
+
+    // Description: Mean anomaly at reference time.
+    // Units: rad
+    double m_0;
+
+    // Description: Mean motion difference from computed value.
+    // Units: rad/s
+    double delta_n;
+
+    // Description: Eccentricity.
+    // Units: none
+    double e;
+
+    // Description: Square root of semi-major axis.
+    // Units: sqrt(m)
+    double sqrt_a;
+
+    // Description: Longitude of ascending node of orbit plane at weekly epoch
+    // Units: rad
+    double omega_0;
+
+    // Description: Inclination angle at reference time.
+    // Units: rad
+    double i_0;
+
+    // Description: Rate of change of inclination angle.
+    // Units: rad
+    double i_dot;
+
+    // Description: Argument of perigee.
+    // Units: rad
+    double omega;
+
+    // Description: Rate of right ascension.
+    // Units: rad/s
+    double omega_dot;
+
+    // Description: Amplitude of cosine harmonic correction terms to the argument of latitude.
+    // Units: rad
+    double c_uc;
+
+    // Description: Amplitude of sine harmonic correction terms to the argument of latitude.
+    // Units: rad
+    double c_us;
+
+    // Description: Amplitude of cosine harmonic correction terms to the orbit radius.
+    // Units: m
+    double c_rc;
+
+    // Description: Amplitude of sine harmonic correction terms to the orbit radius.
+    // Units: m
+    double c_rs;
+
+    // Description: Amplitude of cosine harmonic correction terms to the angle of inclination.
+    // Units: rad
+    double c_ic;
+
+    // Description: Amplitude of sine harmonic correction terms to the angle of inclination.
+    // Units: rad
+    double c_is;
+
+    // Description: Ephemeris reference time.
+    // Units: s
+    double t_oe;
+
+
+}

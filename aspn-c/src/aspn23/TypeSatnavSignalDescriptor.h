@@ -1,0 +1,451 @@
+
+/*
+ * This code is generated via firehose.
+ * DO NOT hand edit code.  Make any changes required using the firehose repo instead
+ */
+
+#pragma once
+#include "common.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/**
+ * Three letter RINEX Observation Code of signal as given in Table A23 of RINEX 3.05 specification
+ * (https://files.igs.org/pub/data/format/rinex305.pdf). RINEX Observation Code must be paired with
+ * Satellite system to determine a unique identifier
+ */
+
+enum Aspn23TypeSatnavSignalDescriptorSignalDescriptor {
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L1C,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L1S,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L1L,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L1X,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L1P,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L1W,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L1N,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L2C,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L2D,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L2S,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L2L,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L2X,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L2P,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L2W,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L2N,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L5I,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L5Q,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L5X,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L4A,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L4B,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L4X,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L6A,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L6B,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L6X,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L3I,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L3Q,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L3X,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L1B,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L7I,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L7Q,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L7X,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L8I,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L8Q,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L8X,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L6C,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L1Z,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L5D,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L5P,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L5Z,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L6S,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L6L,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L6E,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L6Z,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L2I,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L2Q,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L1D,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L7D,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L7P,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L7Z,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L8D,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L8P,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L6I,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L6Q,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L6D,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L6P,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L5A,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L5B,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L5C,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L9A,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L9B,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L9C,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L9X,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L1Y,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L1M,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L2Y,
+
+	/**
+	 * See RINEX 3.05 Table A23
+	 */
+
+	ASPN23_TYPE_SATNAV_SIGNAL_DESCRIPTOR_SIGNAL_DESCRIPTOR_L2M
+};
+
+/**
+ * Satellite signal descriptor as defined in RINEX 3.05
+ */
+
+typedef struct Aspn23TypeSatnavSignalDescriptor {
+
+	/**
+	 * Three letter RINEX Observation Code of signal as given in Table A23 of RINEX 3.05
+	 * specification (https://files.igs.org/pub/data/format/rinex305.pdf). RINEX Observation Code
+	 * must be paired with Satellite system to determine a unique identifier
+	 */
+
+	enum Aspn23TypeSatnavSignalDescriptorSignalDescriptor signal_descriptor;
+
+} Aspn23TypeSatnavSignalDescriptor;
+
+Aspn23TypeSatnavSignalDescriptor* ASPN_NULLABLE aspn23_type_satnav_signal_descriptor_new(
+    enum Aspn23TypeSatnavSignalDescriptorSignalDescriptor signal_descriptor);
+
+Aspn23TypeSatnavSignalDescriptor* ASPN_NULLABLE
+aspn23_type_satnav_signal_descriptor_copy(Aspn23TypeSatnavSignalDescriptor*);
+
+/**
+ * free() all memory held by the given Aspn23TypeSatnavSignalDescriptor,
+ * including the struct itself.
+ */
+
+void aspn23_type_satnav_signal_descriptor_free(void* pointer);
+void aspn23_type_satnav_signal_descriptor_free_members(Aspn23TypeSatnavSignalDescriptor* self);
+
+#ifdef __cplusplus
+}  // extern "C"
+#endif

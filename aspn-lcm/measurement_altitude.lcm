@@ -1,0 +1,78 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+package aspn23_lcm;
+
+// Height above a user-specified reference frame.
+struct measurement_altitude {
+
+    // Non ASPN. Do not use. Extra field encoding the struct name to disambiguate LCM type fingerprint hashes.
+    int8_t icd_measurement_altitude;
+
+    // Description: Standard ASPN measurement header.
+    // Units: none
+    type_header header;
+
+    // Description: Time at which the measurement is considered to be valid.
+    // Units: none
+    type_timestamp time_of_validity;
+
+    // Specifies altitude reference.
+    int8_t reference;
+
+    // height above ground level (AGL). Generally, position and terrain elevation data are required to
+    // convert between AGL and (MSL or HAE).
+    const int8_t REFERENCE_AGL = 0;
+
+    // height above mean sea level (MSL). Generally, position is required to convert between MSL and
+    // HAE.
+    const int8_t REFERENCE_MSL = 1;
+
+    // height above the WGS-84 ellipsoid (HAE), also known as geodetic altitude.
+    const int8_t REFERENCE_HAE = 2;
+
+    // Description: Altitude in meters, with altitude defined by the enum, altitude_type.
+    // Units: m
+    double altitude;
+
+    // Description: Altitude variance.
+    // Units: m^2
+    double variance;
+
+    // Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
+    int8_t error_model;
+
+    // No additional error model provided (num_error_model_params = 0).
+    const int8_t ERROR_MODEL_NONE = 0;
+
+    // First-order Gauss-Markov (FOGM) process, defined by the following parameters
+    // (num_error_model_params = 3):
+    // 1) standard_deviation, units: m, description: standard deviation of a scalar, first order
+    // Gauss-Markov measurement noise model.
+    // 2) time_constant, units: seconds, description: time constant of a scalar, first order
+    // Gauss-Markov measurement noise model.
+    // 3) initial_standard_deviation, units: m, description: initial standard deviation of a
+    // scalar, first order Gauss-Markov measurement noise model.
+    const int8_t ERROR_MODEL_FOGM = 1;
+
+    // Description: Number of parameters required for the error model chosen.
+    // Units: none
+    int32_t num_error_model_params;
+
+    // Description: Error model parameters that characterize the optional error model.
+    // Units: various
+    double error_model_params[num_error_model_params];
+
+    // Description: Number of integrity values.
+    // Units: none
+    int16_t num_integrity;
+
+    // Description: Measurement integrity. Includes the integrity method used and an integrity value
+    // (which is to be interpreted based upon the integrity method). The intent of allowing num_integrity >
+    // 1 is to report multiple integrity values based on multiple integrity methods.
+    // Units: none
+    type_integrity integrity[num_integrity];
+
+
+}

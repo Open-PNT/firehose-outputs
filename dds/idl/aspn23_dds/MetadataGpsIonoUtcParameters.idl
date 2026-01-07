@@ -1,0 +1,36 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_METADATAGPSIONOUTCPARAMETERS__
+#define __ASPN23_DDS_METADATAGPSIONOUTCPARAMETERS__
+
+#include <aspn23_dds/TypeMetadataheader.idl>
+#include <aspn23_dds/TypeTimestamp.idl>
+
+module aspn23_dds {
+    
+    @topic
+    struct MetadataGpsIonoUtcParameters {
+        aspn23_dds::TypeMetadataheader info;
+        aspn23_dds::TypeTimestamp time_of_validity;
+        double a_0;
+        double a_1;
+        int8 delta_t_ls;
+        uint32 tot;
+        uint8 wn_t;
+        uint8 wn_lsf;
+        uint8 dn;
+        int8 delta_t_lsf;
+        double alpha_0;
+        double alpha_1;
+        double alpha_2;
+        double alpha_3;
+        double beta_0;
+        double beta_1;
+        double beta_2;
+        double beta_3;
+    };
+};
+
+#endif

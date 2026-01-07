@@ -1,0 +1,31 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_METADATAGALILEOEPHEMERIS__
+#define __ASPN23_DDS_METADATAGALILEOEPHEMERIS__
+
+#include <aspn23_dds/TypeKeplerOrbit.idl>
+#include <aspn23_dds/TypeMetadataheader.idl>
+#include <aspn23_dds/TypeSatnavClock.idl>
+#include <aspn23_dds/TypeTimestamp.idl>
+
+module aspn23_dds {
+    enum MetadataGalileoEphemerisNavMsgTypeValue {
+        ASPN23_METADATA_GALILEO_EPHEMERIS_NAV_MSG_TYPE_INAV,
+        ASPN23_METADATA_GALILEO_EPHEMERIS_NAV_MSG_TYPE_FNAV
+    };
+    
+    @topic
+    struct MetadataGalileoEphemeris {
+        aspn23_dds::TypeMetadataheader info;
+        aspn23_dds::TypeTimestamp time_of_validity;
+        MetadataGalileoEphemerisNavMsgTypeValue nav_msg_type;
+        int32 prn;
+        aspn23_dds::TypeSatnavClock clock;
+        aspn23_dds::TypeKeplerOrbit orbit;
+        double bgd;
+    };
+};
+
+#endif

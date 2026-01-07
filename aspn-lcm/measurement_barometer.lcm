@@ -1,0 +1,54 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+package aspn23_lcm;
+
+// Barometric pressure.
+struct measurement_barometer {
+
+    // Non ASPN. Do not use. Extra field encoding the struct name to disambiguate LCM type fingerprint hashes.
+    int8_t icd_measurement_barometer;
+
+    // Description: Standard ASPN measurement header.
+    // Units: none
+    type_header header;
+
+    // Description: Time at which the measurement is considered to be valid.
+    // Units: none
+    type_timestamp time_of_validity;
+
+    // Description: Reading from a barometric pressure sensor.
+    // Units: pascal
+    double pressure;
+
+    // Description: Pressure variance.
+    // Units: pascal^2
+    double variance;
+
+    // Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
+    int8_t error_model;
+
+    // No additional error model provided (num_error_model_params = 0).
+    const int8_t ERROR_MODEL_NONE = 0;
+
+    // Description: Number of parameters required for the error model chosen.
+    // Units: none
+    int32_t num_error_model_params;
+
+    // Description: Error model parameters that characterize the optional error model.
+    // Units: various
+    double error_model_params[num_error_model_params];
+
+    // Description: Number of integrity values.
+    // Units: none
+    int16_t num_integrity;
+
+    // Description: Measurement integrity. Includes the integrity method used and an integrity value
+    // (which is to be interpreted based upon the integrity method). The intent of allowing num_integrity >
+    // 1 is to report multiple integrity values based on multiple integrity methods.
+    // Units: none
+    type_integrity integrity[num_integrity];
+
+
+}

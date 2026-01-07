@@ -1,0 +1,38 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+package aspn23_lcm;
+
+// Satellite system name
+struct type_satnav_satellite_system {
+
+    // Non ASPN. Do not use. Extra field encoding the struct name to disambiguate LCM type fingerprint hashes.
+    int8_t icd_type_satnav_satellite_system;
+
+    // Enumerated field which describes the Satellite System.
+    int8_t satellite_system;
+
+    // GPS.
+    const int8_t SATELLITE_SYSTEM_SYS_GPS = 0;
+
+    // Galileo.
+    const int8_t SATELLITE_SYSTEM_SYS_GALILEO = 1;
+
+    // GLONASS.
+    const int8_t SATELLITE_SYSTEM_SYS_GLONASS = 2;
+
+    // BeiDou.
+    const int8_t SATELLITE_SYSTEM_SYS_BEIDOU = 3;
+
+    // SBAS.
+    const int8_t SATELLITE_SYSTEM_SYS_SBAS = 4;
+
+    // QZSS.
+    const int8_t SATELLITE_SYSTEM_SYS_QZSS = 5;
+
+    // IRNSS.
+    const int8_t SATELLITE_SYSTEM_SYS_IRNSS = 6;
+
+
+}

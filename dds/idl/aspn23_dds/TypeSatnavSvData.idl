@@ -1,0 +1,44 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_TYPESATNAVSVDATA__
+#define __ASPN23_DDS_TYPESATNAVSVDATA__
+
+#include <aspn23_dds/TypeSatnavSatelliteSystem.idl>
+#include <aspn23_dds/TypeSatnavTime.idl>
+
+module aspn23_dds {
+    enum TypeSatnavSvDataEphemerisTypeValue {
+        ASPN23_TYPE_SATNAV_SV_DATA_EPHEMERIS_TYPE_SET_BY_SYSTEM,
+        ASPN23_TYPE_SATNAV_SV_DATA_EPHEMERIS_TYPE_GPS_LNAV,
+        ASPN23_TYPE_SATNAV_SV_DATA_EPHEMERIS_TYPE_GPS_CNAV,
+        ASPN23_TYPE_SATNAV_SV_DATA_EPHEMERIS_TYPE_GPS_MNAV
+    };
+    enum TypeSatnavSvDataCoordinateFrameValue {
+        ASPN23_TYPE_SATNAV_SV_DATA_COORDINATE_FRAME_ITRF,
+        ASPN23_TYPE_SATNAV_SV_DATA_COORDINATE_FRAME_ECEF,
+        ASPN23_TYPE_SATNAV_SV_DATA_COORDINATE_FRAME_GTRF,
+        ASPN23_TYPE_SATNAV_SV_DATA_COORDINATE_FRAME_PZ90
+    };
+    enum TypeSatnavSvDataGroupDelayEnumValue {
+        ASPN23_TYPE_SATNAV_SV_DATA_GROUP_DELAY_ENUM_TGD_LNAV
+    };
+    
+    @topic
+    struct TypeSatnavSvData {
+        int16 prn;
+        aspn23_dds::TypeSatnavSatelliteSystem satellite_system;
+        TypeSatnavSvDataEphemerisTypeValue ephemeris_type;
+        aspn23_dds::TypeSatnavTime sv_data_time;
+        TypeSatnavSvDataCoordinateFrameValue coordinate_frame;
+        double sv_pos[3];
+        double sv_vel[3];
+        double sv_clock_bias;
+        double sv_clock_drift;
+        TypeSatnavSvDataGroupDelayEnumValue group_delay_enum;
+        float group_delay_vector[4];
+    };
+};
+
+#endif

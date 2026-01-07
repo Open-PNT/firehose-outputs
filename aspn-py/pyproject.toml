@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name="aspn23"
+version="0.1.0"
+description="The Python representation of ASPN-23"
+dependencies=["numpy"]
+requires-python = ">= 3.8"
+
+[tool.setuptools.packages.find]
+where=["src"]
+include=["aspn23*"]
+namespaces=false
+
+[project.optional-dependencies]
+dev = [
+    "mypy>=1.9.0",
+]

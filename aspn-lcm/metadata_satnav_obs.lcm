@@ -1,0 +1,33 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+package aspn23_lcm;
+
+// Metadata for satnav_obs
+struct metadata_satnav_obs {
+
+    // Non ASPN. Do not use. Extra field encoding the struct name to disambiguate LCM type fingerprint hashes.
+    int8_t icd_metadata_satnav_obs;
+
+    // Description: Standard ASPN metadata header.
+    // Units: none
+    type_metadataheader info;
+
+    // Description: Time at which the measurement is considered to be valid.
+    // Units: none
+    type_timestamp time_of_validity;
+
+    // Description: Start time of the interval over which the deltarange is measured with respect to
+    // the measurement time. This value must be provided if the deltarange measurement is provided.
+    // Units: seconds
+    float deltarange_interval_start;
+
+    // Description: Stop time of the interval over which the deltarange is measured with respect to the
+    // measurement time. This value must be provided if the deltarange measurement is provided. If the
+    // deltarange integration period is the same as the measurement time, this value should be 0.
+    // Units: seconds
+    float deltarange_interval_stop;
+
+
+}

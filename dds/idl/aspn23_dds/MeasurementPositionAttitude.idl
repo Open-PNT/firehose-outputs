@@ -1,0 +1,39 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_MEASUREMENTPOSITIONATTITUDE__
+#define __ASPN23_DDS_MEASUREMENTPOSITIONATTITUDE__
+
+#include <aspn23_dds/TypeHeader.idl>
+#include <aspn23_dds/TypeIntegrity.idl>
+#include <aspn23_dds/TypeTimestamp.idl>
+
+module aspn23_dds {
+    enum MeasurementPositionAttitudeReferenceFrameValue {
+        ASPN23_MEASUREMENT_POSITION_ATTITUDE_REFERENCE_FRAME_ECI,
+        ASPN23_MEASUREMENT_POSITION_ATTITUDE_REFERENCE_FRAME_GEODETIC
+    };
+    enum MeasurementPositionAttitudeErrorModelValue {
+        ASPN23_MEASUREMENT_POSITION_ATTITUDE_ERROR_MODEL_NONE
+    };
+    
+    @topic
+    struct MeasurementPositionAttitude {
+        aspn23_dds::TypeHeader header;
+        aspn23_dds::TypeTimestamp time_of_validity;
+        MeasurementPositionAttitudeReferenceFrameValue reference_frame;
+        double p1;
+        double p2;
+        double p3;
+        double quaternion[4];
+        sequence<double> covariance;
+        MeasurementPositionAttitudeErrorModelValue error_model;
+        uint16 num_error_model_params;
+        sequence<double> error_model_params;
+        uint8 num_integrity;
+        sequence<aspn23_dds::TypeIntegrity> integrity;
+    };
+};
+
+#endif

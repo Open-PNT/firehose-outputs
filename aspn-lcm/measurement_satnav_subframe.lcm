@@ -1,0 +1,57 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+package aspn23_lcm;
+
+// satnav navigation data bit subframe.
+struct measurement_satnav_subframe {
+
+    // Non ASPN. Do not use. Extra field encoding the struct name to disambiguate LCM type fingerprint hashes.
+    int8_t icd_measurement_satnav_subframe;
+
+    // Description: Standard ASPN measurement header.
+    // Units: none
+    type_header header;
+
+    // Description: Time at which the measurement is considered to be valid.
+    // Units: none
+    type_timestamp time_of_validity;
+
+    // Description: Message ID provided from the satnav receiver.
+    // Units: none
+    int64_t gnss_message_id;
+
+    // Description: Satellite ID number.
+    // Units: none
+    int32_t prn;
+
+    // Description: Describes the satellite system that generated the subframe.
+    // Units: none
+    type_satnav_satellite_system satellite_system;
+
+    // Description: Frequency slot +7 (range from 0-13). Only used for GLONASS.
+    // Units: none
+    int32_t freq_slot_id;
+
+    // Description: Number of bytes of subframe data.
+    // Units: none
+    int32_t num_bytes;
+
+    // Description: num_bytes sized array of raw subframe message collected by the sensor. The
+    // underlying type and shape of the data vector is given by satnav_msg_id.
+    // Units: none
+    int8_t data_vector[num_bytes];
+
+    // Description: Number of integrity values.
+    // Units: none
+    int16_t num_integrity;
+
+    // Description: Measurement integrity. Includes the integrity method used and an integrity value
+    // (which is to be interpreted based upon the integrity method). The intent of allowing num_integrity >
+    // 1 is to report multiple integrity values based on multiple integrity methods.
+    // Units: none
+    type_integrity integrity[num_integrity];
+
+
+}

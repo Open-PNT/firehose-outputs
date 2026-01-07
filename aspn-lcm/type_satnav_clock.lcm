@@ -1,0 +1,30 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+package aspn23_lcm;
+
+// satnav broadcast parameters required to calculate sv clock corrections
+struct type_satnav_clock {
+
+    // Non ASPN. Do not use. Extra field encoding the struct name to disambiguate LCM type fingerprint hashes.
+    int8_t icd_type_satnav_clock;
+
+    // Description: Clock reference time.
+    // Units: s
+    double t_oc;
+
+    // Description: Satellite clock bias.
+    // Units: s
+    double af_0;
+
+    // Description: Satellite clock drift.
+    // Units: s/s
+    double af_1;
+
+    // Description: Satellite clock drift rate.
+    // Units: s/s^2
+    double af_2;
+
+
+}

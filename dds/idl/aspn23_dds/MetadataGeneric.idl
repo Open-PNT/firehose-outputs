@@ -1,0 +1,22 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_METADATAGENERIC__
+#define __ASPN23_DDS_METADATAGENERIC__
+
+#include <aspn23_dds/TypeMetadataheader.idl>
+#include <aspn23_dds/TypeMounting.idl>
+#include <aspn23_dds/TypeTimestamp.idl>
+
+module aspn23_dds {
+    
+    @topic
+    struct MetadataGeneric {
+        aspn23_dds::TypeMetadataheader info;
+        aspn23_dds::TypeTimestamp time_of_validity;
+        aspn23_dds::TypeMounting mounting;
+    };
+};
+
+#endif

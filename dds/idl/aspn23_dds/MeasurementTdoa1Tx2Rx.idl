@@ -1,0 +1,34 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_MEASUREMENTTDOA1TX2RX__
+#define __ASPN23_DDS_MEASUREMENTTDOA1TX2RX__
+
+#include <aspn23_dds/TypeHeader.idl>
+#include <aspn23_dds/TypeIntegrity.idl>
+#include <aspn23_dds/TypeRemotePoint.idl>
+#include <aspn23_dds/TypeTimestamp.idl>
+
+module aspn23_dds {
+    enum MeasurementTdoa1Tx2RxErrorModelValue {
+        ASPN23_MEASUREMENT_TDOA_1TX_2RX_ERROR_MODEL_NONE
+    };
+    
+    @topic
+    struct MeasurementTdoa1Tx2Rx {
+        aspn23_dds::TypeHeader header;
+        aspn23_dds::TypeTimestamp time_of_validity;
+        aspn23_dds::TypeRemotePoint tx_position_and_covariance;
+        aspn23_dds::TypeRemotePoint rx1_position_and_covariance;
+        double obs;
+        double variance;
+        MeasurementTdoa1Tx2RxErrorModelValue error_model;
+        uint16 num_error_model_params;
+        sequence<double> error_model_params;
+        uint8 num_integrity;
+        sequence<aspn23_dds::TypeIntegrity> integrity;
+    };
+};
+
+#endif

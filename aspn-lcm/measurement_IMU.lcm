@@ -1,0 +1,56 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+package aspn23_lcm;
+
+// Inertial Measurement Unit (IMU) measurements from the device's three axis accelerometers and three
+// axis gyroscopes.
+struct measurement_IMU {
+
+    // Non ASPN. Do not use. Extra field encoding the struct name to disambiguate LCM type fingerprint hashes.
+    int8_t icd_measurement_IMU;
+
+    // Description: Standard ASPN measurement header.
+    // Units: none
+    type_header header;
+
+    // Description: Time at which the measurement is considered to be valid.
+    // Units: none
+    type_timestamp time_of_validity;
+
+    // IMU type
+    int8_t imu_type;
+
+    // delta velocity and delta rotation measurements from the device's three axis accelerometers and
+    // three axis gyroscopes. Specific force integrated over last measurement period expressed as delta_v
+    // array in m/s. Angular rate integrated over last measurement period expressed as delta_theta array in
+    // radians. Time of validity is the end of integration period. Integration period is from previous
+    // measurement to the current measurement.
+    const int8_t IMU_TYPE_INTEGRATED = 0;
+
+    // sampled specific force and rotation rates from the device's three axis accelerometers and three
+    // axis gyroscopes. Specific force is sampled expressed as an array in m/s/s. Angular rate is sampled
+    // and expressed as an array in rad/s.
+    const int8_t IMU_TYPE_SAMPLED = 1;
+
+    // Description: Accelerometer (specific force) measurements in 3 axes per enumerated definition.
+    // Units: various
+    double meas_accel[3];
+
+    // Description: Gyroscope measurements in 3 axes per enumerated definition.
+    // Units: various
+    double meas_gyro[3];
+
+    // Description: Number of integrity values.
+    // Units: none
+    int16_t num_integrity;
+
+    // Description: Measurement integrity. Includes the integrity method used and an integrity value
+    // (which is to be interpreted based upon the integrity method). The intent of allowing num_integrity >
+    // 1 is to report multiple integrity values based on multiple integrity methods.
+    // Units: none
+    type_integrity integrity[num_integrity];
+
+
+}

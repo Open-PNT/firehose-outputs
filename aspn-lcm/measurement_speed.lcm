@@ -1,0 +1,72 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+package aspn23_lcm;
+
+// Speed is the magnitude of the velocity vector with respect to the user-specified reference frame.
+struct measurement_speed {
+
+    // Non ASPN. Do not use. Extra field encoding the struct name to disambiguate LCM type fingerprint hashes.
+    int8_t icd_measurement_speed;
+
+    // Description: Standard ASPN measurement header.
+    // Units: none
+    type_header header;
+
+    // Description: Time at which the measurement is considered to be valid.
+    // Units: none
+    type_timestamp time_of_validity;
+
+    // Defines measurement reference.
+    int8_t reference;
+
+    // Speed with respect to air measured as true airspeed (TAS) with respect to air mass expressed in
+    // sensor coordinate frame.
+    const int8_t REFERENCE_TAS = 0;
+
+    // Speed with respect to air measured as indicated airspeed (IAS) with respect to air mass
+    // expressed in sensor coordinate frame; for example, dynamic pressure from a pitot tube converted to
+    // airspeed without compensation for instrument error, position, altitude, or temperature.
+    const int8_t REFERENCE_IAS = 1;
+
+    // Speed with respect to water. Speed with respect to water expressed in sensor coordinate frame.
+    const int8_t REFERENCE_WATER = 2;
+
+    // Speed with respect to ground. An example source is a ground Doppler radar.
+    const int8_t REFERENCE_GROUND = 3;
+
+    // Description: Speed as the magnitude of the velocity.
+    // Units: m/s
+    double speed;
+
+    // Description: Speed variance.
+    // Units: (m/s)^2
+    double variance;
+
+    // Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
+    int8_t error_model;
+
+    // No additional error model provided (num_error_model_params = 0).
+    const int8_t ERROR_MODEL_NONE = 0;
+
+    // Description: Number of parameters required for the error model chosen.
+    // Units: none
+    int32_t num_error_model_params;
+
+    // Description: Error model parameters that characterize the optional error model.
+    // Units: various
+    double error_model_params[num_error_model_params];
+
+    // Description: Number of integrity values.
+    // Units: none
+    int16_t num_integrity;
+
+    // Description: Measurement integrity. Includes the integrity method used and an integrity value
+    // (which is to be interpreted based upon the integrity method). The intent of allowing num_integrity >
+    // 1 is to report multiple integrity values based on multiple integrity methods.
+    // Units: none
+    type_integrity integrity[num_integrity];
+
+
+}

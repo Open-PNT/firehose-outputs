@@ -1,0 +1,30 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_MEASUREMENTIMU__
+#define __ASPN23_DDS_MEASUREMENTIMU__
+
+#include <aspn23_dds/TypeHeader.idl>
+#include <aspn23_dds/TypeIntegrity.idl>
+#include <aspn23_dds/TypeTimestamp.idl>
+
+module aspn23_dds {
+    enum MeasurementImuImuTypeValue {
+        ASPN23_MEASUREMENT_IMU_IMU_TYPE_INTEGRATED,
+        ASPN23_MEASUREMENT_IMU_IMU_TYPE_SAMPLED
+    };
+    
+    @topic
+    struct MeasurementImu {
+        aspn23_dds::TypeHeader header;
+        aspn23_dds::TypeTimestamp time_of_validity;
+        MeasurementImuImuTypeValue imu_type;
+        double meas_accel[3];
+        double meas_gyro[3];
+        uint8 num_integrity;
+        sequence<aspn23_dds::TypeIntegrity> integrity;
+    };
+};
+
+#endif

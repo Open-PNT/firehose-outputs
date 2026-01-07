@@ -1,0 +1,29 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_METADATABEIDOUEPHEMERIS__
+#define __ASPN23_DDS_METADATABEIDOUEPHEMERIS__
+
+#include <aspn23_dds/TypeKeplerOrbit.idl>
+#include <aspn23_dds/TypeMetadataheader.idl>
+#include <aspn23_dds/TypeSatnavClock.idl>
+#include <aspn23_dds/TypeTimestamp.idl>
+
+module aspn23_dds {
+    
+    @topic
+    struct MetadataBeidouEphemeris {
+        aspn23_dds::TypeMetadataheader info;
+        aspn23_dds::TypeTimestamp time_of_validity;
+        int32 prn;
+        aspn23_dds::TypeSatnavClock clock;
+        aspn23_dds::TypeKeplerOrbit orbit;
+        double t_gd1;
+        double t_gd2;
+        int16 aodc;
+        int16 aode;
+    };
+};
+
+#endif

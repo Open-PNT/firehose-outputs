@@ -1,0 +1,31 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_TYPEKEPLERORBIT__
+#define __ASPN23_DDS_TYPEKEPLERORBIT__
+
+module aspn23_dds {
+    
+    @topic
+    struct TypeKeplerOrbit {
+        double m_0;
+        double delta_n;
+        double e;
+        double sqrt_a;
+        double omega_0;
+        double i_0;
+        double i_dot;
+        double omega;
+        double omega_dot;
+        double c_uc;
+        double c_us;
+        double c_rc;
+        double c_rs;
+        double c_ic;
+        double c_is;
+        double t_oe;
+    };
+};
+
+#endif

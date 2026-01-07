@@ -1,0 +1,54 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_METADATAIMAGEFEATURES__
+#define __ASPN23_DDS_METADATAIMAGEFEATURES__
+
+#include <aspn23_dds/TypeMetadataheader.idl>
+#include <aspn23_dds/TypeTimestamp.idl>
+
+module aspn23_dds {
+    enum MetadataImageFeaturesKeypointDetectorValue {
+        ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_AGAST,
+        ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_AKAZE,
+        ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_BRISK,
+        ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_FAST,
+        ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_GFTT,
+        ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_KAZE,
+        ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_MSER,
+        ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_ORB,
+        ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SIFT,
+        ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SURF,
+        ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_HARRIS,
+        ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SHI,
+        ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_OTHER
+    };
+    enum MetadataImageFeaturesDescriptorExtractorValue {
+        ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_AKAZE,
+        ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_BRISK,
+        ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_KAZE,
+        ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_ORB,
+        ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_SIFT,
+        ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_SURF,
+        ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_OTHER
+    };
+    enum MetadataImageFeaturesDescriptorTypeValue {
+        ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_TYPE_UINT8,
+        ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_TYPE_FLOAT32
+    };
+    
+    @topic
+    struct MetadataImageFeatures {
+        aspn23_dds::TypeMetadataheader info;
+        aspn23_dds::TypeTimestamp time_of_validity;
+        MetadataImageFeaturesKeypointDetectorValue keypoint_detector;
+        boolean orientation_calculated;
+        MetadataImageFeaturesDescriptorExtractorValue descriptor_extractor;
+        boolean is_bigendian;
+        MetadataImageFeaturesDescriptorTypeValue descriptor_type;
+        uint16 descriptor_number_of_elements;
+    };
+};
+
+#endif

@@ -1,0 +1,86 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+package aspn23_lcm;
+
+// 3D direction to or from a point as defined by the reference enum. Information about the remote
+// point (its position and/or correspondence with previous or future appearances
+// of this same point) may be determined using remote_point.
+struct type_direction_3d_to_point {
+
+    // Non ASPN. Do not use. Extra field encoding the struct name to disambiguate LCM type fingerprint hashes.
+    int8_t icd_type_direction_3d_to_point;
+
+    // Description: Position and/or correspondence information about the remote point.
+    // Units: various
+    type_remote_point remote_point;
+
+    // Defines measurement reference frame.
+    int8_t reference_frame;
+
+    // Azimuth (first component of obs) is the angle between the sensor frame x-axis (boresight) and
+    // the projection of the point onto the sensor frame's x-y plane (positive right-hand rule about the
+    // sensor frame z-axis). Elevation (second component of obs) is the angle between the sensor frame's
+    // x-y plane and the vector from the sensor to the point (positive right-hand rule about the
+    // intermediate axis formed by the azimuth rotation). The covariance is for the azimuth and elevation
+    // errors. Units for the observation are in rad, covariance rad^2.
+    const int8_t REFERENCE_FRAME_AZ_EL = 0;
+
+    // The pixel coordinates of the point in an image (sub-pixel resolution is allowed). When combined
+    // with the camera model, these can be converted to the NORMALIZED_IMAGE reference frame
+    // representation. Units for the observation are in pixels, covariance pixels^2.
+    const int8_t REFERENCE_FRAME_PIXEL = 1;
+
+    // 2D position from the sensor frame origin to the point expressed in components y and z of the
+    // sensor frame normalized by the boresight distance. The x component of the sensor frame is the
+    // boresight axis. Units for the observation are m/m, covariance (m/m)^2.
+    const int8_t REFERENCE_FRAME_NORMALIZED_IMAGE = 2;
+
+    // 2D position from the sensor frame origin to the point expressed in components y and z of the
+    // sensor frame normalized by the range to the point. The x component of the sensor frame is the
+    // boresight axis. Units for the observation are m/m, covariance (m/m)^2.
+    const int8_t REFERENCE_FRAME_SINE_SPACE = 3;
+
+    // Description: 3D direction to the remote point as defined in reference_frame.
+    // Units: various
+    double obs[2];
+
+    // Description: Covariance of the direction measurement as defined in reference_frame.
+    // Units: various
+    double covariance[2][2];
+
+    // Description: Switch for whether observation_characteristics is valid or not.
+    // Units: none
+    boolean has_observation_characteristics;
+
+    // Description: Image feature characteristics.
+    // Units: various
+    type_image_feature observation_characteristics;
+
+    // Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
+    int8_t error_model;
+
+    // No additional error model provided (num_error_model_params = 0).
+    const int8_t ERROR_MODEL_NONE = 0;
+
+    // Description: Number of parameters required for the error model chosen.
+    // Units: none
+    int32_t num_error_model_params;
+
+    // Description: Error model parameters that characterize the optional error model.
+    // Units: various
+    double error_model_params[num_error_model_params];
+
+    // Description: Number of integrity values.
+    // Units: none
+    int16_t num_integrity;
+
+    // Description: Measurement integrity. Includes the integrity method used and an integrity value
+    // (which is to be interpreted based upon the integrity method). The intent of allowing num_integrity >
+    // 1 is to report multiple integrity values based on multiple integrity methods.
+    // Units: none
+    type_integrity integrity[num_integrity];
+
+
+}

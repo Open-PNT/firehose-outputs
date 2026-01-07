@@ -1,0 +1,22 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_TYPEMETADATAHEADER__
+#define __ASPN23_DDS_TYPEMETADATAHEADER__
+
+#include <aspn23_dds/TypeHeader.idl>
+
+module aspn23_dds {
+    
+    @topic
+    struct TypeMetadataheader {
+        aspn23_dds::TypeHeader header;
+        string sensor_description;
+        @optional double delta_t_nom;
+        uint8 timestamp_clock_id;
+        uint8 digits_of_precision;
+    };
+};
+
+#endif

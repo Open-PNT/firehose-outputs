@@ -1,0 +1,38 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_MEASUREMENTDIRECTIONOFMOTION2D__
+#define __ASPN23_DDS_MEASUREMENTDIRECTIONOFMOTION2D__
+
+#include <aspn23_dds/TypeHeader.idl>
+#include <aspn23_dds/TypeIntegrity.idl>
+#include <aspn23_dds/TypeTimestamp.idl>
+
+module aspn23_dds {
+    enum MeasurementDirectionOfMotion2DReferenceValue {
+        ASPN23_MEASUREMENT_DIRECTION_OF_MOTION_2D_REFERENCE_NE,
+        ASPN23_MEASUREMENT_DIRECTION_OF_MOTION_2D_REFERENCE_ND,
+        ASPN23_MEASUREMENT_DIRECTION_OF_MOTION_2D_REFERENCE_ED,
+        ASPN23_MEASUREMENT_DIRECTION_OF_MOTION_2D_REFERENCE_SENSOR
+    };
+    enum MeasurementDirectionOfMotion2DErrorModelValue {
+        ASPN23_MEASUREMENT_DIRECTION_OF_MOTION_2D_ERROR_MODEL_NONE
+    };
+    
+    @topic
+    struct MeasurementDirectionOfMotion2D {
+        aspn23_dds::TypeHeader header;
+        aspn23_dds::TypeTimestamp time_of_validity;
+        MeasurementDirectionOfMotion2DReferenceValue reference;
+        double obs;
+        double variance;
+        MeasurementDirectionOfMotion2DErrorModelValue error_model;
+        uint16 num_error_model_params;
+        sequence<double> error_model_params;
+        uint8 num_integrity;
+        sequence<aspn23_dds::TypeIntegrity> integrity;
+    };
+};
+
+#endif

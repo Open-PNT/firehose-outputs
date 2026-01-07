@@ -1,0 +1,17 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_TYPEINTEGRITY__
+#define __ASPN23_DDS_TYPEINTEGRITY__
+
+module aspn23_dds {
+    
+    @topic
+    struct TypeIntegrity {
+        uint8 integrity_method;
+        @optional double integrity_value;
+    };
+};
+
+#endif

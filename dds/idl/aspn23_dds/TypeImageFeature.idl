@@ -1,0 +1,22 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_TYPEIMAGEFEATURE__
+#define __ASPN23_DDS_TYPEIMAGEFEATURE__
+
+module aspn23_dds {
+    
+    @topic
+    struct TypeImageFeature {
+        double response;
+        double orientation;
+        double size;
+        uint16 class_id;
+        uint16 octave;
+        uint16 descriptor_size;
+        sequence<uint8> descriptor;
+    };
+};
+
+#endif

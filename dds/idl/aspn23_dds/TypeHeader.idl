@@ -1,0 +1,19 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_TYPEHEADER__
+#define __ASPN23_DDS_TYPEHEADER__
+
+module aspn23_dds {
+    
+    @topic
+    struct TypeHeader {
+        uint32 vendor_id;
+        uint64 device_id;
+        uint32 context_id;
+        uint16 sequence_id;
+    };
+};
+
+#endif

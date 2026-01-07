@@ -1,0 +1,49 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_MEASUREMENTIMAGE__
+#define __ASPN23_DDS_MEASUREMENTIMAGE__
+
+#include <aspn23_dds/TypeHeader.idl>
+#include <aspn23_dds/TypeIntegrity.idl>
+#include <aspn23_dds/TypeTimestamp.idl>
+
+module aspn23_dds {
+    enum MeasurementImageImageTypeValue {
+        ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_BMP,
+        ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_PNG,
+        ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_JPG,
+        ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_TIFF,
+        ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAY8,
+        ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_RGB8,
+        ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_BGR8,
+        ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_RGBA8,
+        ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_BGRA8,
+        ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAY16,
+        ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAYFLOAT64
+    };
+    enum MeasurementImageCameraModelValue {
+        ASPN23_MEASUREMENT_IMAGE_CAMERA_MODEL_ASPN_PINHOLE_PLUMB_BOB,
+        ASPN23_MEASUREMENT_IMAGE_CAMERA_MODEL_ASPN_LINEAR_MODEL
+    };
+    
+    @topic
+    struct MeasurementImage {
+        aspn23_dds::TypeHeader header;
+        aspn23_dds::TypeTimestamp time_of_validity;
+        uint32 height;
+        uint32 width;
+        boolean is_bigendian;
+        MeasurementImageImageTypeValue image_type;
+        uint64 image_data_length;
+        sequence<uint8> image_data;
+        MeasurementImageCameraModelValue camera_model;
+        uint8 num_model_coefficients;
+        sequence<double> model_coefficients;
+        uint8 num_integrity;
+        sequence<aspn23_dds::TypeIntegrity> integrity;
+    };
+};
+
+#endif

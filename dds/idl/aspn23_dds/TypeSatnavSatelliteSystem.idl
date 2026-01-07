@@ -1,0 +1,25 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_TYPESATNAVSATELLITESYSTEM__
+#define __ASPN23_DDS_TYPESATNAVSATELLITESYSTEM__
+
+module aspn23_dds {
+    enum TypeSatnavSatelliteSystemSatelliteSystemValue {
+        ASPN23_TYPE_SATNAV_SATELLITE_SYSTEM_SATELLITE_SYSTEM_SYS_GPS,
+        ASPN23_TYPE_SATNAV_SATELLITE_SYSTEM_SATELLITE_SYSTEM_SYS_GALILEO,
+        ASPN23_TYPE_SATNAV_SATELLITE_SYSTEM_SATELLITE_SYSTEM_SYS_GLONASS,
+        ASPN23_TYPE_SATNAV_SATELLITE_SYSTEM_SATELLITE_SYSTEM_SYS_BEIDOU,
+        ASPN23_TYPE_SATNAV_SATELLITE_SYSTEM_SATELLITE_SYSTEM_SYS_SBAS,
+        ASPN23_TYPE_SATNAV_SATELLITE_SYSTEM_SATELLITE_SYSTEM_SYS_QZSS,
+        ASPN23_TYPE_SATNAV_SATELLITE_SYSTEM_SATELLITE_SYSTEM_SYS_IRNSS
+    };
+    
+    @topic
+    struct TypeSatnavSatelliteSystem {
+        TypeSatnavSatelliteSystemSatelliteSystemValue satellite_system;
+    };
+};
+
+#endif

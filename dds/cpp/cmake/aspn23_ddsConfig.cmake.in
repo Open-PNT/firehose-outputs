@@ -1,0 +1,9 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+find_dependency(fastcdr)
+find_dependency(fastrtps)
+
+if(NOT TARGET aspn23_dds)
+    include("${CMAKE_CURRENT_LIST_DIR}/@PROJECT_NAME@Targets.cmake")
+endif(NOT TARGET aspn23_dds)

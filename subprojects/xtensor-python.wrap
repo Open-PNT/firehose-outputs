@@ -1,0 +1,12 @@
+[wrap-git]
+directory = xtensor-python
+
+url = https://github.com/QuantStack/xtensor-python
+# v0.29.0
+revision = 7065f733f4839066d1092bad38b9cbbdd9fc6dee
+depth = 1
+
+patch_directory = xtensor-python
+
+[provide]
+dependency_names = xtensor-python

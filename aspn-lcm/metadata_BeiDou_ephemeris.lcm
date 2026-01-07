@@ -1,0 +1,53 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+package aspn23_lcm;
+
+// BeiDou Ephemeris describing satellite locations. Definitions and usage are covered in
+// BDS-SIS-ICD-BII-3.0, February 2019,
+struct metadata_BeiDou_ephemeris {
+
+    // Non ASPN. Do not use. Extra field encoding the struct name to disambiguate LCM type fingerprint hashes.
+    int8_t icd_metadata_BeiDou_ephemeris;
+
+    // Description: Standard ASPN metadata header.
+    // Units: none
+    type_metadataheader info;
+
+    // Description: Time at which the measurement is considered to be valid.
+    // Units: none
+    type_timestamp time_of_validity;
+
+    // Description: Satellite PRN number.
+    // Units: none
+    int32_t prn;
+
+    // Description: GNSS broadcast parameters required to calculate sv clock corrections.
+    // Units: none
+    type_satnav_clock clock;
+
+    // Description: Keplerian orbit parameters required to calculate satellite position.
+    // Units: none
+    type_kepler_orbit orbit;
+
+    // Description: Group delay differential for B1I user.
+    // Units: s
+    double t_gd1;
+
+    // Description: Group delay differential for B2I user.
+    // Units: s
+    double t_gd2;
+
+    // Description: Age of data, clock is updated at start of each hour in BDT per table 5-6 in
+    // BDS-SIS-ICD-BII-3.0.
+    // Units: none
+    int16_t aodc;
+
+    // Description: Age of data, ephemeris is updated at start of each hour in BDT per table 5-8 in
+    // BDS-SIS-ICD-BII-3.0.
+    // Units: none
+    int16_t aode;
+
+
+}

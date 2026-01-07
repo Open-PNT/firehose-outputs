@@ -1,0 +1,19 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_TYPEMOUNTING__
+#define __ASPN23_DDS_TYPEMOUNTING__
+
+module aspn23_dds {
+    
+    @topic
+    struct TypeMounting {
+        double lever_arm[3];
+        double lever_arm_sigma[3];
+        @optional double orientation_quaternion[4];
+        sequence<double> orientation_tilt_error_covariance;
+    };
+};
+
+#endif

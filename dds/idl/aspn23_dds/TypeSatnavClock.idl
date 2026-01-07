@@ -1,0 +1,19 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_TYPESATNAVCLOCK__
+#define __ASPN23_DDS_TYPESATNAVCLOCK__
+
+module aspn23_dds {
+    
+    @topic
+    struct TypeSatnavClock {
+        double t_oc;
+        double af_0;
+        double af_1;
+        double af_2;
+    };
+};
+
+#endif

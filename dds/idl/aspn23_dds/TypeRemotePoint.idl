@@ -1,0 +1,27 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_TYPEREMOTEPOINT__
+#define __ASPN23_DDS_TYPEREMOTEPOINT__
+
+module aspn23_dds {
+    enum TypeRemotePointPositionReferenceFrameValue {
+        ASPN23_TYPE_REMOTE_POINT_POSITION_REFERENCE_FRAME_NONE,
+        ASPN23_TYPE_REMOTE_POINT_POSITION_REFERENCE_FRAME_GEODETIC
+    };
+    
+    @topic
+    struct TypeRemotePoint {
+        uint8 included_terms;
+        uint32 id;
+        TypeRemotePointPositionReferenceFrameValue position_reference_frame;
+        @optional double position1;
+        @optional double position2;
+        @optional double position3;
+        uint8 num_position_components;
+        sequence<double> position_covariance;
+    };
+};
+
+#endif

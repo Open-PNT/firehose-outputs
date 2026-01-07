@@ -1,0 +1,23 @@
+
+// This code is generated via firehose.
+// DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+#ifndef __ASPN23_DDS_MEASUREMENTDIRECTION3DTOPOINTS__
+#define __ASPN23_DDS_MEASUREMENTDIRECTION3DTOPOINTS__
+
+#include <aspn23_dds/TypeDirection3DToPoint.idl>
+#include <aspn23_dds/TypeHeader.idl>
+#include <aspn23_dds/TypeTimestamp.idl>
+
+module aspn23_dds {
+    
+    @topic
+    struct MeasurementDirection3DToPoints {
+        aspn23_dds::TypeHeader header;
+        aspn23_dds::TypeTimestamp time_of_validity;
+        uint16 num_obs;
+        sequence<aspn23_dds::TypeDirection3DToPoint> obs;
+    };
+};
+
+#endif
