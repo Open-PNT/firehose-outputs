@@ -1,0 +1,54 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/TypeMounting.msg
+// generated code does not contain a copyright notice
+
+
+module aspn23_ros_interfaces {
+  module msg {
+    typedef double double__3[3];
+    typedef double double__4[4];
+    typedef double double__9[9];
+    struct TypeMounting {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Describes the translational and angular offset between the sensor frame and the platform body frame." "\n"
+        "Platform body frame is defined using axes in forward, right, and down convention, and the origin is" "\n"
+        "system defined. This type also contains the uncertainty associated with the translational and" "\n"
+        "angular offset." "\n"
+        "Description: 3x1 lever arm vector describing the sensor position in the platform body frame." "\n"
+        "Units: m")
+      double__3 lever_arm;
+
+      @verbatim (language="comment", text=
+        "Description: 3x1 lever arm uncertainty vector as standard deviations in the platform body frame." "\n"
+        "Units: m")
+      double__3 lever_arm_sigma;
+
+      @verbatim (language="comment", text=
+        "Description: Four element quaternion, q = [a, b, c, d], where a = cos(phi/2), b =" "\n"
+        "(phi_x/phi)*sin(phi/2), c = (phi_y/phi)*sin(phi/2), and d = (phi_z/phi)*sin(phi/2). In this" "\n"
+        "description, the vector [phi_x, phi_y, phi_z] represents the rotation vector that describes the" "\n"
+        "frame rotation to be applied to the \"reference\" frame (ECI, ECEF, or NED) to rotate it into the axes" "\n"
+        "that describe the measured attitude, and the value phi is the magnitude of the [phi_x, phi_y, phi_z]" "\n"
+        "vector." "\n"
+        "Orientation is optional in the sense that orientation shall be specified except in the case that" "\n"
+        "orientation is meaningless, for example, in the case of an RF antenna mounting." "\n"
+        "See \"conventions\" documentation for more detailed information." "\n"
+        "Units: none")
+      double__4 orientation_quaternion;
+
+      @verbatim (language="comment", text=
+        "Description: Tilt error covariance matrix. This matrix represents the uncertainty in the \"tilt" "\n"
+        "errors\" that represent the additional rotation to be applied to the provided attitude quaternion in" "\n"
+        "order to convert it to the true attitude with no errors. By convention, these \"tilt errors\" are" "\n"
+        "expressed in the reference frame (ECI, ECEF, or NED)." "\n"
+        "Tilt error covariance is optional only because orientation itself is optional. Orientation error" "\n"
+        "covariance shall be provided if orientation is provided." "\n"
+        "See \"conventions\" documentation for more detailed information." "\n"
+        "Units: rad^2" "\n"
+        "Note: field represents a 3 x 3 matrix")
+      double__9 orientation_tilt_error_covariance;
+    };
+  };
+};

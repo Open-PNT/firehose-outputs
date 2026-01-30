@@ -1,0 +1,69 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/TypeRemotePoint.msg
+// generated code does not contain a copyright notice
+
+
+module aspn23_ros_interfaces {
+  module msg {
+    module TypeRemotePoint_Constants {
+      @verbatim (language="comment", text=
+        "No reference frame. This is only valid if position is not included" "\n"        "(included_terms is 0 or 1).")
+      const uint8 ASPN23_TYPE_REMOTE_POINT_POSITION_REFERENCE_FRAME_NONE = 0;
+      @verbatim (language="comment", text=
+        "Point position relative to the WGS-84 reference expressed using position1 as geodetic latitude" "\n"        "in radians, position2 as longitude in radians, and position3 as geodetic altitude (or height" "\n"        "above the WGS-84 ellipsoid) in meters. Each term is optional." "\n"        "position_covariance is given using north-south position error in meters (an expression of" "\n"        "geodetic latitude error), east-west position error in meters (an expression of longitude" "\n"        "error), and geodetic altitude error in meters. In the case of nulled position components, the" "\n"        "corresponding error covariance terms are omitted.")
+      const uint8 ASPN23_TYPE_REMOTE_POINT_POSITION_REFERENCE_FRAME_GEODETIC = 1;
+    };
+    struct TypeRemotePoint {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "ASPN custom type representing a point. This includes optional information" "\n"
+        "(indicated by included_terms) for the position and a correspondence ID for the" "\n"
+        "point." "\n"
+        "Description: Indicates which information is included about the point" "\n"
+        "0 = no information included (unknown point)" "\n"
+        "1 = id included (corresponded point)" "\n"
+        "2 = position included (known point)" "\n"
+        "3 = id and position included" "\n"
+        "Units: none")
+      uint8 included_terms;
+
+      @verbatim (language="comment", text=
+        "Description: Unique identification number assigned by the sensor. Points that have the same id from" "\n"
+        "a sensor are multiple instances of the same point as determined by a sensor's point correspondence." "\n"
+        "Units: none")
+      uint32 id;
+
+      @verbatim (language="comment", text=
+        "Defines position reference.")
+      uint8 position_reference_frame;
+
+      @verbatim (language="comment", text=
+        "Description: First position term as defined in position_reference_frame." "\n"
+        "Units: various")
+      double position1;
+
+      @verbatim (language="comment", text=
+        "Description: Second position term as defined in position_reference_frame." "\n"
+        "Units: various")
+      double position2;
+
+      @verbatim (language="comment", text=
+        "Description: Third position term as defined in position_reference_frame." "\n"
+        "Units: various")
+      double position3;
+
+      @verbatim (language="comment", text=
+        "Description: Dimension of position provided." "\n"
+        "Units: none")
+      uint8 num_position_components;
+
+      @verbatim (language="comment", text=
+        "Description: Position error covariance (or variance depending on num_position_components) as defined" "\n"
+        "in position_reference_frame." "\n"
+        "Units: m^2" "\n"
+        "Note: field represents a num_position_components x num_position_components matrix")
+      sequence<double> position_covariance;
+    };
+  };
+};

@@ -1,0 +1,26 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/TypeTimestamp.msg
+// generated code does not contain a copyright notice
+
+
+module aspn23_ros_interfaces {
+  module msg {
+    struct TypeTimestamp {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Whole number nanoseconds elapsed since timestamp's zero epoch. If negative, whole number nanoseconds" "\n"
+        "until timestamp's zero epoch. The zero epoch definition is based on the timing source used by the" "\n"
+        "message provider. The timing source used by the message provider is defined by the" "\n"
+        "`timestamp_clock_id` included in the `type_metadataheader` as part of the metadata. Additionally," "\n"
+        "the timestamp's digits of precision are included in the `type_metadataheader` as part of the" "\n"
+        "metadata, which may be useful if an implementation is converting the timestamp to another type" "\n"
+        "internally." "\n"
+        "If needed, the time elapsed in seconds is equal to elapsed_nsec * 1e-9." "\n"
+        "Description: Whole number nanoseconds elapsed since timestamp's zero epoch. If negative, whole" "\n"
+        "number nanoseconds until timestamp's zero epoch." "\n"
+        "Units: nanoseconds")
+      int64 elapsed_nsec;
+    };
+  };
+};

@@ -1,0 +1,96 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/MeasurementDirectionOfMotion3D.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeHeader.idl"
+#include "aspn23_ros_interfaces/msg/TypeIntegrity.idl"
+#include "aspn23_ros_interfaces/msg/TypeTimestamp.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    typedef double double__3[3];
+    typedef double double__4[4];
+    module MeasurementDirectionOfMotion3D_Constants {
+      @verbatim (language="comment", text=
+        "Direction of motion with respect to earth-centered inertial (ECi) frame, expressed in an" "\n"        "earth-centered inertial frame. See also ECi coordinate frame definition for x, y, and z definitions.")
+      const uint8 ASPN23_MEASUREMENT_DIRECTION_OF_MOTION_3D_REFERENCE_FRAME_ECI = 0;
+      @verbatim (language="comment", text=
+        "Direction of motion with respect to earth-fixed frame expressed in earth-centered, earth-fixed" "\n"        "(ECEF) frame. See also ECEF coordinate frame definition for x, y, and z definitions.")
+      const uint8 ASPN23_MEASUREMENT_DIRECTION_OF_MOTION_3D_REFERENCE_FRAME_ECEF = 1;
+      @verbatim (language="comment", text=
+        "Local level, geodetic velocity: Velocity with respect to earth-fixed frame expressed in the" "\n"        "North-East-Down (NED), local level frame. See also NED coordinate frame definition for N, E, and D" "\n"        "definitions.")
+      const uint8 ASPN23_MEASUREMENT_DIRECTION_OF_MOTION_3D_REFERENCE_FRAME_NED = 2;
+      @verbatim (language="comment", text=
+        "Direction of motion with respect to earth-fixed frame expressed in sensor coordinate frame. Sensor" "\n"        "coordinate frame is defined in sensor metadataHeader.")
+      const uint8 ASPN23_MEASUREMENT_DIRECTION_OF_MOTION_3D_REFERENCE_FRAME_SENSOR = 3;
+      @verbatim (language="comment", text=
+        "No additional error model provided (num_error_model_params = 0).")
+      const uint8 ASPN23_MEASUREMENT_DIRECTION_OF_MOTION_3D_ERROR_MODEL_NONE = 0;
+    };
+    struct MeasurementDirectionOfMotion3D {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Direction of motion represented as a unit vector." "\n"
+        "Description: Standard ASPN measurement header." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeHeader header;
+
+      @verbatim (language="comment", text=
+        "Description: Time at which the measurement is considered to be valid." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeTimestamp time_of_validity;
+
+      @verbatim (language="comment", text=
+        "Defines measurement reference.")
+      uint8 reference_frame;
+
+      @verbatim (language="comment", text=
+        "Description: Direction of motion represented as a unit vector." "\n"
+        "Units: none")
+      double__3 obs;
+
+      @verbatim (language="comment", text=
+        "Description: Error is expressed as rotation uncertainty about two axes, error_vector and and a" "\n"
+        "second error vector that is orthogonal to both the obs vector and the error_vector." "\n"
+        "Units: none")
+      double__3 error_vector;
+
+      @verbatim (language="comment", text=
+        "Description: Error is expressed as rotation uncertainty about the following two axes: 1)" "\n"
+        "error_vector, and 2) a second error vector that is orthogonal to both the obs direction vector and" "\n"
+        "the error_vector." "\n"
+        "Units: rad^2" "\n"
+        "Note: field represents a 2 x 2 matrix")
+      double__4 covariance;
+
+      @verbatim (language="comment", text=
+        "Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).")
+      uint8 error_model;
+
+      @verbatim (language="comment", text=
+        "Description: Number of parameters required for the error model chosen." "\n"
+        "Units: none")
+      uint16 num_error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Error model parameters that characterize the optional error model." "\n"
+        "Units: various" "\n"
+        "Note: array length is num_error_model_params")
+      sequence<double> error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Number of integrity values." "\n"
+        "Units: none")
+      uint8 num_integrity;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement integrity. Includes the integrity method used and an integrity value (which" "\n"
+        "is to be interpreted based upon the integrity method). The intent of allowing num_integrity > 1 is" "\n"
+        "to report multiple integrity values based on multiple integrity methods." "\n"
+        "Units: none" "\n"
+        "Note: array length is num_integrity")
+      sequence<aspn23_ros_interfaces::msg::TypeIntegrity> integrity;
+    };
+  };
+};

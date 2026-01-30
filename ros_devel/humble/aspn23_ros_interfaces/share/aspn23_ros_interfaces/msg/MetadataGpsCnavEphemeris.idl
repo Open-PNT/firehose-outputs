@@ -1,0 +1,95 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/MetadataGpsCnavEphemeris.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeKeplerOrbit.idl"
+#include "aspn23_ros_interfaces/msg/TypeMetadataheader.idl"
+#include "aspn23_ros_interfaces/msg/TypeSatnavClock.idl"
+#include "aspn23_ros_interfaces/msg/TypeTimestamp.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    struct MetadataGpsCnavEphemeris {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "CNAV Ephemeris describing GPS satellite locations. Definitions and usage are covered in" "\n"
+        "ICD-GPS-200L, Section 20.3.3.4 and following." "\n"
+        "Description: Standard ASPN metadata header." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeMetadataheader info;
+
+      @verbatim (language="comment", text=
+        "Description: Time at which the measurement is considered to be valid." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeTimestamp time_of_validity;
+
+      @verbatim (language="comment", text=
+        "Description: Full GPS week number calculated from the Modulo 1024 WN in Subframe 1 and the number of" "\n"
+        "GPS week rollovers" "\n"
+        "Units: weeks")
+      uint16 week_number;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite PRN number." "\n"
+        "Units: none")
+      int32 prn;
+
+      @verbatim (language="comment", text=
+        "Description: GNSS broadcast parameters required to calculate sv clock corrections." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeSatnavClock clock;
+
+      @verbatim (language="comment", text=
+        "Description: Keplerian orbit parameters required to calculate satellite position." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeKeplerOrbit orbit;
+
+      @verbatim (language="comment", text=
+        "Description: Group delay differential between L1 and L2." "\n"
+        "Units: s")
+      double t_gd;
+
+      @verbatim (language="comment", text=
+        "Description: Issue of Data Clock. 10 bit value from Subframe 1" "\n"
+        "Units: none")
+      uint16 iodc;
+
+      @verbatim (language="comment", text=
+        "Description: Issue of Data Ephemeris. 8 bits repeated in Subframe 2 and Subframe 3. Should match the" "\n"
+        "8 LSBs of the IODC." "\n"
+        "Units: none")
+      uint8 iode;
+
+      @verbatim (language="comment", text=
+        "Description: L1 P(Y) to L1 C/A inter-signal correction." "\n"
+        "Units: s")
+      double isc_l1_ca;
+
+      @verbatim (language="comment", text=
+        "Description: L1 P(Y) to L2C inter-signal correction." "\n"
+        "Units: s")
+      double isc_l2_c;
+
+      @verbatim (language="comment", text=
+        "Description: L1 P(Y) to L5 I5 inter-signal correction." "\n"
+        "Units: s")
+      double isc_l5_i5;
+
+      @verbatim (language="comment", text=
+        "Description: L1 P(Y) to L5 Q5 inter-signal correction." "\n"
+        "Units: s")
+      double isc_l5_q5;
+
+      @verbatim (language="comment", text=
+        "Description: Semi-major axis difference at reference time." "\n"
+        "Units: m")
+      double delta_a_0;
+
+      @verbatim (language="comment", text=
+        "Description: Change rate of semi-major axis." "\n"
+        "Units: m/s")
+      double a_dot;
+    };
+  };
+};

@@ -1,0 +1,86 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/MeasurementMagneticField.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeHeader.idl"
+#include "aspn23_ros_interfaces/msg/TypeIntegrity.idl"
+#include "aspn23_ros_interfaces/msg/TypeTimestamp.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    module MeasurementMagneticField_Constants {
+      @verbatim (language="comment", text=
+        "No additional error model provided (num_error_model_params = 0).")
+      const uint8 ASPN23_MEASUREMENT_MAGNETIC_FIELD_ERROR_MODEL_NONE = 0;
+    };
+    struct MeasurementMagneticField {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Vector magnetic field. Represents the magnetic field strength along sensor x, y, and z axes as" "\n"
+        "defined in mounting. May represent 1-D, 2-D, or 3-D measurement" "\n"
+        "Description: Standard ASPN measurement header." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeHeader header;
+
+      @verbatim (language="comment", text=
+        "Description: Time at which the measurement is considered to be valid." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeTimestamp time_of_validity;
+
+      @verbatim (language="comment", text=
+        "Description: Dimension of measurement provided. May be 1, 2, or 3." "\n"
+        "Units: none")
+      uint8 num_meas;
+
+      @verbatim (language="comment", text=
+        "Description: Field strength of magnetic field in nanoTesla (nT)." "\n"
+        "Units: nT")
+      double x_field_strength;
+
+      @verbatim (language="comment", text=
+        "Description: Field strength of magnetic field in nanoTesla (nT)." "\n"
+        "Units: nT")
+      double y_field_strength;
+
+      @verbatim (language="comment", text=
+        "Description: Field strength of magnetic field in nanoTesla (nT)." "\n"
+        "Units: nT")
+      double z_field_strength;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement error variance or covariance depending on measurement dimension." "\n"
+        "Units: (nT)^2 Dimensions of covariance must be num_meas²" "\n"
+        "Note: field represents a num_meas x num_meas matrix")
+      sequence<double> covariance;
+
+      @verbatim (language="comment", text=
+        "Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).")
+      uint8 error_model;
+
+      @verbatim (language="comment", text=
+        "Description: Number of parameters required for the error model chosen." "\n"
+        "Units: none")
+      uint16 num_error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Error model parameters that characterize the optional error model." "\n"
+        "Units: various" "\n"
+        "Note: array length is num_error_model_params")
+      sequence<double> error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Number of integrity values." "\n"
+        "Units: none")
+      uint8 num_integrity;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement integrity. Includes the integrity method used and an integrity value (which" "\n"
+        "is to be interpreted based upon the integrity method). The intent of allowing num_integrity > 1 is" "\n"
+        "to report multiple integrity values based on multiple integrity methods." "\n"
+        "Units: none" "\n"
+        "Note: array length is num_integrity")
+      sequence<aspn23_ros_interfaces::msg::TypeIntegrity> integrity;
+    };
+  };
+};

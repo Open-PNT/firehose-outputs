@@ -1,0 +1,443 @@
+# generated from rosidl_generator_py/resource/_idl.py.em
+# with input from aspn23_ros_interfaces:msg/TypeKeplerOrbit.idl
+# generated code does not contain a copyright notice
+
+
+# Import statements for member types
+
+import builtins  # noqa: E402, I100
+
+import math  # noqa: E402, I100
+
+import rosidl_parser.definition  # noqa: E402, I100
+
+
+class Metaclass_TypeKeplerOrbit(type):
+    """Metaclass of message 'TypeKeplerOrbit'."""
+
+    _CREATE_ROS_MESSAGE = None
+    _CONVERT_FROM_PY = None
+    _CONVERT_TO_PY = None
+    _DESTROY_ROS_MESSAGE = None
+    _TYPE_SUPPORT = None
+
+    __constants = {
+    }
+
+    @classmethod
+    def __import_type_support__(cls):
+        try:
+            from rosidl_generator_py import import_type_support
+            module = import_type_support('aspn23_ros_interfaces')
+        except ImportError:
+            import logging
+            import traceback
+            logger = logging.getLogger(
+                'aspn23_ros_interfaces.msg.TypeKeplerOrbit')
+            logger.debug(
+                'Failed to import needed modules for type support:\n' +
+                traceback.format_exc())
+        else:
+            cls._CREATE_ROS_MESSAGE = module.create_ros_message_msg__msg__type_kepler_orbit
+            cls._CONVERT_FROM_PY = module.convert_from_py_msg__msg__type_kepler_orbit
+            cls._CONVERT_TO_PY = module.convert_to_py_msg__msg__type_kepler_orbit
+            cls._TYPE_SUPPORT = module.type_support_msg__msg__type_kepler_orbit
+            cls._DESTROY_ROS_MESSAGE = module.destroy_ros_message_msg__msg__type_kepler_orbit
+
+    @classmethod
+    def __prepare__(cls, name, bases, **kwargs):
+        # list constant names here so that they appear in the help text of
+        # the message class under "Data and other attributes defined here:"
+        # as well as populate each message instance
+        return {
+        }
+
+
+class TypeKeplerOrbit(metaclass=Metaclass_TypeKeplerOrbit):
+    """Message class 'TypeKeplerOrbit'."""
+
+    __slots__ = [
+        '_m_0',
+        '_delta_n',
+        '_e',
+        '_sqrt_a',
+        '_omega_0',
+        '_i_0',
+        '_i_dot',
+        '_omega',
+        '_omega_dot',
+        '_c_uc',
+        '_c_us',
+        '_c_rc',
+        '_c_rs',
+        '_c_ic',
+        '_c_is',
+        '_t_oe',
+    ]
+
+    _fields_and_field_types = {
+        'm_0': 'double',
+        'delta_n': 'double',
+        'e': 'double',
+        'sqrt_a': 'double',
+        'omega_0': 'double',
+        'i_0': 'double',
+        'i_dot': 'double',
+        'omega': 'double',
+        'omega_dot': 'double',
+        'c_uc': 'double',
+        'c_us': 'double',
+        'c_rc': 'double',
+        'c_rs': 'double',
+        'c_ic': 'double',
+        'c_is': 'double',
+        't_oe': 'double',
+    }
+
+    SLOT_TYPES = (
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+    )
+
+    def __init__(self, **kwargs):
+        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+            'Invalid arguments passed to constructor: %s' % \
+            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        self.m_0 = kwargs.get('m_0', float())
+        self.delta_n = kwargs.get('delta_n', float())
+        self.e = kwargs.get('e', float())
+        self.sqrt_a = kwargs.get('sqrt_a', float())
+        self.omega_0 = kwargs.get('omega_0', float())
+        self.i_0 = kwargs.get('i_0', float())
+        self.i_dot = kwargs.get('i_dot', float())
+        self.omega = kwargs.get('omega', float())
+        self.omega_dot = kwargs.get('omega_dot', float())
+        self.c_uc = kwargs.get('c_uc', float())
+        self.c_us = kwargs.get('c_us', float())
+        self.c_rc = kwargs.get('c_rc', float())
+        self.c_rs = kwargs.get('c_rs', float())
+        self.c_ic = kwargs.get('c_ic', float())
+        self.c_is = kwargs.get('c_is', float())
+        self.t_oe = kwargs.get('t_oe', float())
+
+    def __repr__(self):
+        typename = self.__class__.__module__.split('.')
+        typename.pop()
+        typename.append(self.__class__.__name__)
+        args = []
+        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+            field = getattr(self, s)
+            fieldstr = repr(field)
+            # We use Python array type for fields that can be directly stored
+            # in them, and "normal" sequences for everything else.  If it is
+            # a type that we store in an array, strip off the 'array' portion.
+            if (
+                isinstance(t, rosidl_parser.definition.AbstractSequence) and
+                isinstance(t.value_type, rosidl_parser.definition.BasicType) and
+                t.value_type.typename in ['float', 'double', 'int8', 'uint8', 'int16', 'uint16', 'int32', 'uint32', 'int64', 'uint64']
+            ):
+                if len(field) == 0:
+                    fieldstr = '[]'
+                else:
+                    assert fieldstr.startswith('array(')
+                    prefix = "array('X', "
+                    suffix = ')'
+                    fieldstr = fieldstr[len(prefix):-len(suffix)]
+            args.append(s[1:] + '=' + fieldstr)
+        return '%s(%s)' % ('.'.join(typename), ', '.join(args))
+
+    def __eq__(self, other):
+        if not isinstance(other, self.__class__):
+            return False
+        if self.m_0 != other.m_0:
+            return False
+        if self.delta_n != other.delta_n:
+            return False
+        if self.e != other.e:
+            return False
+        if self.sqrt_a != other.sqrt_a:
+            return False
+        if self.omega_0 != other.omega_0:
+            return False
+        if self.i_0 != other.i_0:
+            return False
+        if self.i_dot != other.i_dot:
+            return False
+        if self.omega != other.omega:
+            return False
+        if self.omega_dot != other.omega_dot:
+            return False
+        if self.c_uc != other.c_uc:
+            return False
+        if self.c_us != other.c_us:
+            return False
+        if self.c_rc != other.c_rc:
+            return False
+        if self.c_rs != other.c_rs:
+            return False
+        if self.c_ic != other.c_ic:
+            return False
+        if self.c_is != other.c_is:
+            return False
+        if self.t_oe != other.t_oe:
+            return False
+        return True
+
+    @classmethod
+    def get_fields_and_field_types(cls):
+        from copy import copy
+        return copy(cls._fields_and_field_types)
+
+    @builtins.property
+    def m_0(self):
+        """Message field 'm_0'."""
+        return self._m_0
+
+    @m_0.setter
+    def m_0(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'm_0' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'm_0' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._m_0 = value
+
+    @builtins.property
+    def delta_n(self):
+        """Message field 'delta_n'."""
+        return self._delta_n
+
+    @delta_n.setter
+    def delta_n(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'delta_n' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'delta_n' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._delta_n = value
+
+    @builtins.property
+    def e(self):
+        """Message field 'e'."""
+        return self._e
+
+    @e.setter
+    def e(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'e' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'e' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._e = value
+
+    @builtins.property
+    def sqrt_a(self):
+        """Message field 'sqrt_a'."""
+        return self._sqrt_a
+
+    @sqrt_a.setter
+    def sqrt_a(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'sqrt_a' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'sqrt_a' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._sqrt_a = value
+
+    @builtins.property
+    def omega_0(self):
+        """Message field 'omega_0'."""
+        return self._omega_0
+
+    @omega_0.setter
+    def omega_0(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'omega_0' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'omega_0' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._omega_0 = value
+
+    @builtins.property
+    def i_0(self):
+        """Message field 'i_0'."""
+        return self._i_0
+
+    @i_0.setter
+    def i_0(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'i_0' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'i_0' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._i_0 = value
+
+    @builtins.property
+    def i_dot(self):
+        """Message field 'i_dot'."""
+        return self._i_dot
+
+    @i_dot.setter
+    def i_dot(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'i_dot' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'i_dot' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._i_dot = value
+
+    @builtins.property
+    def omega(self):
+        """Message field 'omega'."""
+        return self._omega
+
+    @omega.setter
+    def omega(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'omega' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'omega' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._omega = value
+
+    @builtins.property
+    def omega_dot(self):
+        """Message field 'omega_dot'."""
+        return self._omega_dot
+
+    @omega_dot.setter
+    def omega_dot(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'omega_dot' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'omega_dot' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._omega_dot = value
+
+    @builtins.property
+    def c_uc(self):
+        """Message field 'c_uc'."""
+        return self._c_uc
+
+    @c_uc.setter
+    def c_uc(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'c_uc' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'c_uc' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._c_uc = value
+
+    @builtins.property
+    def c_us(self):
+        """Message field 'c_us'."""
+        return self._c_us
+
+    @c_us.setter
+    def c_us(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'c_us' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'c_us' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._c_us = value
+
+    @builtins.property
+    def c_rc(self):
+        """Message field 'c_rc'."""
+        return self._c_rc
+
+    @c_rc.setter
+    def c_rc(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'c_rc' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'c_rc' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._c_rc = value
+
+    @builtins.property
+    def c_rs(self):
+        """Message field 'c_rs'."""
+        return self._c_rs
+
+    @c_rs.setter
+    def c_rs(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'c_rs' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'c_rs' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._c_rs = value
+
+    @builtins.property
+    def c_ic(self):
+        """Message field 'c_ic'."""
+        return self._c_ic
+
+    @c_ic.setter
+    def c_ic(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'c_ic' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'c_ic' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._c_ic = value
+
+    @builtins.property
+    def c_is(self):
+        """Message field 'c_is'."""
+        return self._c_is
+
+    @c_is.setter
+    def c_is(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'c_is' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'c_is' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._c_is = value
+
+    @builtins.property
+    def t_oe(self):
+        """Message field 't_oe'."""
+        return self._t_oe
+
+    @t_oe.setter
+    def t_oe(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 't_oe' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 't_oe' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._t_oe = value

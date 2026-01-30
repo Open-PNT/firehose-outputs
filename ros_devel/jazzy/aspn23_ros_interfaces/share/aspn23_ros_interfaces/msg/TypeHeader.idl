@@ -1,0 +1,43 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/TypeHeader.msg
+// generated code does not contain a copyright notice
+
+
+module aspn23_ros_interfaces {
+  module msg {
+    struct TypeHeader {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Header for each ASPN measurement" "\n"
+        "Description: Unique identifier that identifies the device or application vendor. Vendor ID is" "\n"
+        "user-selected, inspired by your company name to mitigate conflicts with other users. Vendor IDs 0x23" "\n"
+        "00 00 00 through 0x23 FF FF FF inclusive are reserved and shall not be chosen as user-selected" "\n"
+        "vendor IDs." "\n"
+        "Units: none")
+      uint32 vendor_id;
+
+      @verbatim (language="comment", text=
+        "Description: Unique identifier that identifies the sensor or device type as assigned by the vendor." "\n"
+        "Device_ids are unique within a given vendor_id." "\n"
+        "Units: none")
+      uint64 device_id;
+
+      @verbatim (language="comment", text=
+        "Description: Unique identifier that provides additional context to define a logical stream of data" "\n"
+        "from the sensor or device as assigned by the vendor. This identifier allows multiple measurements of" "\n"
+        "the same type to be provided by a device. Context_ids are unique within a given vendor_id and" "\n"
+        "device_id." "\n"
+        "Units: none")
+      uint32 context_id;
+
+      @verbatim (language="comment", text=
+        "Description: Unique identifier for a specific message within a data stream as defined by a" "\n"
+        "vendor_id, device_id, and context_id. Sequential messages from each data source (identified by" "\n"
+        "vendor_id, device_id, and context_id) shall increment by exactly 1 and rollover to 0 after an" "\n"
+        "overflow." "\n"
+        "Units: none")
+      uint16 sequence_id;
+    };
+  };
+};

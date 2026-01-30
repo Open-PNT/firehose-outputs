@@ -1,0 +1,31 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/MetadataGeneric.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeMetadataheader.idl"
+#include "aspn23_ros_interfaces/msg/TypeMounting.idl"
+#include "aspn23_ros_interfaces/msg/TypeTimestamp.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    struct MetadataGeneric {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Metadata for a generic sensor." "\n"
+        "Description: Standard ASPN metadata header." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeMetadataheader info;
+
+      @verbatim (language="comment", text=
+        "Description: Time at which the measurement is considered to be valid." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeTimestamp time_of_validity;
+
+      @verbatim (language="comment", text=
+        "Description: Standard ASPN mounting information." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeMounting mounting;
+    };
+  };
+};

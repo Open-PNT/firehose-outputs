@@ -1,0 +1,54 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/TypeImageFeature.msg
+// generated code does not contain a copyright notice
+
+
+module aspn23_ros_interfaces {
+  module msg {
+    struct TypeImageFeature {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Image feature characteristics" "\n"
+        "Description: Value representing the magnitude of the response of the keypoint detection algorithm" "\n"
+        "used to locate this keypoint in the image." "\n"
+        "Units: none")
+      double response;
+
+      @verbatim (language="comment", text=
+        "Description: Value representing the orientation of the detected keypoint, as measured relative to" "\n"
+        "the image coordinate system (radians, clockwise). Metadata flag determines if this field is" "\n"
+        "calculated by the current keypoint detector." "\n"
+        "Units: rad")
+      double orientation;
+
+      @verbatim (language="comment", text=
+        "Description: Effective size (pixels) of the detected keypoint. This field takes into consideration" "\n"
+        "the octave and kernel used to localize the keypoint, and normalizes to the original size of the" "\n"
+        "image." "\n"
+        "Units: pixels")
+      double size;
+
+      @verbatim (language="comment", text=
+        "Description: ID that ties the detected keypoint to a class or group of keypoints." "\n"
+        "Units: none")
+      uint16 class_id;
+
+      @verbatim (language="comment", text=
+        "Description: Octave or pyramid layer from which the detected keypoint was extracted." "\n"
+        "Units: none")
+      uint16 octave;
+
+      @verbatim (language="comment", text=
+        "Description: Size of the descriptor in bytes." "\n"
+        "Units: none")
+      uint16 descriptor_size;
+
+      @verbatim (language="comment", text=
+        "Description: Feature descriptor." "\n"
+        "Units: none" "\n"
+        "Note: array length is descriptor_size")
+      sequence<uint8> descriptor;
+    };
+  };
+};

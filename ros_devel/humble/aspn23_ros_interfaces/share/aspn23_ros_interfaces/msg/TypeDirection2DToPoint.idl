@@ -1,0 +1,92 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/TypeDirection2DToPoint.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeImageFeature.idl"
+#include "aspn23_ros_interfaces/msg/TypeIntegrity.idl"
+#include "aspn23_ros_interfaces/msg/TypeRemotePoint.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    module TypeDirection2DToPoint_Constants {
+      @verbatim (language="comment", text=
+        "Angle between the sensor's local level N-axis and the vector from the sensor to the point projected" "\n"        "onto the sensor's local level North-East plane. Positive angle is defined as a rotation towards the" "\n"        "E-axis." "\n"        "See also NED coordinate frame definition for N, E, and D definitions. A figure depicting the angle" "\n"        "definition is included in the conventions documentation.")
+      const uint8 ASPN23_TYPE_DIRECTION_2D_TO_POINT_REFERENCE_NE_TO = 0;
+      @verbatim (language="comment", text=
+        "Angle between the point's local level N-axis and the vector from the point to the sensor projected" "\n"        "onto the point's local level North-East plane. Positive angle is defined as a rotation towards the" "\n"        "E-axis." "\n"        "The significant difference between NE_TO and NE_FROM is where the NED frame originates (NE_FROM has" "\n"        "its origin located at the point's location)." "\n"        "See also NED coordinate frame definition for N, E, and D definitions. A figure depicting the angle" "\n"        "definition is included in the conventions documentation.")
+      const uint8 ASPN23_TYPE_DIRECTION_2D_TO_POINT_REFERENCE_NE_FROM = 1;
+      @verbatim (language="comment", text=
+        "Angle between the sensor's local level North-East plane and the vector from the sensor to the point." "\n"        "Positive angle is defined as a rotation towards the negative D-axis of the NED frame." "\n"        "See also NED coordinate frame definition for N, E, and D definitions. A figure depicting the angle" "\n"        "definition is included in the conventions documentation.")
+      const uint8 ASPN23_TYPE_DIRECTION_2D_TO_POINT_REFERENCE_ELEVATION = 2;
+      @verbatim (language="comment", text=
+        "Angle between the sensor's x-axis and the vector from the sensor to the point projected onto the" "\n"        "sensor frame x-y plane. Positive angle is defined as a rotation towards the y-axis." "\n"        "Sensor frame is defined in mounting. A figure depicting the angle definition is included in the" "\n"        "conventions documentation.")
+      const uint8 ASPN23_TYPE_DIRECTION_2D_TO_POINT_REFERENCE_SENSOR = 3;
+      @verbatim (language="comment", text=
+        "No additional error model provided (num_error_model_params = 0).")
+      const uint8 ASPN23_TYPE_DIRECTION_2D_TO_POINT_ERROR_MODEL_NONE = 0;
+    };
+    struct TypeDirection2DToPoint {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "2D direction to or from a point as defined by the reference enum. Information about the remote" "\n"
+        "point (its position and/or correspondence with previous or future appearances" "\n"
+        "of this same point) may be determined using remote_point." "\n"
+        "Description: Position and/or correspondence information about the remote point." "\n"
+        "Units: various")
+      aspn23_ros_interfaces::msg::TypeRemotePoint remote_point;
+
+      @verbatim (language="comment", text=
+        "Specifies measurement reference.")
+      uint8 reference;
+
+      @verbatim (language="comment", text=
+        "Description: Observations as specified in the reference enum." "\n"
+        "Units: rad")
+      double obs;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement error variance." "\n"
+        "Units: rad^2")
+      double variance;
+
+      @verbatim (language="comment", text=
+        "Description: Switch for whether observation_characteristics is valid or not." "\n"
+        "Units: none")
+      boolean has_observation_characteristics;
+
+      @verbatim (language="comment", text=
+        "Description: Image feature characteristics." "\n"
+        "Units: various")
+      aspn23_ros_interfaces::msg::TypeImageFeature observation_characteristics;
+
+      @verbatim (language="comment", text=
+        "Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).")
+      uint8 error_model;
+
+      @verbatim (language="comment", text=
+        "Description: Number of parameters required for the error model chosen." "\n"
+        "Units: none")
+      uint16 num_error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Error model parameters that characterize the optional error model." "\n"
+        "Units: various" "\n"
+        "Note: array length is num_error_model_params")
+      sequence<double> error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Number of integrity values." "\n"
+        "Units: none")
+      uint8 num_integrity;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement integrity. Includes the integrity method used and an integrity value (which" "\n"
+        "is to be interpreted based upon the integrity method). The intent of allowing num_integrity > 1 is" "\n"
+        "to report multiple integrity values based on multiple integrity methods." "\n"
+        "Units: none" "\n"
+        "Note: array length is num_integrity")
+      sequence<aspn23_ros_interfaces::msg::TypeIntegrity> integrity;
+    };
+  };
+};

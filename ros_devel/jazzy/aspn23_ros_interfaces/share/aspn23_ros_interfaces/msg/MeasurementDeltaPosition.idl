@@ -1,0 +1,107 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/MeasurementDeltaPosition.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeHeader.idl"
+#include "aspn23_ros_interfaces/msg/TypeIntegrity.idl"
+#include "aspn23_ros_interfaces/msg/TypeTimestamp.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    module MeasurementDeltaPosition_Constants {
+      @verbatim (language="comment", text=
+        "Change in position along the N, E, and D axes of the locally level NED frame. Each direction is" "\n"        "optional. term1, term2, and term3, if provided, describe the change in position along the N, E, and" "\n"        "D axes, respectively. For example, a depth sensor may report a change in position of +2m along the D" "\n"        "axis by omitting term1 and term2 (using the appropriate null) and using term3 = 2. This observation" "\n"        "may be interpreted as (1) the sensor has no knowledge of the change in position in the N and E" "\n"        "directions, and (2) the sensor observed that the position at the end of the observation time" "\n"        "interval, time_of_validity, is 2 meters lower than the position at the start of the time interval," "\n"        "time_of_validity - delta_t. See also NED coordinate frame definition for N, E, and D definitions.")
+      const uint8 ASPN23_MEASUREMENT_DELTA_POSITION_REFERENCE_FRAME_NED = 0;
+      @verbatim (language="comment", text=
+        "Change in position expressed in the sensor frame at the start of the measurement interval as defined" "\n"        "in mounting. Each direction is optional. term1, term2, and term3, if provided, describe the change" "\n"        "in position along the sensor x, y, and z axes, respectively.")
+      const uint8 ASPN23_MEASUREMENT_DELTA_POSITION_REFERENCE_FRAME_SENSOR_START = 1;
+      @verbatim (language="comment", text=
+        "Change in position expressed in the sensor frame at the end of the measurement interval as defined" "\n"        "in mounting. Each direction is optional. term1, term2, and term3, if provided, describe the change" "\n"        "in position along the sensor x, y, and z axes, respectively.")
+      const uint8 ASPN23_MEASUREMENT_DELTA_POSITION_REFERENCE_FRAME_SENSOR_END = 2;
+      @verbatim (language="comment", text=
+        "No additional error model provided (num_error_model_params = 0).")
+      const uint8 ASPN23_MEASUREMENT_DELTA_POSITION_ERROR_MODEL_NONE = 0;
+    };
+    struct MeasurementDeltaPosition {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Delta position is the change in position from the position at time (time_of_validity - delta_t) to" "\n"
+        "the position at time (time_of_validity), where the change in position is reported along each axis of" "\n"
+        "the reference frame. The reference frame is chosen by the user in the reference enum." "\n"
+        "Description: Standard ASPN measurement header." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeHeader header;
+
+      @verbatim (language="comment", text=
+        "Description: Time at which the measurement is considered to be valid at the end of the" "\n"
+        "delta-position period." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeTimestamp time_of_validity;
+
+      @verbatim (language="comment", text=
+        "Specifies measurement reference frame.")
+      uint8 reference_frame;
+
+      @verbatim (language="comment", text=
+        "Description: Duration of the observation time interval. The time_of_validity denotes the end of the" "\n"
+        "time interval. The start of the time interval is time_of_validity - delta_t." "\n"
+        "Units: sec")
+      double delta_t;
+
+      @verbatim (language="comment", text=
+        "Description: Dimension of measurement provided." "\n"
+        "Units: none")
+      uint8 num_meas;
+
+      @verbatim (language="comment", text=
+        "Description: Delta position over the first dimension specified by the enum." "\n"
+        "Units: m")
+      double term1;
+
+      @verbatim (language="comment", text=
+        "Description: Delta position over the second dimension specified by the enum." "\n"
+        "Units: m")
+      double term2;
+
+      @verbatim (language="comment", text=
+        "Description: Delta position over the third dimension specified by the enum." "\n"
+        "Units: m")
+      double term3;
+
+      @verbatim (language="comment", text=
+        "Description: Variance or covariance matrix depending on measurement dimension." "\n"
+        "Units: m^2 Dimensions of covariance must be num_meas²" "\n"
+        "Note: field represents a num_meas x num_meas matrix")
+      sequence<double> covariance;
+
+      @verbatim (language="comment", text=
+        "Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).")
+      uint8 error_model;
+
+      @verbatim (language="comment", text=
+        "Description: Number of parameters required for the error model chosen." "\n"
+        "Units: none")
+      uint16 num_error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Error model parameters that characterize the optional error model." "\n"
+        "Units: various" "\n"
+        "Note: array length is num_error_model_params")
+      sequence<double> error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Number of integrity values." "\n"
+        "Units: none")
+      uint8 num_integrity;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement integrity. Includes the integrity method used and an integrity value (which" "\n"
+        "is to be interpreted based upon the integrity method). The intent of allowing num_integrity > 1 is" "\n"
+        "to report multiple integrity values based on multiple integrity methods." "\n"
+        "Units: none" "\n"
+        "Note: array length is num_integrity")
+      sequence<aspn23_ros_interfaces::msg::TypeIntegrity> integrity;
+    };
+  };
+};

@@ -1,0 +1,106 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/MetadataGlonassEphemeris.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeMetadataheader.idl"
+#include "aspn23_ros_interfaces/msg/TypeTimestamp.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    struct MetadataGlonassEphemeris {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "GLONASS Ephemeris describing GLONASS satellite locations. Definitions and usage are covered in" "\n"
+        "GLONASS ICD L1,L2 - Edition 5.1 2008, Section 4.4." "\n"
+        "Description: Standard ASPN metadata header." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeMetadataheader info;
+
+      @verbatim (language="comment", text=
+        "Description: Time at which the measurement is considered to be valid." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeTimestamp time_of_validity;
+
+      @verbatim (language="comment", text=
+        "Description: GLONASS satellite slot number." "\n"
+        "Units: none")
+      int32 slot_number;
+
+      @verbatim (language="comment", text=
+        "Description: Frequency channel offset number in range from 0 to 20." "\n"
+        "Units: none")
+      int32 freq_o;
+
+      @verbatim (language="comment", text=
+        "Description: Calender number of day within 4 year interval starting at Jan 1 of a leap year" "\n"
+        "Units: days")
+      int32 n_t;
+
+      @verbatim (language="comment", text=
+        "Description: Time referenced to the beginning of the frame within the current day." "\n"
+        "Units: s")
+      double t_k;
+
+      @verbatim (language="comment", text=
+        "Description: Index of time interval within current day according to UTC(SU) + 03 hrs." "\n"
+        "Units: minutes")
+      double t_b;
+
+      @verbatim (language="comment", text=
+        "Description: Relative Satellite frequency bias" "\n"
+        "Units: s/s")
+      double gamma_n;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite clock bias." "\n"
+        "Units: s")
+      double tau_n;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite X position in PZ-90 coordinate system at time t_b." "\n"
+        "Units: km")
+      double sv_pos_x;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite X velocity in PZ-90 coordinate system at time t_b." "\n"
+        "Units: km/s")
+      double sv_vel_x;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite X acceleration in PZ-90 coordinate system at time t_b." "\n"
+        "Units: km/s^2")
+      double sv_accel_x;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite Y position in PZ-90 coordinate system at time t_b." "\n"
+        "Units: km")
+      double sv_pos_y;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite Y velocity in PZ-90 coordinate system at time t_b." "\n"
+        "Units: km/s")
+      double sv_vel_y;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite Y acceleration in PZ-90 coordinate system at time t_b." "\n"
+        "Units: km/s^2")
+      double sv_accel_y;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite Z position in PZ-90 coordinate system at time t_b." "\n"
+        "Units: km")
+      double sv_pos_z;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite Z velocity in PZ-90 coordinate system at time t_b." "\n"
+        "Units: km/s")
+      double sv_vel_z;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite Z acceleration in PZ-90 coordinate system at time t_b." "\n"
+        "Units: km/s^2")
+      double sv_accel_z;
+    };
+  };
+};

@@ -1,0 +1,105 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/MeasurementPositionAttitude.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeHeader.idl"
+#include "aspn23_ros_interfaces/msg/TypeIntegrity.idl"
+#include "aspn23_ros_interfaces/msg/TypeTimestamp.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    typedef double double__4[4];
+    typedef double double__36[36];
+    module MeasurementPositionAttitude_Constants {
+      @verbatim (language="comment", text=
+        "Sensor position and attitude relative to the earth-centered, inertial (ECi) frame. Position is" "\n"        "expressed where p1, p2, and p3 are the x, y, and z components of ECI position in meters," "\n"        "respectively. Attitude is expressed as a four-element quaternion. Error covariance is given using" "\n"        "x-axis position error component (meters), y-axis position error component (meters), z-axis position" "\n"        "error component (meters), tilt error about the x-axis (rad), tilt error about the y-axis (rad), and" "\n"        "tilt error about the z-axis (rad). See also ECi coordinate frame definition for x, y, and z" "\n"        "definitions.")
+      const uint8 ASPN23_MEASUREMENT_POSITION_ATTITUDE_REFERENCE_FRAME_ECI = 0;
+      @verbatim (language="comment", text=
+        "Sensor position, and attitude relative to the WGS-84 reference. Position is expressed where p1 is" "\n"        "the geodetic latitude in radians, p2 is the longitude in radians, and p3 is the geodetic altitude" "\n"        "(or height above the WGS-84 ellipsoid) in meters. Attitude is the sensor frame rotation relative to" "\n"        "the local level frame expressed as a four-element quaternion. Error covariance is given using" "\n"        "north-south position error (meters), east-west position error (meters), geodetic altitude error" "\n"        "(meters), tilt error about the north axis (rad), tilt error about the east axis (rad), and tilt" "\n"        "error about the down axis (rad).")
+      const uint8 ASPN23_MEASUREMENT_POSITION_ATTITUDE_REFERENCE_FRAME_GEODETIC = 1;
+      @verbatim (language="comment", text=
+        "No additional error model provided (num_error_model_params = 0).")
+      const uint8 ASPN23_MEASUREMENT_POSITION_ATTITUDE_ERROR_MODEL_NONE = 0;
+    };
+    struct MeasurementPositionAttitude {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Position and attitude, also known as pose. Position is relative to a user-defined reference frame." "\n"
+        "Attitude expressed as a quaternion, a four element vector representation, the elements of which are" "\n"
+        "functions of the orientation of the vector and the magnitude of the rotation." "\n"
+        "Description: Standard ASPN measurement header." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeHeader header;
+
+      @verbatim (language="comment", text=
+        "Description: Time at which the measurement is considered to be valid." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeTimestamp time_of_validity;
+
+      @verbatim (language="comment", text=
+        "Defines measurement reference.")
+      uint8 reference_frame;
+
+      @verbatim (language="comment", text=
+        "Description: First position term as defined in enum." "\n"
+        "Units: rad")
+      double p1;
+
+      @verbatim (language="comment", text=
+        "Description: First position term as defined in enum." "\n"
+        "Units: rad")
+      double p2;
+
+      @verbatim (language="comment", text=
+        "Description: First position term as defined in enum." "\n"
+        "Units: m")
+      double p3;
+
+      @verbatim (language="comment", text=
+        "Description: Four element quaternion, q = [a, b, c, d], where a = cos(phi/2), b =" "\n"
+        "(phi_x/phi)*sin(phi/2), c = (phi_y/phi)*sin(phi/2), and d = (phi_z/phi)*sin(phi/2). In this" "\n"
+        "description, the vector [phi_x, phi_y, phi_z] represents the rotation vector that describes the" "\n"
+        "frame rotation to be applied to the \"reference\" frame (ECI, ECEF, or NED) to rotate it into the axes" "\n"
+        "that describe the measured attitude, and the value phi is the magnitude of the [phi_x, phi_y, phi_z]" "\n"
+        "vector." "\n"
+        "See \"conventions\" documentation for more detailed information." "\n"
+        "Units: none")
+      double__4 quaternion;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement error variance or covariance depending on measurement dimension." "\n"
+        "Units: various" "\n"
+        "Note: field represents a 6 x 6 matrix")
+      double__36 covariance;
+
+      @verbatim (language="comment", text=
+        "Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).")
+      uint8 error_model;
+
+      @verbatim (language="comment", text=
+        "Description: Number of parameters required for the error model chosen." "\n"
+        "Units: none")
+      uint16 num_error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Error model parameters that characterize the optional error model." "\n"
+        "Units: various" "\n"
+        "Note: array length is num_error_model_params")
+      sequence<double> error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Number of integrity values." "\n"
+        "Units: none")
+      uint8 num_integrity;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement integrity. Includes the integrity method used and an integrity value (which" "\n"
+        "is to be interpreted based upon the integrity method). The intent of allowing num_integrity > 1 is" "\n"
+        "to report multiple integrity values based on multiple integrity methods." "\n"
+        "Units: none" "\n"
+        "Note: array length is num_integrity")
+      sequence<aspn23_ros_interfaces::msg::TypeIntegrity> integrity;
+    };
+  };
+};

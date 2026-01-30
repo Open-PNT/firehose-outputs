@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "aspn23_ros_interfaces/msg/TypeSatnavSatelliteSystem",
+      "fields": [
+        {
+          "name": "satellite_system",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "aspn23_ros_interfaces/msg/TypeSatnavSatelliteSystem",
+      "hash_string": "RIHS01_fb18f1c521c7d6915157150c225863f531551ef63ac0757aebbd05fc4abcff3a"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/MeasurementTdoa1Tx2Rx.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeHeader.idl"
+#include "aspn23_ros_interfaces/msg/TypeIntegrity.idl"
+#include "aspn23_ros_interfaces/msg/TypeRemotePoint.idl"
+#include "aspn23_ros_interfaces/msg/TypeTimestamp.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    module MeasurementTdoa1Tx2Rx_Constants {
+      @verbatim (language="comment", text=
+        "No additional error model provided (num_error_model_params = 0).")
+      const uint8 ASPN23_MEASUREMENT_TDOA_1TX_2RX_ERROR_MODEL_NONE = 0;
+    };
+    struct MeasurementTdoa1Tx2Rx {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Time difference of arrival of a single transmitter (Tx) to two receivers." "\n"
+        "Receiver 1 (Rx1) is at a known location. Receiver 2 is the sensor system" "\n"
+        "providing the measurement." "\n"
+        "Description: Standard ASPN measurement header." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeHeader header;
+
+      @verbatim (language="comment", text=
+        "Description: Time at which the measurement is considered to be valid." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeTimestamp time_of_validity;
+
+      @verbatim (language="comment", text=
+        "Description: Transmitter (Tx)'s known location." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeRemotePoint tx_position_and_covariance;
+
+      @verbatim (language="comment", text=
+        "Description: Receiver 1 (Rx1)'s known location." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeRemotePoint rx1_position_and_covariance;
+
+      @verbatim (language="comment", text=
+        "Description: Time difference of arrival (in meters). Time difference of Tx signal's arrival time at" "\n"
+        "Rx1 minus Tx signal's arrival time at the sensor. Positive obs indicates Tx arrived at Rx1 later" "\n"
+        "than arriving at the sensor." "\n"
+        "Units: m")
+      double obs;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement variance." "\n"
+        "Units: m^2")
+      double variance;
+
+      @verbatim (language="comment", text=
+        "Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).")
+      uint8 error_model;
+
+      @verbatim (language="comment", text=
+        "Description: Number of parameters required for the error model chosen." "\n"
+        "Units: none")
+      uint16 num_error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Error model parameters that characterize the optional error model." "\n"
+        "Units: various" "\n"
+        "Note: array length is num_error_model_params")
+      sequence<double> error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Number of integrity values." "\n"
+        "Units: none")
+      uint8 num_integrity;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement integrity. Includes the integrity method used and an integrity value (which" "\n"
+        "is to be interpreted based upon the integrity method). The intent of allowing num_integrity > 1 is" "\n"
+        "to report multiple integrity values based on multiple integrity methods." "\n"
+        "Units: none" "\n"
+        "Note: array length is num_integrity")
+      sequence<aspn23_ros_interfaces::msg::TypeIntegrity> integrity;
+    };
+  };
+};

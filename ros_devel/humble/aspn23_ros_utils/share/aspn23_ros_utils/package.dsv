@@ -1,0 +1,6 @@
+source;share/aspn23_ros_utils/hook/pythonpath.ps1
+source;share/aspn23_ros_utils/hook/pythonpath.dsv
+source;share/aspn23_ros_utils/hook/pythonpath.sh
+source;share/aspn23_ros_utils/hook/ament_prefix_path.ps1
+source;share/aspn23_ros_utils/hook/ament_prefix_path.dsv
+source;share/aspn23_ros_utils/hook/ament_prefix_path.sh

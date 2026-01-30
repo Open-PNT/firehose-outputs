@@ -1,0 +1,457 @@
+# generated from rosidl_generator_py/resource/_idl.py.em
+# with input from aspn23_ros_interfaces:msg/MetadataImageFeatures.idl
+# generated code does not contain a copyright notice
+
+
+# Import statements for member types
+
+import builtins  # noqa: E402, I100
+
+import rosidl_parser.definition  # noqa: E402, I100
+
+
+class Metaclass_MetadataImageFeatures(type):
+    """Metaclass of message 'MetadataImageFeatures'."""
+
+    _CREATE_ROS_MESSAGE = None
+    _CONVERT_FROM_PY = None
+    _CONVERT_TO_PY = None
+    _DESTROY_ROS_MESSAGE = None
+    _TYPE_SUPPORT = None
+
+    __constants = {
+        'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_AGAST': 0,
+        'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_AKAZE': 1,
+        'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_BRISK': 2,
+        'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_FAST': 3,
+        'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_GFTT': 4,
+        'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_KAZE': 5,
+        'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_MSER': 6,
+        'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_ORB': 7,
+        'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SIFT': 8,
+        'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SURF': 9,
+        'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_HARRIS': 10,
+        'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SHI': 11,
+        'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_OTHER': 12,
+        'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_AKAZE': 0,
+        'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_BRISK': 1,
+        'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_KAZE': 2,
+        'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_ORB': 3,
+        'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_SIFT': 4,
+        'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_SURF': 5,
+        'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_OTHER': 6,
+        'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_TYPE_UINT8': 0,
+        'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_TYPE_FLOAT32': 1,
+    }
+
+    @classmethod
+    def __import_type_support__(cls):
+        try:
+            from rosidl_generator_py import import_type_support
+            module = import_type_support('aspn23_ros_interfaces')
+        except ImportError:
+            import logging
+            import traceback
+            logger = logging.getLogger(
+                'aspn23_ros_interfaces.msg.MetadataImageFeatures')
+            logger.debug(
+                'Failed to import needed modules for type support:\n' +
+                traceback.format_exc())
+        else:
+            cls._CREATE_ROS_MESSAGE = module.create_ros_message_msg__msg__metadata_image_features
+            cls._CONVERT_FROM_PY = module.convert_from_py_msg__msg__metadata_image_features
+            cls._CONVERT_TO_PY = module.convert_to_py_msg__msg__metadata_image_features
+            cls._TYPE_SUPPORT = module.type_support_msg__msg__metadata_image_features
+            cls._DESTROY_ROS_MESSAGE = module.destroy_ros_message_msg__msg__metadata_image_features
+
+            from aspn23_ros_interfaces.msg import TypeMetadataheader
+            if TypeMetadataheader.__class__._TYPE_SUPPORT is None:
+                TypeMetadataheader.__class__.__import_type_support__()
+
+            from aspn23_ros_interfaces.msg import TypeTimestamp
+            if TypeTimestamp.__class__._TYPE_SUPPORT is None:
+                TypeTimestamp.__class__.__import_type_support__()
+
+    @classmethod
+    def __prepare__(cls, name, bases, **kwargs):
+        # list constant names here so that they appear in the help text of
+        # the message class under "Data and other attributes defined here:"
+        # as well as populate each message instance
+        return {
+            'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_AGAST': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_AGAST'],
+            'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_AKAZE': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_AKAZE'],
+            'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_BRISK': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_BRISK'],
+            'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_FAST': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_FAST'],
+            'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_GFTT': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_GFTT'],
+            'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_KAZE': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_KAZE'],
+            'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_MSER': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_MSER'],
+            'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_ORB': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_ORB'],
+            'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SIFT': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SIFT'],
+            'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SURF': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SURF'],
+            'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_HARRIS': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_HARRIS'],
+            'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SHI': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SHI'],
+            'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_OTHER': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_OTHER'],
+            'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_AKAZE': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_AKAZE'],
+            'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_BRISK': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_BRISK'],
+            'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_KAZE': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_KAZE'],
+            'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_ORB': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_ORB'],
+            'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_SIFT': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_SIFT'],
+            'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_SURF': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_SURF'],
+            'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_OTHER': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_OTHER'],
+            'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_TYPE_UINT8': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_TYPE_UINT8'],
+            'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_TYPE_FLOAT32': cls.__constants['ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_TYPE_FLOAT32'],
+        }
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_AGAST(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_AGAST'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_AGAST']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_AKAZE(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_AKAZE'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_AKAZE']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_BRISK(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_BRISK'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_BRISK']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_FAST(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_FAST'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_FAST']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_GFTT(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_GFTT'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_GFTT']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_KAZE(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_KAZE'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_KAZE']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_MSER(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_MSER'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_MSER']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_ORB(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_ORB'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_ORB']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SIFT(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SIFT'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SIFT']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SURF(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SURF'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SURF']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_HARRIS(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_HARRIS'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_HARRIS']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SHI(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SHI'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SHI']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_OTHER(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_OTHER'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_OTHER']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_AKAZE(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_AKAZE'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_AKAZE']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_BRISK(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_BRISK'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_BRISK']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_KAZE(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_KAZE'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_KAZE']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_ORB(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_ORB'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_ORB']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_SIFT(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_SIFT'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_SIFT']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_SURF(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_SURF'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_SURF']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_OTHER(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_OTHER'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_OTHER']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_TYPE_UINT8(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_TYPE_UINT8'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_TYPE_UINT8']
+
+    @property
+    def ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_TYPE_FLOAT32(self):
+        """Message constant 'ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_TYPE_FLOAT32'."""
+        return Metaclass_MetadataImageFeatures.__constants['ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_TYPE_FLOAT32']
+
+
+class MetadataImageFeatures(metaclass=Metaclass_MetadataImageFeatures):
+    """
+    Message class 'MetadataImageFeatures'.
+
+    Constants:
+      ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_AGAST
+      ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_AKAZE
+      ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_BRISK
+      ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_FAST
+      ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_GFTT
+      ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_KAZE
+      ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_MSER
+      ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_ORB
+      ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SIFT
+      ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SURF
+      ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_HARRIS
+      ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_SHI
+      ASPN23_METADATA_IMAGE_FEATURES_KEYPOINT_DETECTOR_DET_OTHER
+      ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_AKAZE
+      ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_BRISK
+      ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_KAZE
+      ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_ORB
+      ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_SIFT
+      ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_SURF
+      ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_EXTRACTOR_DESC_OTHER
+      ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_TYPE_UINT8
+      ASPN23_METADATA_IMAGE_FEATURES_DESCRIPTOR_TYPE_FLOAT32
+    """
+
+    __slots__ = [
+        '_info',
+        '_time_of_validity',
+        '_keypoint_detector',
+        '_orientation_calculated',
+        '_descriptor_extractor',
+        '_is_bigendian',
+        '_descriptor_type',
+        '_descriptor_number_of_elements',
+    ]
+
+    _fields_and_field_types = {
+        'info': 'aspn23_ros_interfaces/TypeMetadataheader',
+        'time_of_validity': 'aspn23_ros_interfaces/TypeTimestamp',
+        'keypoint_detector': 'uint8',
+        'orientation_calculated': 'boolean',
+        'descriptor_extractor': 'uint8',
+        'is_bigendian': 'boolean',
+        'descriptor_type': 'uint8',
+        'descriptor_number_of_elements': 'uint16',
+    }
+
+    SLOT_TYPES = (
+        rosidl_parser.definition.NamespacedType(['aspn23_ros_interfaces', 'msg'], 'TypeMetadataheader'),  # noqa: E501
+        rosidl_parser.definition.NamespacedType(['aspn23_ros_interfaces', 'msg'], 'TypeTimestamp'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
+    )
+
+    def __init__(self, **kwargs):
+        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+            'Invalid arguments passed to constructor: %s' % \
+            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        from aspn23_ros_interfaces.msg import TypeMetadataheader
+        self.info = kwargs.get('info', TypeMetadataheader())
+        from aspn23_ros_interfaces.msg import TypeTimestamp
+        self.time_of_validity = kwargs.get('time_of_validity', TypeTimestamp())
+        self.keypoint_detector = kwargs.get('keypoint_detector', int())
+        self.orientation_calculated = kwargs.get('orientation_calculated', bool())
+        self.descriptor_extractor = kwargs.get('descriptor_extractor', int())
+        self.is_bigendian = kwargs.get('is_bigendian', bool())
+        self.descriptor_type = kwargs.get('descriptor_type', int())
+        self.descriptor_number_of_elements = kwargs.get('descriptor_number_of_elements', int())
+
+    def __repr__(self):
+        typename = self.__class__.__module__.split('.')
+        typename.pop()
+        typename.append(self.__class__.__name__)
+        args = []
+        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+            field = getattr(self, s)
+            fieldstr = repr(field)
+            # We use Python array type for fields that can be directly stored
+            # in them, and "normal" sequences for everything else.  If it is
+            # a type that we store in an array, strip off the 'array' portion.
+            if (
+                isinstance(t, rosidl_parser.definition.AbstractSequence) and
+                isinstance(t.value_type, rosidl_parser.definition.BasicType) and
+                t.value_type.typename in ['float', 'double', 'int8', 'uint8', 'int16', 'uint16', 'int32', 'uint32', 'int64', 'uint64']
+            ):
+                if len(field) == 0:
+                    fieldstr = '[]'
+                else:
+                    assert fieldstr.startswith('array(')
+                    prefix = "array('X', "
+                    suffix = ')'
+                    fieldstr = fieldstr[len(prefix):-len(suffix)]
+            args.append(s[1:] + '=' + fieldstr)
+        return '%s(%s)' % ('.'.join(typename), ', '.join(args))
+
+    def __eq__(self, other):
+        if not isinstance(other, self.__class__):
+            return False
+        if self.info != other.info:
+            return False
+        if self.time_of_validity != other.time_of_validity:
+            return False
+        if self.keypoint_detector != other.keypoint_detector:
+            return False
+        if self.orientation_calculated != other.orientation_calculated:
+            return False
+        if self.descriptor_extractor != other.descriptor_extractor:
+            return False
+        if self.is_bigendian != other.is_bigendian:
+            return False
+        if self.descriptor_type != other.descriptor_type:
+            return False
+        if self.descriptor_number_of_elements != other.descriptor_number_of_elements:
+            return False
+        return True
+
+    @classmethod
+    def get_fields_and_field_types(cls):
+        from copy import copy
+        return copy(cls._fields_and_field_types)
+
+    @builtins.property
+    def info(self):
+        """Message field 'info'."""
+        return self._info
+
+    @info.setter
+    def info(self, value):
+        if __debug__:
+            from aspn23_ros_interfaces.msg import TypeMetadataheader
+            assert \
+                isinstance(value, TypeMetadataheader), \
+                "The 'info' field must be a sub message of type 'TypeMetadataheader'"
+        self._info = value
+
+    @builtins.property
+    def time_of_validity(self):
+        """Message field 'time_of_validity'."""
+        return self._time_of_validity
+
+    @time_of_validity.setter
+    def time_of_validity(self, value):
+        if __debug__:
+            from aspn23_ros_interfaces.msg import TypeTimestamp
+            assert \
+                isinstance(value, TypeTimestamp), \
+                "The 'time_of_validity' field must be a sub message of type 'TypeTimestamp'"
+        self._time_of_validity = value
+
+    @builtins.property
+    def keypoint_detector(self):
+        """Message field 'keypoint_detector'."""
+        return self._keypoint_detector
+
+    @keypoint_detector.setter
+    def keypoint_detector(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'keypoint_detector' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'keypoint_detector' field must be an unsigned integer in [0, 255]"
+        self._keypoint_detector = value
+
+    @builtins.property
+    def orientation_calculated(self):
+        """Message field 'orientation_calculated'."""
+        return self._orientation_calculated
+
+    @orientation_calculated.setter
+    def orientation_calculated(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'orientation_calculated' field must be of type 'bool'"
+        self._orientation_calculated = value
+
+    @builtins.property
+    def descriptor_extractor(self):
+        """Message field 'descriptor_extractor'."""
+        return self._descriptor_extractor
+
+    @descriptor_extractor.setter
+    def descriptor_extractor(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'descriptor_extractor' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'descriptor_extractor' field must be an unsigned integer in [0, 255]"
+        self._descriptor_extractor = value
+
+    @builtins.property
+    def is_bigendian(self):
+        """Message field 'is_bigendian'."""
+        return self._is_bigendian
+
+    @is_bigendian.setter
+    def is_bigendian(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'is_bigendian' field must be of type 'bool'"
+        self._is_bigendian = value
+
+    @builtins.property
+    def descriptor_type(self):
+        """Message field 'descriptor_type'."""
+        return self._descriptor_type
+
+    @descriptor_type.setter
+    def descriptor_type(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'descriptor_type' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'descriptor_type' field must be an unsigned integer in [0, 255]"
+        self._descriptor_type = value
+
+    @builtins.property
+    def descriptor_number_of_elements(self):
+        """Message field 'descriptor_number_of_elements'."""
+        return self._descriptor_number_of_elements
+
+    @descriptor_number_of_elements.setter
+    def descriptor_number_of_elements(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'descriptor_number_of_elements' field must be of type 'int'"
+            assert value >= 0 and value < 65536, \
+                "The 'descriptor_number_of_elements' field must be an unsigned integer in [0, 65535]"
+        self._descriptor_number_of_elements = value

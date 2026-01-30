@@ -1,0 +1,537 @@
+# generated from rosidl_generator_py/resource/_idl.py.em
+# with input from aspn23_ros_interfaces:msg/MeasurementImage.idl
+# generated code does not contain a copyright notice
+
+
+# Import statements for member types
+
+# Member 'image_data'
+# Member 'model_coefficients'
+import array  # noqa: E402, I100
+
+import builtins  # noqa: E402, I100
+
+import math  # noqa: E402, I100
+
+import rosidl_parser.definition  # noqa: E402, I100
+
+
+class Metaclass_MeasurementImage(type):
+    """Metaclass of message 'MeasurementImage'."""
+
+    _CREATE_ROS_MESSAGE = None
+    _CONVERT_FROM_PY = None
+    _CONVERT_TO_PY = None
+    _DESTROY_ROS_MESSAGE = None
+    _TYPE_SUPPORT = None
+
+    __constants = {
+        'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_BMP': 0,
+        'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_PNG': 1,
+        'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_JPG': 2,
+        'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_TIFF': 3,
+        'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAY8': 4,
+        'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_RGB8': 5,
+        'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_BGR8': 6,
+        'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_RGBA8': 7,
+        'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_BGRA8': 8,
+        'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAY16': 9,
+        'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAYFLOAT64': 10,
+        'ASPN23_MEASUREMENT_IMAGE_CAMERA_MODEL_ASPN_PINHOLE_PLUMB_BOB': 0,
+        'ASPN23_MEASUREMENT_IMAGE_CAMERA_MODEL_ASPN_LINEAR_MODEL': 1,
+    }
+
+    @classmethod
+    def __import_type_support__(cls):
+        try:
+            from rosidl_generator_py import import_type_support
+            module = import_type_support('aspn23_ros_interfaces')
+        except ImportError:
+            import logging
+            import traceback
+            logger = logging.getLogger(
+                'aspn23_ros_interfaces.msg.MeasurementImage')
+            logger.debug(
+                'Failed to import needed modules for type support:\n' +
+                traceback.format_exc())
+        else:
+            cls._CREATE_ROS_MESSAGE = module.create_ros_message_msg__msg__measurement_image
+            cls._CONVERT_FROM_PY = module.convert_from_py_msg__msg__measurement_image
+            cls._CONVERT_TO_PY = module.convert_to_py_msg__msg__measurement_image
+            cls._TYPE_SUPPORT = module.type_support_msg__msg__measurement_image
+            cls._DESTROY_ROS_MESSAGE = module.destroy_ros_message_msg__msg__measurement_image
+
+            from aspn23_ros_interfaces.msg import TypeHeader
+            if TypeHeader.__class__._TYPE_SUPPORT is None:
+                TypeHeader.__class__.__import_type_support__()
+
+            from aspn23_ros_interfaces.msg import TypeIntegrity
+            if TypeIntegrity.__class__._TYPE_SUPPORT is None:
+                TypeIntegrity.__class__.__import_type_support__()
+
+            from aspn23_ros_interfaces.msg import TypeTimestamp
+            if TypeTimestamp.__class__._TYPE_SUPPORT is None:
+                TypeTimestamp.__class__.__import_type_support__()
+
+    @classmethod
+    def __prepare__(cls, name, bases, **kwargs):
+        # list constant names here so that they appear in the help text of
+        # the message class under "Data and other attributes defined here:"
+        # as well as populate each message instance
+        return {
+            'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_BMP': cls.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_BMP'],
+            'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_PNG': cls.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_PNG'],
+            'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_JPG': cls.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_JPG'],
+            'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_TIFF': cls.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_TIFF'],
+            'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAY8': cls.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAY8'],
+            'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_RGB8': cls.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_RGB8'],
+            'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_BGR8': cls.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_BGR8'],
+            'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_RGBA8': cls.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_RGBA8'],
+            'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_BGRA8': cls.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_BGRA8'],
+            'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAY16': cls.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAY16'],
+            'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAYFLOAT64': cls.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAYFLOAT64'],
+            'ASPN23_MEASUREMENT_IMAGE_CAMERA_MODEL_ASPN_PINHOLE_PLUMB_BOB': cls.__constants['ASPN23_MEASUREMENT_IMAGE_CAMERA_MODEL_ASPN_PINHOLE_PLUMB_BOB'],
+            'ASPN23_MEASUREMENT_IMAGE_CAMERA_MODEL_ASPN_LINEAR_MODEL': cls.__constants['ASPN23_MEASUREMENT_IMAGE_CAMERA_MODEL_ASPN_LINEAR_MODEL'],
+        }
+
+    @property
+    def ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_BMP(self):
+        """Message constant 'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_BMP'."""
+        return Metaclass_MeasurementImage.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_BMP']
+
+    @property
+    def ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_PNG(self):
+        """Message constant 'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_PNG'."""
+        return Metaclass_MeasurementImage.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_PNG']
+
+    @property
+    def ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_JPG(self):
+        """Message constant 'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_JPG'."""
+        return Metaclass_MeasurementImage.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_JPG']
+
+    @property
+    def ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_TIFF(self):
+        """Message constant 'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_TIFF'."""
+        return Metaclass_MeasurementImage.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_TIFF']
+
+    @property
+    def ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAY8(self):
+        """Message constant 'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAY8'."""
+        return Metaclass_MeasurementImage.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAY8']
+
+    @property
+    def ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_RGB8(self):
+        """Message constant 'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_RGB8'."""
+        return Metaclass_MeasurementImage.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_RGB8']
+
+    @property
+    def ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_BGR8(self):
+        """Message constant 'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_BGR8'."""
+        return Metaclass_MeasurementImage.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_BGR8']
+
+    @property
+    def ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_RGBA8(self):
+        """Message constant 'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_RGBA8'."""
+        return Metaclass_MeasurementImage.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_RGBA8']
+
+    @property
+    def ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_BGRA8(self):
+        """Message constant 'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_BGRA8'."""
+        return Metaclass_MeasurementImage.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_BGRA8']
+
+    @property
+    def ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAY16(self):
+        """Message constant 'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAY16'."""
+        return Metaclass_MeasurementImage.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAY16']
+
+    @property
+    def ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAYFLOAT64(self):
+        """Message constant 'ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAYFLOAT64'."""
+        return Metaclass_MeasurementImage.__constants['ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAYFLOAT64']
+
+    @property
+    def ASPN23_MEASUREMENT_IMAGE_CAMERA_MODEL_ASPN_PINHOLE_PLUMB_BOB(self):
+        """Message constant 'ASPN23_MEASUREMENT_IMAGE_CAMERA_MODEL_ASPN_PINHOLE_PLUMB_BOB'."""
+        return Metaclass_MeasurementImage.__constants['ASPN23_MEASUREMENT_IMAGE_CAMERA_MODEL_ASPN_PINHOLE_PLUMB_BOB']
+
+    @property
+    def ASPN23_MEASUREMENT_IMAGE_CAMERA_MODEL_ASPN_LINEAR_MODEL(self):
+        """Message constant 'ASPN23_MEASUREMENT_IMAGE_CAMERA_MODEL_ASPN_LINEAR_MODEL'."""
+        return Metaclass_MeasurementImage.__constants['ASPN23_MEASUREMENT_IMAGE_CAMERA_MODEL_ASPN_LINEAR_MODEL']
+
+
+class MeasurementImage(metaclass=Metaclass_MeasurementImage):
+    """
+    Message class 'MeasurementImage'.
+
+    Constants:
+      ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_BMP
+      ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_PNG
+      ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_JPG
+      ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_TIFF
+      ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAY8
+      ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_RGB8
+      ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_BGR8
+      ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_RGBA8
+      ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_BGRA8
+      ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAY16
+      ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAYFLOAT64
+      ASPN23_MEASUREMENT_IMAGE_CAMERA_MODEL_ASPN_PINHOLE_PLUMB_BOB
+      ASPN23_MEASUREMENT_IMAGE_CAMERA_MODEL_ASPN_LINEAR_MODEL
+    """
+
+    __slots__ = [
+        '_header',
+        '_time_of_validity',
+        '_height',
+        '_width',
+        '_is_bigendian',
+        '_image_type',
+        '_image_data_length',
+        '_image_data',
+        '_camera_model',
+        '_num_model_coefficients',
+        '_model_coefficients',
+        '_num_integrity',
+        '_integrity',
+    ]
+
+    _fields_and_field_types = {
+        'header': 'aspn23_ros_interfaces/TypeHeader',
+        'time_of_validity': 'aspn23_ros_interfaces/TypeTimestamp',
+        'height': 'uint32',
+        'width': 'uint32',
+        'is_bigendian': 'boolean',
+        'image_type': 'uint8',
+        'image_data_length': 'uint64',
+        'image_data': 'sequence<uint8>',
+        'camera_model': 'uint8',
+        'num_model_coefficients': 'uint8',
+        'model_coefficients': 'sequence<double>',
+        'num_integrity': 'uint8',
+        'integrity': 'sequence<aspn23_ros_interfaces/TypeIntegrity>',
+    }
+
+    SLOT_TYPES = (
+        rosidl_parser.definition.NamespacedType(['aspn23_ros_interfaces', 'msg'], 'TypeHeader'),  # noqa: E501
+        rosidl_parser.definition.NamespacedType(['aspn23_ros_interfaces', 'msg'], 'TypeTimestamp'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('uint8')),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('double')),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.NamespacedType(['aspn23_ros_interfaces', 'msg'], 'TypeIntegrity')),  # noqa: E501
+    )
+
+    def __init__(self, **kwargs):
+        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+            'Invalid arguments passed to constructor: %s' % \
+            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        from aspn23_ros_interfaces.msg import TypeHeader
+        self.header = kwargs.get('header', TypeHeader())
+        from aspn23_ros_interfaces.msg import TypeTimestamp
+        self.time_of_validity = kwargs.get('time_of_validity', TypeTimestamp())
+        self.height = kwargs.get('height', int())
+        self.width = kwargs.get('width', int())
+        self.is_bigendian = kwargs.get('is_bigendian', bool())
+        self.image_type = kwargs.get('image_type', int())
+        self.image_data_length = kwargs.get('image_data_length', int())
+        self.image_data = array.array('B', kwargs.get('image_data', []))
+        self.camera_model = kwargs.get('camera_model', int())
+        self.num_model_coefficients = kwargs.get('num_model_coefficients', int())
+        self.model_coefficients = array.array('d', kwargs.get('model_coefficients', []))
+        self.num_integrity = kwargs.get('num_integrity', int())
+        self.integrity = kwargs.get('integrity', [])
+
+    def __repr__(self):
+        typename = self.__class__.__module__.split('.')
+        typename.pop()
+        typename.append(self.__class__.__name__)
+        args = []
+        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+            field = getattr(self, s)
+            fieldstr = repr(field)
+            # We use Python array type for fields that can be directly stored
+            # in them, and "normal" sequences for everything else.  If it is
+            # a type that we store in an array, strip off the 'array' portion.
+            if (
+                isinstance(t, rosidl_parser.definition.AbstractSequence) and
+                isinstance(t.value_type, rosidl_parser.definition.BasicType) and
+                t.value_type.typename in ['float', 'double', 'int8', 'uint8', 'int16', 'uint16', 'int32', 'uint32', 'int64', 'uint64']
+            ):
+                if len(field) == 0:
+                    fieldstr = '[]'
+                else:
+                    assert fieldstr.startswith('array(')
+                    prefix = "array('X', "
+                    suffix = ')'
+                    fieldstr = fieldstr[len(prefix):-len(suffix)]
+            args.append(s[1:] + '=' + fieldstr)
+        return '%s(%s)' % ('.'.join(typename), ', '.join(args))
+
+    def __eq__(self, other):
+        if not isinstance(other, self.__class__):
+            return False
+        if self.header != other.header:
+            return False
+        if self.time_of_validity != other.time_of_validity:
+            return False
+        if self.height != other.height:
+            return False
+        if self.width != other.width:
+            return False
+        if self.is_bigendian != other.is_bigendian:
+            return False
+        if self.image_type != other.image_type:
+            return False
+        if self.image_data_length != other.image_data_length:
+            return False
+        if self.image_data != other.image_data:
+            return False
+        if self.camera_model != other.camera_model:
+            return False
+        if self.num_model_coefficients != other.num_model_coefficients:
+            return False
+        if self.model_coefficients != other.model_coefficients:
+            return False
+        if self.num_integrity != other.num_integrity:
+            return False
+        if self.integrity != other.integrity:
+            return False
+        return True
+
+    @classmethod
+    def get_fields_and_field_types(cls):
+        from copy import copy
+        return copy(cls._fields_and_field_types)
+
+    @builtins.property
+    def header(self):
+        """Message field 'header'."""
+        return self._header
+
+    @header.setter
+    def header(self, value):
+        if __debug__:
+            from aspn23_ros_interfaces.msg import TypeHeader
+            assert \
+                isinstance(value, TypeHeader), \
+                "The 'header' field must be a sub message of type 'TypeHeader'"
+        self._header = value
+
+    @builtins.property
+    def time_of_validity(self):
+        """Message field 'time_of_validity'."""
+        return self._time_of_validity
+
+    @time_of_validity.setter
+    def time_of_validity(self, value):
+        if __debug__:
+            from aspn23_ros_interfaces.msg import TypeTimestamp
+            assert \
+                isinstance(value, TypeTimestamp), \
+                "The 'time_of_validity' field must be a sub message of type 'TypeTimestamp'"
+        self._time_of_validity = value
+
+    @builtins.property
+    def height(self):
+        """Message field 'height'."""
+        return self._height
+
+    @height.setter
+    def height(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'height' field must be of type 'int'"
+            assert value >= 0 and value < 4294967296, \
+                "The 'height' field must be an unsigned integer in [0, 4294967295]"
+        self._height = value
+
+    @builtins.property
+    def width(self):
+        """Message field 'width'."""
+        return self._width
+
+    @width.setter
+    def width(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'width' field must be of type 'int'"
+            assert value >= 0 and value < 4294967296, \
+                "The 'width' field must be an unsigned integer in [0, 4294967295]"
+        self._width = value
+
+    @builtins.property
+    def is_bigendian(self):
+        """Message field 'is_bigendian'."""
+        return self._is_bigendian
+
+    @is_bigendian.setter
+    def is_bigendian(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'is_bigendian' field must be of type 'bool'"
+        self._is_bigendian = value
+
+    @builtins.property
+    def image_type(self):
+        """Message field 'image_type'."""
+        return self._image_type
+
+    @image_type.setter
+    def image_type(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'image_type' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'image_type' field must be an unsigned integer in [0, 255]"
+        self._image_type = value
+
+    @builtins.property
+    def image_data_length(self):
+        """Message field 'image_data_length'."""
+        return self._image_data_length
+
+    @image_data_length.setter
+    def image_data_length(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'image_data_length' field must be of type 'int'"
+            assert value >= 0 and value < 18446744073709551616, \
+                "The 'image_data_length' field must be an unsigned integer in [0, 18446744073709551615]"
+        self._image_data_length = value
+
+    @builtins.property
+    def image_data(self):
+        """Message field 'image_data'."""
+        return self._image_data
+
+    @image_data.setter
+    def image_data(self, value):
+        if isinstance(value, array.array):
+            assert value.typecode == 'B', \
+                "The 'image_data' array.array() must have the type code of 'B'"
+            self._image_data = value
+            return
+        if __debug__:
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, int) for v in value) and
+                 all(val >= 0 and val < 256 for val in value)), \
+                "The 'image_data' field must be a set or sequence and each value of type 'int' and each unsigned integer in [0, 255]"
+        self._image_data = array.array('B', value)
+
+    @builtins.property
+    def camera_model(self):
+        """Message field 'camera_model'."""
+        return self._camera_model
+
+    @camera_model.setter
+    def camera_model(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'camera_model' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'camera_model' field must be an unsigned integer in [0, 255]"
+        self._camera_model = value
+
+    @builtins.property
+    def num_model_coefficients(self):
+        """Message field 'num_model_coefficients'."""
+        return self._num_model_coefficients
+
+    @num_model_coefficients.setter
+    def num_model_coefficients(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'num_model_coefficients' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'num_model_coefficients' field must be an unsigned integer in [0, 255]"
+        self._num_model_coefficients = value
+
+    @builtins.property
+    def model_coefficients(self):
+        """Message field 'model_coefficients'."""
+        return self._model_coefficients
+
+    @model_coefficients.setter
+    def model_coefficients(self, value):
+        if isinstance(value, array.array):
+            assert value.typecode == 'd', \
+                "The 'model_coefficients' array.array() must have the type code of 'd'"
+            self._model_coefficients = value
+            return
+        if __debug__:
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, float) for v in value) and
+                 all(not (val < -1.7976931348623157e+308 or val > 1.7976931348623157e+308) or math.isinf(val) for val in value)), \
+                "The 'model_coefficients' field must be a set or sequence and each value of type 'float' and each double in [-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000, 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000]"
+        self._model_coefficients = array.array('d', value)
+
+    @builtins.property
+    def num_integrity(self):
+        """Message field 'num_integrity'."""
+        return self._num_integrity
+
+    @num_integrity.setter
+    def num_integrity(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'num_integrity' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'num_integrity' field must be an unsigned integer in [0, 255]"
+        self._num_integrity = value
+
+    @builtins.property
+    def integrity(self):
+        """Message field 'integrity'."""
+        return self._integrity
+
+    @integrity.setter
+    def integrity(self, value):
+        if __debug__:
+            from aspn23_ros_interfaces.msg import TypeIntegrity
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, TypeIntegrity) for v in value) and
+                 True), \
+                "The 'integrity' field must be a set or sequence and each value of type 'TypeIntegrity'"
+        self._integrity = value

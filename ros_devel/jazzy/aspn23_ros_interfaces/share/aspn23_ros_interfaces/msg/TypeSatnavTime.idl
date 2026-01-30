@@ -1,0 +1,47 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/TypeSatnavTime.msg
+// generated code does not contain a copyright notice
+
+
+module aspn23_ros_interfaces {
+  module msg {
+    module TypeSatnavTime_Constants {
+      @verbatim (language="comment", text=
+        "GPS system time.")
+      const uint8 ASPN23_TYPE_SATNAV_TIME_TIME_REFERENCE_TIME_GPS = 0;
+      @verbatim (language="comment", text=
+        "Galileo system time.")
+      const uint8 ASPN23_TYPE_SATNAV_TIME_TIME_REFERENCE_TIME_GALILEO = 1;
+      @verbatim (language="comment", text=
+        "BeiDou system time.")
+      const uint8 ASPN23_TYPE_SATNAV_TIME_TIME_REFERENCE_TIME_BEIDOU = 2;
+      @verbatim (language="comment", text=
+        "GLONASS system time.")
+      const uint8 ASPN23_TYPE_SATNAV_TIME_TIME_REFERENCE_TIME_GLONASS = 3;
+    };
+    struct TypeSatnavTime {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Satellite system time" "\n"
+        "Description: Full Week number since zero epoch at which the data provided in this message is valid," "\n"
+        "expressed in time system defined by time_reference enum (below)." "\n"
+        "Units: weeks")
+      uint16 week_number;
+
+      @verbatim (language="comment", text=
+        "Description: Seconds since start of current week at which the data provided in this message is" "\n"
+        "valid, expressed in time system defined by time_reference enum (below)." "\n"
+        "Units: seconds")
+      double seconds_of_week;
+
+      @verbatim (language="comment", text=
+        "Reference time system used to express the data in this message. In a multi-GNSS receiver" "\n"
+        "(GPS/GLONASS/Galileo/QZSS/BeiDou) all pseudorange observations must refer to one receiver clock" "\n"
+        "only. The receiver clock time of the measurement is the receiver clock time of the received signals." "\n"
+        "It is identical for the phase and range measurements and is identical for all satellites observed in" "\n"
+        "a given epoch.")
+      uint8 time_reference;
+    };
+  };
+};

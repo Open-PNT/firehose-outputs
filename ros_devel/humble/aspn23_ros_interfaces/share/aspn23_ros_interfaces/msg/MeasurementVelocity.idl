@@ -1,0 +1,105 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/MeasurementVelocity.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeHeader.idl"
+#include "aspn23_ros_interfaces/msg/TypeIntegrity.idl"
+#include "aspn23_ros_interfaces/msg/TypeTimestamp.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    module MeasurementVelocity_Constants {
+      @verbatim (language="comment", text=
+        "Velocity with respect to earth-centered inertial frame, expressed in an earth-centered inertial" "\n"        "frame. See also ECi coordinate frame definition for x, y, and z definitions.")
+      const uint8 ASPN23_MEASUREMENT_VELOCITY_REFERENCE_FRAME_ECI = 0;
+      @verbatim (language="comment", text=
+        "Velocity with respect to earth-fixed frame expressed in earth-centered, earth-fixed (ECEF) frame." "\n"        "See also ECEF coordinate frame definition for x, y, and z definitions.")
+      const uint8 ASPN23_MEASUREMENT_VELOCITY_REFERENCE_FRAME_ECEF = 1;
+      @verbatim (language="comment", text=
+        "Local level, geodetic velocity: Velocity with respect to earth-fixed frame expressed in the" "\n"        "North-East-Down (NED), local level frame. See also NED coordinate frame definition for N, E, and D" "\n"        "definitions.")
+      const uint8 ASPN23_MEASUREMENT_VELOCITY_REFERENCE_FRAME_NED = 2;
+      @verbatim (language="comment", text=
+        "Velocity with respect to earth-fixed frame expressed in sensor coordinate frame. Sensor coordinate" "\n"        "frame is defined in sensor metadataHeader.")
+      const uint8 ASPN23_MEASUREMENT_VELOCITY_REFERENCE_FRAME_SENSOR = 3;
+      @verbatim (language="comment", text=
+        "No additional error model provided (num_error_model_params = 0).")
+      const uint8 ASPN23_MEASUREMENT_VELOCITY_ERROR_MODEL_NONE = 0;
+    };
+    struct MeasurementVelocity {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Velocity is time rate of change of position with respect to the user-specified reference frame. May" "\n"
+        "be one, two, or three dimensional." "\n"
+        "Description: Standard ASPN measurement header." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeHeader header;
+
+      @verbatim (language="comment", text=
+        "Description: Time at which the measurement is considered to be valid." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeTimestamp time_of_validity;
+
+      @verbatim (language="comment", text=
+        "Defines measurement reference.")
+      uint8 reference_frame;
+
+      @verbatim (language="comment", text=
+        "Description: Velocity along the first axis of the measurement reference frame enumerated in" "\n"
+        "reference_frame." "\n"
+        "Units: m/s")
+      double x;
+
+      @verbatim (language="comment", text=
+        "Description: Velocity along the second axis of the measurement reference frame enumerated in" "\n"
+        "reference_frame." "\n"
+        "Units: m/s")
+      double y;
+
+      @verbatim (language="comment", text=
+        "Description: Velocity along the third axis of the measurement reference frame enumerated in" "\n"
+        "reference_frame." "\n"
+        "Units: m/s")
+      double z;
+
+      @verbatim (language="comment", text=
+        "Description: Dimension of measurement provided." "\n"
+        "Units: none")
+      uint8 num_meas;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement error covariance or variance depending on measurement dimension." "\n"
+        "Units: (m/s)^2 Dimensions of covariance must be num_meas²" "\n"
+        "Note: field represents a num_meas x num_meas matrix")
+      sequence<double> covariance;
+
+      @verbatim (language="comment", text=
+        "Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).")
+      uint8 error_model;
+
+      @verbatim (language="comment", text=
+        "Description: Number of parameters required for the error model chosen." "\n"
+        "Units: none")
+      uint16 num_error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Error model parameters that characterize the optional error model." "\n"
+        "Units: various" "\n"
+        "Note: array length is num_error_model_params")
+      sequence<double> error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Number of integrity values." "\n"
+        "Units: none")
+      uint8 num_integrity;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement integrity. Includes the integrity method used and an integrity value (which" "\n"
+        "is to be interpreted based upon the integrity method). The intent of allowing num_integrity > 1 is" "\n"
+        "to report multiple integrity values based on multiple integrity methods." "\n"
+        "Units: none" "\n"
+        "Note: array length is num_integrity")
+      sequence<aspn23_ros_interfaces::msg::TypeIntegrity> integrity;
+    };
+  };
+};

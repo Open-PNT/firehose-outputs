@@ -1,0 +1,107 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/TypeSatnavSvData.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeSatnavSatelliteSystem.idl"
+#include "aspn23_ros_interfaces/msg/TypeSatnavTime.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    typedef double double__3[3];
+    typedef float float__4[4];
+    module TypeSatnavSvData_Constants {
+      @verbatim (language="comment", text=
+        "To be used when a system only uses one ephemeris representation, so knowing the satellite_system" "\n"        "fully defines what ephemeris is being used.")
+      const uint8 ASPN23_TYPE_SATNAV_SV_DATA_EPHEMERIS_TYPE_SET_BY_SYSTEM = 0;
+      @verbatim (language="comment", text=
+        "Calculated using legacy GPS (LNAV) messages")
+      const uint8 ASPN23_TYPE_SATNAV_SV_DATA_EPHEMERIS_TYPE_GPS_LNAV = 1;
+      @verbatim (language="comment", text=
+        "Calculated using GPS CNAV messages")
+      const uint8 ASPN23_TYPE_SATNAV_SV_DATA_EPHEMERIS_TYPE_GPS_CNAV = 2;
+      @verbatim (language="comment", text=
+        "Calculated using GPS MNAV messages")
+      const uint8 ASPN23_TYPE_SATNAV_SV_DATA_EPHEMERIS_TYPE_GPS_MNAV = 3;
+      @verbatim (language="comment", text=
+        "International Terrestrial Reference Frame")
+      const uint8 ASPN23_TYPE_SATNAV_SV_DATA_COORDINATE_FRAME_ITRF = 0;
+      @verbatim (language="comment", text=
+        "Earth-centered earth-fixed frame as defined by WGS-84 (nearly identical with ITRF)")
+      const uint8 ASPN23_TYPE_SATNAV_SV_DATA_COORDINATE_FRAME_ECEF = 1;
+      @verbatim (language="comment", text=
+        "Galileo Terrestrial Reference Frame (nearly identical with ITRF)")
+      const uint8 ASPN23_TYPE_SATNAV_SV_DATA_COORDINATE_FRAME_GTRF = 2;
+      @verbatim (language="comment", text=
+        "Parametri Zemli 1990 (PZ-90) reference frame")
+      const uint8 ASPN23_TYPE_SATNAV_SV_DATA_COORDINATE_FRAME_PZ90 = 3;
+      @verbatim (language="comment", text=
+        "group_delay_vector is legacy Tgd as defined in ICD-GPS-200L Section 20.3.3.3.3.2. All other terms" "\n"        "not used.")
+      const uint8 ASPN23_TYPE_SATNAV_SV_DATA_GROUP_DELAY_ENUM_TGD_LNAV = 0;
+    };
+    struct TypeSatnavSvData {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Satellite position, velocity and clock error at a particular time epoch" "\n"
+        "Description: PRN code which identifies satellite (or slot number, in the case of GLONASS) of this" "\n"
+        "ephemeris." "\n"
+        "Units: none")
+      int16 prn;
+
+      @verbatim (language="comment", text=
+        "Description: Describes the Satellite System which was used to generate the satellite information" "\n"
+        "provided in this message." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeSatnavSatelliteSystem satellite_system;
+
+      @verbatim (language="comment", text=
+        "Provides further clarification of which ephemeris was used to generate the satellite information" "\n"
+        "provided in this message for systems which have more than one ephemeris representation.")
+      uint8 ephemeris_type;
+
+      @verbatim (language="comment", text=
+        "Description: Receiver time at which the data provided in this message is valid." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeSatnavTime sv_data_time;
+
+      @verbatim (language="comment", text=
+        "Coordinate frame system used to describe satellite position and velocity.")
+      uint8 coordinate_frame;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite position in frame specified by coordinate_frame at time specified by" "\n"
+        "sv_data_time_week_number and sv_data_time_seconds_of_week." "\n"
+        "Units: m")
+      double__3 sv_pos;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite velocity in frame specified by coordinate_frame at time specified by" "\n"
+        "sv_data_time_week_number and sv_data_time_seconds_of_week." "\n"
+        "Units: m/s")
+      double__3 sv_vel;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite clock bias at the sv_data_time, used to correct the satellite time like" "\n"
+        "delta_t_sv in equation (1) of ICD-GPS-200L, Section 20.3.3.3.3.1." "\n"
+        "Units: sec")
+      double sv_clock_bias;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite clock drift rate at the sv_data_time. By way of example, for GPS this would" "\n"
+        "be af1 in equation (2) of ICD-GPS-200L, Section 20.3.3.3.3.1." "\n"
+        "Units: sec/sec")
+      double sv_clock_drift;
+
+      @verbatim (language="comment", text=
+        "Describes how to interpret group delay terms, because they vary by ephemeris type. Descriptions" "\n"
+        "assume zero-indexing.")
+      uint8 group_delay_enum;
+
+      @verbatim (language="comment", text=
+        "Description: Group delay terms, with interpretation provided by group_delay_enum. (Need to verify" "\n"
+        "that four is sufficient for all ephemeris.)" "\n"
+        "Units: sec")
+      float__4 group_delay_vector;
+    };
+  };
+};

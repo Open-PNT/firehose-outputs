@@ -1,0 +1,118 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/MeasurementFrequencyDifference.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeHeader.idl"
+#include "aspn23_ros_interfaces/msg/TypeIntegrity.idl"
+#include "aspn23_ros_interfaces/msg/TypeTimestamp.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    module MeasurementFrequencyDifference_Constants {
+      @verbatim (language="comment", text=
+        "No additional error model provided (num_error_model_params = 0).")
+      const uint8 ASPN23_MEASUREMENT_FREQUENCY_DIFFERENCE_ERROR_MODEL_NONE = 0;
+    };
+    struct MeasurementFrequencyDifference {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Frequency difference between two clocks or timing sources." "\n"
+        "Description: Standard ASPN measurement header." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeHeader header;
+
+      @verbatim (language="comment", text=
+        "Description: Time at which the measurement is considered to be valid." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeTimestamp time_of_validity;
+
+      @verbatim (language="comment", text=
+        "Description: Whole number of attoseconds used to provide additional timestamp fidelity describing" "\n"
+        "the time at which the measurement is considered to be valid. This is only needed if the time of" "\n"
+        "validity is known to more precision than 1ns; otherwise, set time_of_validity_attosec = 0. Be sure" "\n"
+        "to report the timestamp's digits of precision in the `type_metadataheader` as part of the metadata." "\n"
+        "The full timestamp in nanoseconds is calculated as" "\n"
+        "" "\n"
+        "time_of_validity + ( time_of_validity_attosec * 1E-9 )" "\n"
+        "" "\n"
+        "and if needed, a timestamp in seconds is calculated as" "\n"
+        "" "\n"
+        "time_of_validity * 1E-9 + time_of_validity_attosec * 1E-18" "\n"
+        "" "\n"
+        "(Recall time_of_validity is in nanoseconds and time_of_validity_attosec is in attoseconds.)" "\n"
+        "Furthermore, both time_of_validity and time_of_validity_attosec are signed integers and may be" "\n"
+        "positive or negative. It is recommended to make time_of_validity and time_of_validity_attosec the" "\n"
+        "same sign. Care should be taken when constructing the timestamp components to be sure the summation" "\n"
+        "produces the desired result." "\n"
+        "Units: attoseconds")
+      int32 time_of_validity_attosec;
+
+      @verbatim (language="comment", text=
+        "Description: Identifier for clock/timing source 1. See clock_identifiers.md for a full description," "\n"
+        "but the summary is as follows:" "\n"
+        "0 = ASPN System Time" "\n"
+        "1 = International Atomic Time (TAI)" "\n"
+        "2 = Universal Coordinated Time (UTC)" "\n"
+        "3 = GPS System Time" "\n"
+        "4 = Galileo System Time" "\n"
+        "5 = GLONASS System Time" "\n"
+        "6 = BeiDou System Time" "\n"
+        "7-50: Reserved for future additional time scale representations." "\n"
+        "Units: none")
+      uint8 clock_id1;
+
+      @verbatim (language="comment", text=
+        "Description: Identifier for clock/timing source 2. See clock_identifiers.md for a full description," "\n"
+        "but the summary is as follows:" "\n"
+        "0 = ASPN System Time" "\n"
+        "1 = International Atomic Time (TAI)" "\n"
+        "2 = Universal Coordinated Time (UTC)" "\n"
+        "3 = GPS System Time" "\n"
+        "4 = Galileo System Time" "\n"
+        "5 = GLONASS System Time" "\n"
+        "6 = BeiDou System Time" "\n"
+        "7-50: Reserved for future additional time scale representations." "\n"
+        "Units: none")
+      uint8 clock_id2;
+
+      @verbatim (language="comment", text=
+        "Description: Frequency difference formed as (frequency from clock_id1) - (frequency from clock_id2)." "\n"
+        "Units: Hertz")
+      double freq_diff;
+
+      @verbatim (language="comment", text=
+        "Description: Variance of the error in the frequency difference measurement." "\n"
+        "Units: Hertz^2")
+      double variance;
+
+      @verbatim (language="comment", text=
+        "Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).")
+      uint8 error_model;
+
+      @verbatim (language="comment", text=
+        "Description: Number of parameters required for the error model chosen." "\n"
+        "Units: none")
+      uint16 num_error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Error model parameters that characterize the optional error model." "\n"
+        "Units: various" "\n"
+        "Note: array length is num_error_model_params")
+      sequence<double> error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Number of integrity values." "\n"
+        "Units: none")
+      uint8 num_integrity;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement integrity. Includes the integrity method used and an integrity value (which" "\n"
+        "is to be interpreted based upon the integrity method). The intent of allowing num_integrity > 1 is" "\n"
+        "to report multiple integrity values based on multiple integrity methods." "\n"
+        "Units: none" "\n"
+        "Note: array length is num_integrity")
+      sequence<aspn23_ros_interfaces::msg::TypeIntegrity> integrity;
+    };
+  };
+};

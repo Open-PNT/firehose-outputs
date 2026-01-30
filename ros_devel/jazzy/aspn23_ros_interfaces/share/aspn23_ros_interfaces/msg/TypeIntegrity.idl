@@ -1,0 +1,31 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/TypeIntegrity.msg
+// generated code does not contain a copyright notice
+
+
+module aspn23_ros_interfaces {
+  module msg {
+    struct TypeIntegrity {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Integrity provides a numerical measure of the trustworthiness of the associated measurement. The" "\n"
+        "integrity_method enum specifies the integrity method and the appropriate interpretation of the" "\n"
+        "integrity_value." "\n"
+        "Enumerated field which describes the meaning of the integrity value. Integrity methods may use" "\n"
+        "multiple enum entries if there is a need to pass multiple integrity values. For example, an" "\n"
+        "integrity method with 3 parameters may use 3 enum entries (e.g., MY_METHOD_VALUE1, MY_METHOD_VALUE2," "\n"
+        "MY_METHOD_VALUE3). When integrity is reported in a message, a vector of integrity types is passed." "\n"
+        "In the MY_METHOD example, num_integrity = 3 just for the MY_METHOD integrity. If additional" "\n"
+        "integrity methods are also reported, then num_integrity would be greater than 3 to include those" "\n"
+        "additional methods.")
+      uint8 integrity_method;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement integrity value to be interpreted based on the definition in the" "\n"
+        "integrity_type enum." "\n"
+        "Units: none")
+      double integrity_value;
+    };
+  };
+};

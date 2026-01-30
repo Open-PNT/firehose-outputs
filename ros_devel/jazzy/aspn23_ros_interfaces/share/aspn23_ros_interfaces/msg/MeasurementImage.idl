@@ -1,0 +1,139 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/MeasurementImage.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeHeader.idl"
+#include "aspn23_ros_interfaces/msg/TypeIntegrity.idl"
+#include "aspn23_ros_interfaces/msg/TypeTimestamp.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    module MeasurementImage_Constants {
+      @verbatim (language="comment", text=
+        "Windows Bitmaps")
+      const uint8 ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_BMP = 0;
+      @verbatim (language="comment", text=
+        "Portable Network Graphics")
+      const uint8 ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_PNG = 1;
+      @verbatim (language="comment", text=
+        "Joint Photographic Experts Group")
+      const uint8 ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_JPG = 2;
+      @verbatim (language="comment", text=
+        "Tag Image File Format")
+      const uint8 ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_TIFF = 3;
+      @verbatim (language="comment", text=
+        "Single channel raw gray scale image. One byte per pixel.")
+      const uint8 ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAY8 = 4;
+      @verbatim (language="comment", text=
+        "Three channel raw RGB image. One byte per pixel per channel.")
+      const uint8 ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_RGB8 = 5;
+      @verbatim (language="comment", text=
+        "Three channel raw BGR image. One byte per pixel per channel.")
+      const uint8 ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_BGR8 = 6;
+      @verbatim (language="comment", text=
+        "Four channel raw RGBA image. One byte per pixel per channel.")
+      const uint8 ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_RGBA8 = 7;
+      @verbatim (language="comment", text=
+        "Four channel raw BGRA image. One byte per pixel per channel.")
+      const uint8 ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_BGRA8 = 8;
+      @verbatim (language="comment", text=
+        "Single channel raw gray scale image. Two bytes per pixel.")
+      const uint8 ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAY16 = 9;
+      @verbatim (language="comment", text=
+        "Single channel raw gray scale image. Eight bytes per pixel.")
+      const uint8 ASPN23_MEASUREMENT_IMAGE_IMAGE_TYPE_RAW_GRAYFLOAT64 = 10;
+      @verbatim (language="comment", text=
+        "A 10 parameter model, 4 parameters composing the 2D focal length fc = (fx, fy) and camera principal" "\n"        "point cc = (cx, cy) in pixels, a model of radial and tangential distortion specified using the 5" "\n"        "parameters (kc1, kc2, kc3, kc4, kc5). And the skew parameter, alpha_c. Mapping from 3D points in the" "\n"        "world to 2D points in the image is described at" "\n"        "http://www.vision.caltech.edu/bouguetj/calib_doc/htmls/parameters.html")
+      const uint8 ASPN23_MEASUREMENT_IMAGE_CAMERA_MODEL_ASPN_PINHOLE_PLUMB_BOB = 0;
+      @verbatim (language="comment", text=
+        "A 4 parameter model, modeling only the the 2D focal length fc = (fx, fy) and camera principal point" "\n"        "cc = (cx, cy). Effectively using the same model as described in described at" "\n"        "http://www.vision.caltech.edu/bouguetj/calib_doc/htmls/parameters.html, with all distortion and skew" "\n"        "parameters zeroed out")
+      const uint8 ASPN23_MEASUREMENT_IMAGE_CAMERA_MODEL_ASPN_LINEAR_MODEL = 1;
+    };
+    struct MeasurementImage {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "2D Raster Image" "\n"
+        "Description: Standard ASPN measurement header." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeHeader header;
+
+      @verbatim (language="comment", text=
+        "Description: Time at which the measurement is considered to be valid." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeTimestamp time_of_validity;
+
+      @verbatim (language="comment", text=
+        "Description: The number of pixel rows in this image." "\n"
+        "Units: pixels")
+      uint32 height;
+
+      @verbatim (language="comment", text=
+        "Description: The number of pixel columns in this image." "\n"
+        "Units: pixels")
+      uint32 width;
+
+      @verbatim (language="comment", text=
+        "Description: True if the image_data byte order is big endian, false if it is little endian. For raw" "\n"
+        "image_types, this is only applicable for image_types with multi-byte pixels." "\n"
+        "Units: none")
+      boolean is_bigendian;
+
+      @verbatim (language="comment", text=
+        "Enumerated field which specifies the datatype of the pixels represented in this image." "\n"
+        "Raw images are stored in row-major order. In multi-channel raw images, the first element contains" "\n"
+        "the first pixel of the first channel, the second element contains the first pixel of the second" "\n"
+        "channel, and so on. The data of each multi-byte pixel should be contiguous within the data array" "\n"
+        "with the endianness defined by the is_bigendian field." "\n"
+        "Example - 2x2 RAW_RGB8 image_data[0] row1 col1 chanR image_data[1] row1 col1 chanG image_data[2]" "\n"
+        "row1 col1 chanB image_data[3] row1 col2 chanR image_data[4] row1 col2 chanG image_data[5] row1 col2" "\n"
+        "chanB image_data[6] row2 col1 chanR image_data[7] row2 col1 chanG image_data[8] row2 col1 chanB" "\n"
+        "image_data[9] row2 col2 chanR image_data[10] row2 col2 chanG image_data[11] row2 col2 chanB" "\n"
+        "Example - 2x2 RAW_GRAY16, is_bigendian = 1 Where byte 1 is the most significant byte (byte1 << 8 |" "\n"
+        "byte2): image_data[0] row1 col1 byte1 image_data[1] row1 col1 byte2 image_data[2] row1 col2 byte1" "\n"
+        "image_data[3] row1 col2 byte2 image_data[4] row2 col1 byte1 image_data[5] row2 col1 byte2" "\n"
+        "image_data[6] row2 col2 byte1 image_data[7] row2 col2 byte2")
+      uint8 image_type;
+
+      @verbatim (language="comment", text=
+        "Description: Length of the byte array holding the encoded image. For raw image types, this should be" "\n"
+        "equal to height * width * num_channels * bytes_per_pixel." "\n"
+        "Units: byte")
+      uint64 image_data_length;
+
+      @verbatim (language="comment", text=
+        "Description: Stores the encoded image. Interpretation varies based on the image_type." "\n"
+        "Units: none" "\n"
+        "Note: array length is image_data_length")
+      sequence<uint8> image_data;
+
+      @verbatim (language="comment", text=
+        "The model used to map 3D points in the world to 2D points on the image plane")
+      uint8 camera_model;
+
+      @verbatim (language="comment", text=
+        "Description: The number of coefficients used in camera model." "\n"
+        "Units: none")
+      uint8 num_model_coefficients;
+
+      @verbatim (language="comment", text=
+        "Description: The camera model parameters, size depending on the distortion model." "\n"
+        "Units: none" "\n"
+        "Note: array length is num_model_coefficients")
+      sequence<double> model_coefficients;
+
+      @verbatim (language="comment", text=
+        "Description: Number of integrity values." "\n"
+        "Units: none")
+      uint8 num_integrity;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement integrity. Includes the integrity method used and an integrity value (which" "\n"
+        "is to be interpreted based upon the integrity method). The intent of allowing num_integrity > 1 is" "\n"
+        "to report multiple integrity values based on multiple integrity methods." "\n"
+        "Units: none" "\n"
+        "Note: array length is num_integrity")
+      sequence<aspn23_ros_interfaces::msg::TypeIntegrity> integrity;
+    };
+  };
+};

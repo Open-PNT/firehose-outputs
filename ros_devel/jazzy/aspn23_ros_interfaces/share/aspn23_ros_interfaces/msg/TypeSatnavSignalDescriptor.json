@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "aspn23_ros_interfaces/msg/TypeSatnavSignalDescriptor",
+      "fields": [
+        {
+          "name": "signal_descriptor",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "aspn23_ros_interfaces/msg/TypeSatnavSignalDescriptor",
+      "hash_string": "RIHS01_d0d1ea958dde827a7034d2cfb2af1d0562f2201dae0d5844568093a4a7f8e4c0"
+    }
+  ]
+}
