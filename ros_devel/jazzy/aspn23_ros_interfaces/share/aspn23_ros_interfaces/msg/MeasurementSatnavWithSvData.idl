@@ -1,0 +1,77 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/MeasurementSatnavWithSvData.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeHeader.idl"
+#include "aspn23_ros_interfaces/msg/TypeIntegrity.idl"
+#include "aspn23_ros_interfaces/msg/TypeSatnavObs.idl"
+#include "aspn23_ros_interfaces/msg/TypeSatnavSvData.idl"
+#include "aspn23_ros_interfaces/msg/TypeSatnavTime.idl"
+#include "aspn23_ros_interfaces/msg/TypeTimestamp.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    struct MeasurementSatnavWithSvData {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Raw measurements from a satnav receiver." "\n"
+        "Description: Standard ASPN measurement header." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeHeader header;
+
+      @verbatim (language="comment", text=
+        "Description: Time at which the measurement is considered to be valid." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeTimestamp time_of_validity;
+
+      @verbatim (language="comment", text=
+        "Description: Receiver clock time. In a multi-GNSS receiver (GPS/GLONASS/Galileo/QZSS/BeiDou) all" "\n"
+        "pseudorange observations must refer to one receiver clock only. The receiver clock time of the" "\n"
+        "measurement is the receiver clock time of the received signals. It is identical for the phase and" "\n"
+        "range measurements and is identical for all satellites observed in a given epoch." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeSatnavTime receiver_clock_time;
+
+      @verbatim (language="comment", text=
+        "Description: Number of different signal types tracked in the current epoch. Examples of signal types" "\n"
+        "include GPS L1 C/A code, Galileo E1B." "\n"
+        "Units: none")
+      uint16 num_signal_types;
+
+      @verbatim (language="comment", text=
+        "Description: Total number of signals tracked across all PRNs and signal types." "\n"
+        "Units: none")
+      uint16 num_signals_tracked;
+
+      @verbatim (language="comment", text=
+        "Description: Array of satnav obs data for all of the signals/PRNs being tracked in this epoch." "\n"
+        "Units: none" "\n"
+        "Note: array length is num_signals_tracked")
+      sequence<aspn23_ros_interfaces::msg::TypeSatnavObs> obs;
+
+      @verbatim (language="comment", text=
+        "Description: Array of satellite position, velocity, and clock information. These line up precisely" "\n"
+        "with the obs, such that sv_data[N] is the satellite information for observations obs[N] for any" "\n"
+        "valid N." "\n"
+        "Units: none" "\n"
+        "Note: array length is num_signals_tracked")
+      sequence<aspn23_ros_interfaces::msg::TypeSatnavSvData> sv_data;
+
+      @verbatim (language="comment", text=
+        "Description: Number of integrity values." "\n"
+        "Units: none")
+      uint8 num_integrity;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement integrity at the sensor level. Integrity is also available for each" "\n"
+        "observable, which is found in the observable type definition. Includes the integrity method used and" "\n"
+        "an integrity value (which is to be interpreted based upon the integrity method). The intent of" "\n"
+        "allowing num_integrity > 1 is to report multiple integrity values based on multiple integrity" "\n"
+        "methods." "\n"
+        "Units: none" "\n"
+        "Note: array length is num_integrity")
+      sequence<aspn23_ros_interfaces::msg::TypeIntegrity> integrity;
+    };
+  };
+};

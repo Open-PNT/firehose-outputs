@@ -1,0 +1,264 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "aspn23_ros_interfaces/msg/MeasurementTimeFrequencyDifference",
+      "fields": [
+        {
+          "name": "header",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "aspn23_ros_interfaces/msg/TypeHeader"
+          },
+          "default_value": ""
+        },
+        {
+          "name": "time_of_validity",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "aspn23_ros_interfaces/msg/TypeTimestamp"
+          },
+          "default_value": ""
+        },
+        {
+          "name": "time_of_validity_attosec",
+          "type": {
+            "type_id": 6,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "clock_id1",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "clock_id2",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "time_diff_nsec",
+          "type": {
+            "type_id": 8,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "time_diff_attosec",
+          "type": {
+            "type_id": 6,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "digits_of_precision",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "freq_diff",
+          "type": {
+            "type_id": 11,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "covariance",
+          "type": {
+            "type_id": 59,
+            "capacity": 4,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "error_model",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "num_error_model_params",
+          "type": {
+            "type_id": 5,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "error_model_params",
+          "type": {
+            "type_id": 155,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "num_integrity",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "integrity",
+          "type": {
+            "type_id": 145,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "aspn23_ros_interfaces/msg/TypeIntegrity"
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": [
+      {
+        "type_name": "aspn23_ros_interfaces/msg/TypeHeader",
+        "fields": [
+          {
+            "name": "vendor_id",
+            "type": {
+              "type_id": 7,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "device_id",
+            "type": {
+              "type_id": 9,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "context_id",
+            "type": {
+              "type_id": 7,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "sequence_id",
+            "type": {
+              "type_id": 5,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "aspn23_ros_interfaces/msg/TypeIntegrity",
+        "fields": [
+          {
+            "name": "integrity_method",
+            "type": {
+              "type_id": 3,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "integrity_value",
+            "type": {
+              "type_id": 11,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "aspn23_ros_interfaces/msg/TypeTimestamp",
+        "fields": [
+          {
+            "name": "elapsed_nsec",
+            "type": {
+              "type_id": 8,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      }
+    ]
+  },
+  "type_hashes": [
+    {
+      "type_name": "aspn23_ros_interfaces/msg/MeasurementTimeFrequencyDifference",
+      "hash_string": "RIHS01_137376844d1a9617aa543d606cc48e23b5084a43d588295b43b6442477e086ee"
+    },
+    {
+      "type_name": "aspn23_ros_interfaces/msg/TypeHeader",
+      "hash_string": "RIHS01_2208b2416bef60e87858013eeaf139482973c980ddd0e4e945abd6975cc960dc"
+    },
+    {
+      "type_name": "aspn23_ros_interfaces/msg/TypeIntegrity",
+      "hash_string": "RIHS01_b677121dee5ba0c1a896d099ad0e846b5232694b6dab9d31cadba60de15d6617"
+    },
+    {
+      "type_name": "aspn23_ros_interfaces/msg/TypeTimestamp",
+      "hash_string": "RIHS01_ff1f29d844e545041e3433b88512ea8ddeb93f953905918310cc5813947ecf28"
+    }
+  ]
+}

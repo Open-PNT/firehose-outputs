@@ -1,0 +1,46 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "aspn23_ros_interfaces/msg/TypeSatnavTime",
+      "fields": [
+        {
+          "name": "week_number",
+          "type": {
+            "type_id": 5,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "seconds_of_week",
+          "type": {
+            "type_id": 11,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "time_reference",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "aspn23_ros_interfaces/msg/TypeSatnavTime",
+      "hash_string": "RIHS01_4f03eb4cf994f69b7a62af471e7483f1565a938ae924f92c9ab1126ca74cc687"
+    }
+  ]
+}

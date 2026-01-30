@@ -1,0 +1,107 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/MetadataGpsIonoUtcParameters.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeMetadataheader.idl"
+#include "aspn23_ros_interfaces/msg/TypeTimestamp.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    struct MetadataGpsIonoUtcParameters {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Broadcasted GPS navigation data for estimation of single frequency ionospheric correction and" "\n"
+        "determination of UTC. Definitions and usage are covered in ICD-GPS-200L, Section 20.3.3.5.1.6 and" "\n"
+        "20.3.3.5.1.7." "\n"
+        "Description: Standard ASPN metadata header." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeMetadataheader info;
+
+      @verbatim (language="comment", text=
+        "Description: Time at which the measurement is considered to be valid." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeTimestamp time_of_validity;
+
+      @verbatim (language="comment", text=
+        "Description: Bias coefficient of GPS time scale relative to UTC time scale." "\n"
+        "Units: s")
+      double a_0;
+
+      @verbatim (language="comment", text=
+        "Description: Drift coefficient of GPS time scale relative to UTC time scale." "\n"
+        "Units: s/s")
+      double a_1;
+
+      @verbatim (language="comment", text=
+        "Description: Leap second count." "\n"
+        "Units: s")
+      int8 delta_t_ls;
+
+      @verbatim (language="comment", text=
+        "Description: Reference GPS time of week for UTC parameters" "\n"
+        "Units: s")
+      uint32 tot;
+
+      @verbatim (language="comment", text=
+        "Description: Reference Modulo 256 GPS Week number for UTC parameters" "\n"
+        "Units: weeks")
+      uint8 wn_t;
+
+      @verbatim (language="comment", text=
+        "Description: Modulo 256 GPS Week number at the end of which delta_t_lsf becomes effective." "\n"
+        "Units: weeks")
+      uint8 wn_lsf;
+
+      @verbatim (language="comment", text=
+        "Description: Day number at the end of which delta_t_lsf becomes effective (1 to 7)." "\n"
+        "Units: days")
+      uint8 dn;
+
+      @verbatim (language="comment", text=
+        "Description: Future leap second count." "\n"
+        "Units: s")
+      int8 delta_t_lsf;
+
+      @verbatim (language="comment", text=
+        "Description: Zeroth-order coefficient of amplitude of vertical ionospheric delay." "\n"
+        "Units: s")
+      double alpha_0;
+
+      @verbatim (language="comment", text=
+        "Description: First-order coefficient of amplitude of vertical ionospheric delay." "\n"
+        "Units: s/rad")
+      double alpha_1;
+
+      @verbatim (language="comment", text=
+        "Description: Second-order coefficient of amplitude of vertical ionospheric delay." "\n"
+        "Units: s/rad^2")
+      double alpha_2;
+
+      @verbatim (language="comment", text=
+        "Description: Third-order coefficient of amplitude of vertical ionospheric delay." "\n"
+        "Units: s/rads^3")
+      double alpha_3;
+
+      @verbatim (language="comment", text=
+        "Description: Zeroth-order coefficient of period of ionospheric delay model." "\n"
+        "Units: s")
+      double beta_0;
+
+      @verbatim (language="comment", text=
+        "Description: First-order coefficient of period of ionospheric delay model." "\n"
+        "Units: s/rad")
+      double beta_1;
+
+      @verbatim (language="comment", text=
+        "Description: Second-order coefficient of period of ionospheric delay model." "\n"
+        "Units: s/rad^2")
+      double beta_2;
+
+      @verbatim (language="comment", text=
+        "Description: Third-order coefficient of period of ionospheric delay model." "\n"
+        "Units: s/rad^3")
+      double beta_3;
+    };
+  };
+};

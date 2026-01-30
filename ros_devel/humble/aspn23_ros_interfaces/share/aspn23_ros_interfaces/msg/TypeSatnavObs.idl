@@ -1,0 +1,147 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/TypeSatnavObs.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeIntegrity.idl"
+#include "aspn23_ros_interfaces/msg/TypeSatnavSatelliteSystem.idl"
+#include "aspn23_ros_interfaces/msg/TypeSatnavSignalDescriptor.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    module TypeSatnavObs_Constants {
+      @verbatim (language="comment", text=
+        "Instantaneous Doppler at measurement time. Units = Hz Cov. Units = Hz^2")
+      const uint8 ASPN23_TYPE_SATNAV_OBS_PSEUDORANGE_RATE_TYPE_PSR_RATE_DOPPLER = 0;
+      @verbatim (language="comment", text=
+        "Change in pseudorange (integrated Doppler) over a specified time interval. The interval is provided" "\n"        "in metadata_satnav_obs. Units = m Cov. Units = m^2")
+      const uint8 ASPN23_TYPE_SATNAV_OBS_PSEUDORANGE_RATE_TYPE_PSR_RATE_DELTA_RANGE = 1;
+      @verbatim (language="comment", text=
+        "unknown source")
+      const uint8 ASPN23_TYPE_SATNAV_OBS_IONO_CORRECTION_SOURCE_UNKNOWN = 0;
+      @verbatim (language="comment", text=
+        "modeled using the ionospheric models in IS-GPS-200, IS-GPS-700, or IS-GPS-800")
+      const uint8 ASPN23_TYPE_SATNAV_OBS_IONO_CORRECTION_SOURCE_MODELED = 1;
+      @verbatim (language="comment", text=
+        "measured using dual frequencies")
+      const uint8 ASPN23_TYPE_SATNAV_OBS_IONO_CORRECTION_SOURCE_MEASURED = 2;
+    };
+    struct TypeSatnavObs {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Defines measurements that come from a satnav receiver tracking a single signal from a single" "\n"
+        "satellite." "\n"
+        "Description: Enumerated field which describes the Satellite System that generated the observations." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeSatnavSatelliteSystem satellite_system;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite signal descriptor as defined in RINEX 3.05" "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeSatnavSignalDescriptor signal_descriptor;
+
+      @verbatim (language="comment", text=
+        "Description: PRN code which identifies satellite (or slot number, in the case of GLONASS) for the" "\n"
+        "observables." "\n"
+        "Units: none")
+      int16 prn;
+
+      @verbatim (language="comment", text=
+        "Description: Center frequency of signal. For GLONASS, this should be the center frequency of the" "\n"
+        "frequency-shifted signal with the k value taken into account." "\n"
+        "Units: Hz")
+      double frequency;
+
+      @verbatim (language="comment", text=
+        "Description: Pseudorange measurement" "\n"
+        "Units: m")
+      double pseudorange;
+
+      @verbatim (language="comment", text=
+        "Description: Variance of pseudorange measurement noise/multipath. This value must be provided if the" "\n"
+        "pseudorange measurement is provided. Note: This is not intended to represent clock, atmospheric, or" "\n"
+        "satellite position errors." "\n"
+        "Units: m^2")
+      float pseudorange_variance;
+
+      @verbatim (language="comment", text=
+        "Indicates the type of measurement contained in pseudorange_rate.")
+      uint8 pseudorange_rate_type;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement of the change in the pseudorange. See pseudorange_rate_type for details." "\n"
+        "Units: Hz or m")
+      double pseudorange_rate;
+
+      @verbatim (language="comment", text=
+        "Description: Variance of pseudorange_rate noise. This value must be provided if the pseudorange_rate" "\n"
+        "measurement is provided." "\n"
+        "Units: Hz^2 or m^2")
+      float pseudorange_rate_variance;
+
+      @verbatim (language="comment", text=
+        "Description: Carrier-phase (integrated Doppler) measurement. This measurement has an N cycle" "\n"
+        "ambiguity (where N is unknown and arbitrary integer)." "\n"
+        "Units: cycles (1 cycle = wavelength of carrier frequency)")
+      double carrier_phase;
+
+      @verbatim (language="comment", text=
+        "Description: Variance of carrier-phase noise/multipath. This value must be provided if the" "\n"
+        "carrier-phase measurement is provided. Note: This is not intended to represent clock, atmospheric," "\n"
+        "or satellite position errors or the integer N ambiguity." "\n"
+        "Units: cycles^2")
+      float carrier_phase_variance;
+
+      @verbatim (language="comment", text=
+        "Description: Carrier to noise density ratio. C/N0 = 10" "\n"
+        "Units: db-Hz")
+      @unit (value="log10(S/N0)")
+      float c_n0;
+
+      @verbatim (language="comment", text=
+        "Description: Number of observations with continuous tracking (no cycle slips). Value of -1 means" "\n"
+        "that there is no loss of lock information available. First lock_count after cycle slip has occurred" "\n"
+        "will have a value of 0. The lock_count only applies to the carrier-phase measurement." "\n"
+        "Units: none")
+      int32 lock_count;
+
+      @verbatim (language="comment", text=
+        "Enumerated field which describes the source of the ionospheric delay correction.")
+      uint8 iono_correction_source;
+
+      @verbatim (language="comment", text=
+        "Description: Identifies if the ionospheric correction has been applied to the measurement. 1 =" "\n"
+        "Applied." "\n"
+        "Units: none")
+      boolean iono_correction_applied;
+
+      @verbatim (language="comment", text=
+        "Description: Identifies if the tropospheric correction has been applied to the measurement. 1 =" "\n"
+        "Applied." "\n"
+        "Units: none")
+      boolean tropo_correction_applied;
+
+      @verbatim (language="comment", text=
+        "Description: Represents biases within the transmitting signal that are identified in the downlink" "\n"
+        "data, Group Delay for LNAV, and Interchannel Signal Correction (ISC) message for MNAV. This term" "\n"
+        "indicates whether the correction is known, being applied to Pseudorange Correction, and its" "\n"
+        "associated estimated error applied to the ERE. When invalid the correction and estimated error are" "\n"
+        "not known and therefore not applied. 1 = Valid." "\n"
+        "Units: none")
+      boolean signal_bias_correction_applied;
+
+      @verbatim (language="comment", text=
+        "Description: Number of integrity values." "\n"
+        "Units: none")
+      uint8 num_integrity;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement integrity. Includes the integrity method used and an integrity value (which" "\n"
+        "is to be interpreted based upon the integrity method). The intent of allowing num_integrity > 1 is" "\n"
+        "to report multiple integrity values based on multiple integrity methods." "\n"
+        "Units: none" "\n"
+        "Note: array length is num_integrity")
+      sequence<aspn23_ros_interfaces::msg::TypeIntegrity> integrity;
+    };
+  };
+};

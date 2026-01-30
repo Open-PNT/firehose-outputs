@@ -1,0 +1,33 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/TypeSatnavClock.msg
+// generated code does not contain a copyright notice
+
+
+module aspn23_ros_interfaces {
+  module msg {
+    struct TypeSatnavClock {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "satnav broadcast parameters required to calculate sv clock corrections" "\n"
+        "Description: Clock reference time." "\n"
+        "Units: s")
+      double t_oc;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite clock bias." "\n"
+        "Units: s")
+      double af_0;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite clock drift." "\n"
+        "Units: s/s")
+      double af_1;
+
+      @verbatim (language="comment", text=
+        "Description: Satellite clock drift rate." "\n"
+        "Units: s/s^2")
+      double af_2;
+    };
+  };
+};

@@ -1,0 +1,493 @@
+# generated from rosidl_generator_py/resource/_idl.py.em
+# with input from aspn23_ros_interfaces:msg/MetadataGpsIonoUtcParameters.idl
+# generated code does not contain a copyright notice
+
+
+# Import statements for member types
+
+import builtins  # noqa: E402, I100
+
+import math  # noqa: E402, I100
+
+import rosidl_parser.definition  # noqa: E402, I100
+
+
+class Metaclass_MetadataGpsIonoUtcParameters(type):
+    """Metaclass of message 'MetadataGpsIonoUtcParameters'."""
+
+    _CREATE_ROS_MESSAGE = None
+    _CONVERT_FROM_PY = None
+    _CONVERT_TO_PY = None
+    _DESTROY_ROS_MESSAGE = None
+    _TYPE_SUPPORT = None
+
+    __constants = {
+    }
+
+    @classmethod
+    def __import_type_support__(cls):
+        try:
+            from rosidl_generator_py import import_type_support
+            module = import_type_support('aspn23_ros_interfaces')
+        except ImportError:
+            import logging
+            import traceback
+            logger = logging.getLogger(
+                'aspn23_ros_interfaces.msg.MetadataGpsIonoUtcParameters')
+            logger.debug(
+                'Failed to import needed modules for type support:\n' +
+                traceback.format_exc())
+        else:
+            cls._CREATE_ROS_MESSAGE = module.create_ros_message_msg__msg__metadata_gps_iono_utc_parameters
+            cls._CONVERT_FROM_PY = module.convert_from_py_msg__msg__metadata_gps_iono_utc_parameters
+            cls._CONVERT_TO_PY = module.convert_to_py_msg__msg__metadata_gps_iono_utc_parameters
+            cls._TYPE_SUPPORT = module.type_support_msg__msg__metadata_gps_iono_utc_parameters
+            cls._DESTROY_ROS_MESSAGE = module.destroy_ros_message_msg__msg__metadata_gps_iono_utc_parameters
+
+            from aspn23_ros_interfaces.msg import TypeMetadataheader
+            if TypeMetadataheader.__class__._TYPE_SUPPORT is None:
+                TypeMetadataheader.__class__.__import_type_support__()
+
+            from aspn23_ros_interfaces.msg import TypeTimestamp
+            if TypeTimestamp.__class__._TYPE_SUPPORT is None:
+                TypeTimestamp.__class__.__import_type_support__()
+
+    @classmethod
+    def __prepare__(cls, name, bases, **kwargs):
+        # list constant names here so that they appear in the help text of
+        # the message class under "Data and other attributes defined here:"
+        # as well as populate each message instance
+        return {
+        }
+
+
+class MetadataGpsIonoUtcParameters(metaclass=Metaclass_MetadataGpsIonoUtcParameters):
+    """Message class 'MetadataGpsIonoUtcParameters'."""
+
+    __slots__ = [
+        '_info',
+        '_time_of_validity',
+        '_a_0',
+        '_a_1',
+        '_delta_t_ls',
+        '_tot',
+        '_wn_t',
+        '_wn_lsf',
+        '_dn',
+        '_delta_t_lsf',
+        '_alpha_0',
+        '_alpha_1',
+        '_alpha_2',
+        '_alpha_3',
+        '_beta_0',
+        '_beta_1',
+        '_beta_2',
+        '_beta_3',
+    ]
+
+    _fields_and_field_types = {
+        'info': 'aspn23_ros_interfaces/TypeMetadataheader',
+        'time_of_validity': 'aspn23_ros_interfaces/TypeTimestamp',
+        'a_0': 'double',
+        'a_1': 'double',
+        'delta_t_ls': 'int8',
+        'tot': 'uint32',
+        'wn_t': 'uint8',
+        'wn_lsf': 'uint8',
+        'dn': 'uint8',
+        'delta_t_lsf': 'int8',
+        'alpha_0': 'double',
+        'alpha_1': 'double',
+        'alpha_2': 'double',
+        'alpha_3': 'double',
+        'beta_0': 'double',
+        'beta_1': 'double',
+        'beta_2': 'double',
+        'beta_3': 'double',
+    }
+
+    SLOT_TYPES = (
+        rosidl_parser.definition.NamespacedType(['aspn23_ros_interfaces', 'msg'], 'TypeMetadataheader'),  # noqa: E501
+        rosidl_parser.definition.NamespacedType(['aspn23_ros_interfaces', 'msg'], 'TypeTimestamp'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+    )
+
+    def __init__(self, **kwargs):
+        assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
+            'Invalid arguments passed to constructor: %s' % \
+            ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
+        from aspn23_ros_interfaces.msg import TypeMetadataheader
+        self.info = kwargs.get('info', TypeMetadataheader())
+        from aspn23_ros_interfaces.msg import TypeTimestamp
+        self.time_of_validity = kwargs.get('time_of_validity', TypeTimestamp())
+        self.a_0 = kwargs.get('a_0', float())
+        self.a_1 = kwargs.get('a_1', float())
+        self.delta_t_ls = kwargs.get('delta_t_ls', int())
+        self.tot = kwargs.get('tot', int())
+        self.wn_t = kwargs.get('wn_t', int())
+        self.wn_lsf = kwargs.get('wn_lsf', int())
+        self.dn = kwargs.get('dn', int())
+        self.delta_t_lsf = kwargs.get('delta_t_lsf', int())
+        self.alpha_0 = kwargs.get('alpha_0', float())
+        self.alpha_1 = kwargs.get('alpha_1', float())
+        self.alpha_2 = kwargs.get('alpha_2', float())
+        self.alpha_3 = kwargs.get('alpha_3', float())
+        self.beta_0 = kwargs.get('beta_0', float())
+        self.beta_1 = kwargs.get('beta_1', float())
+        self.beta_2 = kwargs.get('beta_2', float())
+        self.beta_3 = kwargs.get('beta_3', float())
+
+    def __repr__(self):
+        typename = self.__class__.__module__.split('.')
+        typename.pop()
+        typename.append(self.__class__.__name__)
+        args = []
+        for s, t in zip(self.__slots__, self.SLOT_TYPES):
+            field = getattr(self, s)
+            fieldstr = repr(field)
+            # We use Python array type for fields that can be directly stored
+            # in them, and "normal" sequences for everything else.  If it is
+            # a type that we store in an array, strip off the 'array' portion.
+            if (
+                isinstance(t, rosidl_parser.definition.AbstractSequence) and
+                isinstance(t.value_type, rosidl_parser.definition.BasicType) and
+                t.value_type.typename in ['float', 'double', 'int8', 'uint8', 'int16', 'uint16', 'int32', 'uint32', 'int64', 'uint64']
+            ):
+                if len(field) == 0:
+                    fieldstr = '[]'
+                else:
+                    assert fieldstr.startswith('array(')
+                    prefix = "array('X', "
+                    suffix = ')'
+                    fieldstr = fieldstr[len(prefix):-len(suffix)]
+            args.append(s[1:] + '=' + fieldstr)
+        return '%s(%s)' % ('.'.join(typename), ', '.join(args))
+
+    def __eq__(self, other):
+        if not isinstance(other, self.__class__):
+            return False
+        if self.info != other.info:
+            return False
+        if self.time_of_validity != other.time_of_validity:
+            return False
+        if self.a_0 != other.a_0:
+            return False
+        if self.a_1 != other.a_1:
+            return False
+        if self.delta_t_ls != other.delta_t_ls:
+            return False
+        if self.tot != other.tot:
+            return False
+        if self.wn_t != other.wn_t:
+            return False
+        if self.wn_lsf != other.wn_lsf:
+            return False
+        if self.dn != other.dn:
+            return False
+        if self.delta_t_lsf != other.delta_t_lsf:
+            return False
+        if self.alpha_0 != other.alpha_0:
+            return False
+        if self.alpha_1 != other.alpha_1:
+            return False
+        if self.alpha_2 != other.alpha_2:
+            return False
+        if self.alpha_3 != other.alpha_3:
+            return False
+        if self.beta_0 != other.beta_0:
+            return False
+        if self.beta_1 != other.beta_1:
+            return False
+        if self.beta_2 != other.beta_2:
+            return False
+        if self.beta_3 != other.beta_3:
+            return False
+        return True
+
+    @classmethod
+    def get_fields_and_field_types(cls):
+        from copy import copy
+        return copy(cls._fields_and_field_types)
+
+    @builtins.property
+    def info(self):
+        """Message field 'info'."""
+        return self._info
+
+    @info.setter
+    def info(self, value):
+        if __debug__:
+            from aspn23_ros_interfaces.msg import TypeMetadataheader
+            assert \
+                isinstance(value, TypeMetadataheader), \
+                "The 'info' field must be a sub message of type 'TypeMetadataheader'"
+        self._info = value
+
+    @builtins.property
+    def time_of_validity(self):
+        """Message field 'time_of_validity'."""
+        return self._time_of_validity
+
+    @time_of_validity.setter
+    def time_of_validity(self, value):
+        if __debug__:
+            from aspn23_ros_interfaces.msg import TypeTimestamp
+            assert \
+                isinstance(value, TypeTimestamp), \
+                "The 'time_of_validity' field must be a sub message of type 'TypeTimestamp'"
+        self._time_of_validity = value
+
+    @builtins.property
+    def a_0(self):
+        """Message field 'a_0'."""
+        return self._a_0
+
+    @a_0.setter
+    def a_0(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'a_0' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'a_0' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._a_0 = value
+
+    @builtins.property
+    def a_1(self):
+        """Message field 'a_1'."""
+        return self._a_1
+
+    @a_1.setter
+    def a_1(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'a_1' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'a_1' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._a_1 = value
+
+    @builtins.property
+    def delta_t_ls(self):
+        """Message field 'delta_t_ls'."""
+        return self._delta_t_ls
+
+    @delta_t_ls.setter
+    def delta_t_ls(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'delta_t_ls' field must be of type 'int'"
+            assert value >= -128 and value < 128, \
+                "The 'delta_t_ls' field must be an integer in [-128, 127]"
+        self._delta_t_ls = value
+
+    @builtins.property
+    def tot(self):
+        """Message field 'tot'."""
+        return self._tot
+
+    @tot.setter
+    def tot(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'tot' field must be of type 'int'"
+            assert value >= 0 and value < 4294967296, \
+                "The 'tot' field must be an unsigned integer in [0, 4294967295]"
+        self._tot = value
+
+    @builtins.property
+    def wn_t(self):
+        """Message field 'wn_t'."""
+        return self._wn_t
+
+    @wn_t.setter
+    def wn_t(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'wn_t' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'wn_t' field must be an unsigned integer in [0, 255]"
+        self._wn_t = value
+
+    @builtins.property
+    def wn_lsf(self):
+        """Message field 'wn_lsf'."""
+        return self._wn_lsf
+
+    @wn_lsf.setter
+    def wn_lsf(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'wn_lsf' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'wn_lsf' field must be an unsigned integer in [0, 255]"
+        self._wn_lsf = value
+
+    @builtins.property
+    def dn(self):
+        """Message field 'dn'."""
+        return self._dn
+
+    @dn.setter
+    def dn(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'dn' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'dn' field must be an unsigned integer in [0, 255]"
+        self._dn = value
+
+    @builtins.property
+    def delta_t_lsf(self):
+        """Message field 'delta_t_lsf'."""
+        return self._delta_t_lsf
+
+    @delta_t_lsf.setter
+    def delta_t_lsf(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'delta_t_lsf' field must be of type 'int'"
+            assert value >= -128 and value < 128, \
+                "The 'delta_t_lsf' field must be an integer in [-128, 127]"
+        self._delta_t_lsf = value
+
+    @builtins.property
+    def alpha_0(self):
+        """Message field 'alpha_0'."""
+        return self._alpha_0
+
+    @alpha_0.setter
+    def alpha_0(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'alpha_0' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'alpha_0' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._alpha_0 = value
+
+    @builtins.property
+    def alpha_1(self):
+        """Message field 'alpha_1'."""
+        return self._alpha_1
+
+    @alpha_1.setter
+    def alpha_1(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'alpha_1' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'alpha_1' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._alpha_1 = value
+
+    @builtins.property
+    def alpha_2(self):
+        """Message field 'alpha_2'."""
+        return self._alpha_2
+
+    @alpha_2.setter
+    def alpha_2(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'alpha_2' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'alpha_2' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._alpha_2 = value
+
+    @builtins.property
+    def alpha_3(self):
+        """Message field 'alpha_3'."""
+        return self._alpha_3
+
+    @alpha_3.setter
+    def alpha_3(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'alpha_3' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'alpha_3' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._alpha_3 = value
+
+    @builtins.property
+    def beta_0(self):
+        """Message field 'beta_0'."""
+        return self._beta_0
+
+    @beta_0.setter
+    def beta_0(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'beta_0' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'beta_0' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._beta_0 = value
+
+    @builtins.property
+    def beta_1(self):
+        """Message field 'beta_1'."""
+        return self._beta_1
+
+    @beta_1.setter
+    def beta_1(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'beta_1' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'beta_1' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._beta_1 = value
+
+    @builtins.property
+    def beta_2(self):
+        """Message field 'beta_2'."""
+        return self._beta_2
+
+    @beta_2.setter
+    def beta_2(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'beta_2' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'beta_2' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._beta_2 = value
+
+    @builtins.property
+    def beta_3(self):
+        """Message field 'beta_3'."""
+        return self._beta_3
+
+    @beta_3.setter
+    def beta_3(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'beta_3' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'beta_3' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._beta_3 = value

@@ -1,0 +1,185 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "aspn23_ros_interfaces/msg/TypeSatnavSvData",
+      "fields": [
+        {
+          "name": "prn",
+          "type": {
+            "type_id": 4,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "satellite_system",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "aspn23_ros_interfaces/msg/TypeSatnavSatelliteSystem"
+          },
+          "default_value": ""
+        },
+        {
+          "name": "ephemeris_type",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "sv_data_time",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "aspn23_ros_interfaces/msg/TypeSatnavTime"
+          },
+          "default_value": ""
+        },
+        {
+          "name": "coordinate_frame",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "sv_pos",
+          "type": {
+            "type_id": 59,
+            "capacity": 3,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "sv_vel",
+          "type": {
+            "type_id": 59,
+            "capacity": 3,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "sv_clock_bias",
+          "type": {
+            "type_id": 11,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "sv_clock_drift",
+          "type": {
+            "type_id": 11,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "group_delay_enum",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "group_delay_vector",
+          "type": {
+            "type_id": 58,
+            "capacity": 4,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": [
+      {
+        "type_name": "aspn23_ros_interfaces/msg/TypeSatnavSatelliteSystem",
+        "fields": [
+          {
+            "name": "satellite_system",
+            "type": {
+              "type_id": 3,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "aspn23_ros_interfaces/msg/TypeSatnavTime",
+        "fields": [
+          {
+            "name": "week_number",
+            "type": {
+              "type_id": 5,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "seconds_of_week",
+            "type": {
+              "type_id": 11,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "time_reference",
+            "type": {
+              "type_id": 3,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      }
+    ]
+  },
+  "type_hashes": [
+    {
+      "type_name": "aspn23_ros_interfaces/msg/TypeSatnavSvData",
+      "hash_string": "RIHS01_d8714b6222373349be0a2792b81758bc8296f9a1cb12a4b10e83b7a7828c710c"
+    },
+    {
+      "type_name": "aspn23_ros_interfaces/msg/TypeSatnavSatelliteSystem",
+      "hash_string": "RIHS01_fb18f1c521c7d6915157150c225863f531551ef63ac0757aebbd05fc4abcff3a"
+    },
+    {
+      "type_name": "aspn23_ros_interfaces/msg/TypeSatnavTime",
+      "hash_string": "RIHS01_4f03eb4cf994f69b7a62af471e7483f1565a938ae924f92c9ab1126ca74cc687"
+    }
+  ]
+}

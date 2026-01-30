@@ -1,0 +1,91 @@
+
+# This code is generated via firehose.
+# DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+# Delta position is the change in position from the position at time (time_of_validity - delta_t) to
+# the position at time (time_of_validity), where the change in position is reported along each axis of
+# the reference frame. The reference frame is chosen by the user in the reference enum.
+
+# Description: Standard ASPN measurement header.
+# Units: none
+TypeHeader header
+
+# Description: Time at which the measurement is considered to be valid at the end of the
+# delta-position period.
+# Units: none
+TypeTimestamp time_of_validity
+
+# Specifies measurement reference frame.
+uint8 reference_frame
+
+# Change in position along the N, E, and D axes of the locally level NED frame. Each direction is
+# optional. term1, term2, and term3, if provided, describe the change in position along the N, E, and
+# D axes, respectively. For example, a depth sensor may report a change in position of +2m along the D
+# axis by omitting term1 and term2 (using the appropriate null) and using term3 = 2. This observation
+# may be interpreted as (1) the sensor has no knowledge of the change in position in the N and E
+# directions, and (2) the sensor observed that the position at the end of the observation time
+# interval, time_of_validity, is 2 meters lower than the position at the start of the time interval,
+# time_of_validity - delta_t. See also NED coordinate frame definition for N, E, and D definitions.
+uint8 ASPN23_MEASUREMENT_DELTA_POSITION_REFERENCE_FRAME_NED=0
+
+# Change in position expressed in the sensor frame at the start of the measurement interval as defined
+# in mounting. Each direction is optional. term1, term2, and term3, if provided, describe the change
+# in position along the sensor x, y, and z axes, respectively.
+uint8 ASPN23_MEASUREMENT_DELTA_POSITION_REFERENCE_FRAME_SENSOR_START=1
+
+# Change in position expressed in the sensor frame at the end of the measurement interval as defined
+# in mounting. Each direction is optional. term1, term2, and term3, if provided, describe the change
+# in position along the sensor x, y, and z axes, respectively.
+uint8 ASPN23_MEASUREMENT_DELTA_POSITION_REFERENCE_FRAME_SENSOR_END=2
+
+# Description: Duration of the observation time interval. The time_of_validity denotes the end of the
+# time interval. The start of the time interval is time_of_validity - delta_t.
+# Units: sec
+float64 delta_t
+
+# Description: Dimension of measurement provided.
+# Units: none
+uint8 num_meas
+
+# Description: Delta position over the first dimension specified by the enum.
+# Units: m
+float64 term1
+
+# Description: Delta position over the second dimension specified by the enum.
+# Units: m
+float64 term2
+
+# Description: Delta position over the third dimension specified by the enum.
+# Units: m
+float64 term3
+
+# Description: Variance or covariance matrix depending on measurement dimension.
+# Units: m^2 Dimensions of covariance must be num_meas²
+# Note: field represents a num_meas x num_meas matrix
+float64[] covariance
+
+# Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
+uint8 error_model
+
+# No additional error model provided (num_error_model_params = 0).
+uint8 ASPN23_MEASUREMENT_DELTA_POSITION_ERROR_MODEL_NONE=0
+
+# Description: Number of parameters required for the error model chosen.
+# Units: none
+uint16 num_error_model_params
+
+# Description: Error model parameters that characterize the optional error model.
+# Units: various
+# Note: array length is num_error_model_params
+float64[] error_model_params
+
+# Description: Number of integrity values.
+# Units: none
+uint8 num_integrity
+
+# Description: Measurement integrity. Includes the integrity method used and an integrity value (which
+# is to be interpreted based upon the integrity method). The intent of allowing num_integrity > 1 is
+# to report multiple integrity values based on multiple integrity methods.
+# Units: none
+# Note: array length is num_integrity
+TypeIntegrity[] integrity

@@ -1,0 +1,274 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "aspn23_ros_interfaces/msg/TypeSatnavObs",
+      "fields": [
+        {
+          "name": "satellite_system",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "aspn23_ros_interfaces/msg/TypeSatnavSatelliteSystem"
+          },
+          "default_value": ""
+        },
+        {
+          "name": "signal_descriptor",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "aspn23_ros_interfaces/msg/TypeSatnavSignalDescriptor"
+          },
+          "default_value": ""
+        },
+        {
+          "name": "prn",
+          "type": {
+            "type_id": 4,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "frequency",
+          "type": {
+            "type_id": 11,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "pseudorange",
+          "type": {
+            "type_id": 11,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "pseudorange_variance",
+          "type": {
+            "type_id": 10,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "pseudorange_rate_type",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "pseudorange_rate",
+          "type": {
+            "type_id": 11,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "pseudorange_rate_variance",
+          "type": {
+            "type_id": 10,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "carrier_phase",
+          "type": {
+            "type_id": 11,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "carrier_phase_variance",
+          "type": {
+            "type_id": 10,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "c_n0",
+          "type": {
+            "type_id": 10,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "lock_count",
+          "type": {
+            "type_id": 6,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "iono_correction_source",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "iono_correction_applied",
+          "type": {
+            "type_id": 15,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "tropo_correction_applied",
+          "type": {
+            "type_id": 15,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "signal_bias_correction_applied",
+          "type": {
+            "type_id": 15,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "num_integrity",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "integrity",
+          "type": {
+            "type_id": 145,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "aspn23_ros_interfaces/msg/TypeIntegrity"
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": [
+      {
+        "type_name": "aspn23_ros_interfaces/msg/TypeIntegrity",
+        "fields": [
+          {
+            "name": "integrity_method",
+            "type": {
+              "type_id": 3,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "integrity_value",
+            "type": {
+              "type_id": 11,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "aspn23_ros_interfaces/msg/TypeSatnavSatelliteSystem",
+        "fields": [
+          {
+            "name": "satellite_system",
+            "type": {
+              "type_id": 3,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "aspn23_ros_interfaces/msg/TypeSatnavSignalDescriptor",
+        "fields": [
+          {
+            "name": "signal_descriptor",
+            "type": {
+              "type_id": 3,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      }
+    ]
+  },
+  "type_hashes": [
+    {
+      "type_name": "aspn23_ros_interfaces/msg/TypeSatnavObs",
+      "hash_string": "RIHS01_11ee77dc848f9234c73d2a649e4345c9bc7e651478b5bf5e458b8f16aa7e6850"
+    },
+    {
+      "type_name": "aspn23_ros_interfaces/msg/TypeIntegrity",
+      "hash_string": "RIHS01_b677121dee5ba0c1a896d099ad0e846b5232694b6dab9d31cadba60de15d6617"
+    },
+    {
+      "type_name": "aspn23_ros_interfaces/msg/TypeSatnavSatelliteSystem",
+      "hash_string": "RIHS01_fb18f1c521c7d6915157150c225863f531551ef63ac0757aebbd05fc4abcff3a"
+    },
+    {
+      "type_name": "aspn23_ros_interfaces/msg/TypeSatnavSignalDescriptor",
+      "hash_string": "RIHS01_d0d1ea958dde827a7034d2cfb2af1d0562f2201dae0d5844568093a4a7f8e4c0"
+    }
+  ]
+}

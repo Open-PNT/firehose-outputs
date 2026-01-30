@@ -1,0 +1,70 @@
+
+# This code is generated via firehose.
+# DO NOT hand edit code.  Make any changes required using the firehose repo instead
+
+# Two-dimensional, local level, geographic attitude expressed in the locally level NED frame as a
+# rotation about two axes as defined by the reference_frame.
+
+# Description: Standard ASPN measurement header.
+# Units: none
+TypeHeader header
+
+# Description: Time at which the measurement is considered to be valid .
+# Units: none
+TypeTimestamp time_of_validity
+
+# Defines measurement reference.
+uint8 reference_frame
+
+# Local level, geographic attitude expressed in the locally level NED frame as a rotation about the
+# E-axis followed by rotation about the N-axis. Positive rotation follows the right-hand rule. The
+# third rotation in the NED-frame is unspecified and is not sensed. Use attitude_3d to report a sensed
+# third dimension that is zero. See also NED coordinate frame definition for N, E, and D definitions.
+uint8 ASPN23_MEASUREMENT_ATTITUDE_2D_REFERENCE_FRAME_NE=0
+
+# Local level, geographic attitude expressed in the locally level NED frame as a rotation about the
+# D-axis followed by rotation about the N-axis. Positive rotation follows the right-hand rule. The
+# third rotation in the NED-frame is unspecified and is not sensed. Use attitude_3d to report a sensed
+# third dimension that is zero. See also NED coordinate frame definition for N, E, and D definitions.
+uint8 ASPN23_MEASUREMENT_ATTITUDE_2D_REFERENCE_FRAME_ND=1
+
+# Local level, geographic attitude expressed in the locally level NED frame as a rotation about the
+# D-axis followed by rotation about the E-axis. Positive rotation follows the right-hand rule. The
+# third rotation in the NED-frame is unspecified and is not sensed. Use attitude_3d to report a sensed
+# third dimension that is zero. See also NED coordinate frame definition for N, E, and D definitions.
+uint8 ASPN23_MEASUREMENT_ATTITUDE_2D_REFERENCE_FRAME_ED=2
+
+# Description: Two-dimensional, local level, geographic attitude.
+# Units: rad
+float64[2] attitude2d
+
+# Description: Covariance of the measurement.
+# Units: rad^2
+# Note: field represents a 2 x 2 matrix
+float64[4] covariance
+
+# Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
+uint8 error_model
+
+# No additional error model provided (num_error_model_params = 0).
+uint8 ASPN23_MEASUREMENT_ATTITUDE_2D_ERROR_MODEL_NONE=0
+
+# Description: Number of parameters required for the error model chosen.
+# Units: none
+uint16 num_error_model_params
+
+# Description: Error model parameters that characterize the optional error model.
+# Units: various
+# Note: array length is num_error_model_params
+float64[] error_model_params
+
+# Description: Number of integrity values.
+# Units: none
+uint8 num_integrity
+
+# Description: Measurement integrity. Includes the integrity method used and an integrity value (which
+# is to be interpreted based upon the integrity method). The intent of allowing num_integrity > 1 is
+# to report multiple integrity values based on multiple integrity methods.
+# Units: none
+# Note: array length is num_integrity
+TypeIntegrity[] integrity

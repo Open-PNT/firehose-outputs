@@ -1,0 +1,95 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/MeasurementPosition.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeHeader.idl"
+#include "aspn23_ros_interfaces/msg/TypeIntegrity.idl"
+#include "aspn23_ros_interfaces/msg/TypeTimestamp.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    module MeasurementPosition_Constants {
+      @verbatim (language="comment", text=
+        "Sensor position relative to the earth-centered, inertial (ECi) frame expressed where term1, term2," "\n"        "and term3 are the x, y, and z components of ECI position in meters, respectively. Each term is" "\n"        "optional. Error covariance is given using x-axis position error component (meters), y-axis position" "\n"        "error component (meters), and z-axis position error component (meters). In the case of nulled" "\n"        "position components, the corresponding error covariance terms are omitted. See also ECi coordinate" "\n"        "frame definition for x, y, and z definitions.")
+      const uint8 ASPN23_MEASUREMENT_POSITION_REFERENCE_FRAME_ECI = 0;
+      @verbatim (language="comment", text=
+        "Sensor position relative to the WGS-84 reference expressed using term1 as geodetic latitude in" "\n"        "radians, term2 as longitude in radians, and term3 as geodetic altitude (or height above the WGS-84" "\n"        "ellipsoid) in meters. Each term is optional. Error covariance is given using north-south position" "\n"        "error in meters (an expression of geodetic latitude error), east-west position error in meters (an" "\n"        "expression of longitude error in meters), and geodetic altitude error in meters. In the case of" "\n"        "nulled position components, the corresponding error covariance terms are omitted.")
+      const uint8 ASPN23_MEASUREMENT_POSITION_REFERENCE_FRAME_GEODETIC = 1;
+      @verbatim (language="comment", text=
+        "No additional error model provided (num_error_model_params = 0).")
+      const uint8 ASPN23_MEASUREMENT_POSITION_ERROR_MODEL_NONE = 0;
+    };
+    struct MeasurementPosition {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "One, two, or three dimensional position relative to a user-defined reference frame." "\n"
+        "Description: Standard ASPN measurement header." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeHeader header;
+
+      @verbatim (language="comment", text=
+        "Description: Time at which the measurement is considered to be valid." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeTimestamp time_of_validity;
+
+      @verbatim (language="comment", text=
+        "Defines measurement reference.")
+      uint8 reference_frame;
+
+      @verbatim (language="comment", text=
+        "Description: First position term as defined in enum." "\n"
+        "Units: various")
+      double term1;
+
+      @verbatim (language="comment", text=
+        "Description: Second position term as defined in enum." "\n"
+        "Units: various")
+      double term2;
+
+      @verbatim (language="comment", text=
+        "Description: Third position term as defined in enum." "\n"
+        "Units: various")
+      double term3;
+
+      @verbatim (language="comment", text=
+        "Description: Dimension of measurement provided." "\n"
+        "Units: none")
+      uint8 num_meas;
+
+      @verbatim (language="comment", text=
+        "Description: Error covariance or variance depending on observation dimension." "\n"
+        "Units: various Dimensions of covariance must be num_meas²" "\n"
+        "Note: field represents a num_meas x num_meas matrix")
+      sequence<double> covariance;
+
+      @verbatim (language="comment", text=
+        "Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).")
+      uint8 error_model;
+
+      @verbatim (language="comment", text=
+        "Description: Number of parameters required for the error model chosen." "\n"
+        "Units: none")
+      uint16 num_error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Error model parameters that characterize the optional error model." "\n"
+        "Units: various" "\n"
+        "Note: array length is num_error_model_params")
+      sequence<double> error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Number of integrity values." "\n"
+        "Units: none")
+      uint8 num_integrity;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement integrity. Includes the integrity method used and an integrity value (which" "\n"
+        "is to be interpreted based upon the integrity method). The intent of allowing num_integrity > 1 is" "\n"
+        "to report multiple integrity values based on multiple integrity methods." "\n"
+        "Units: none" "\n"
+        "Note: array length is num_integrity")
+      sequence<aspn23_ros_interfaces::msg::TypeIntegrity> integrity;
+    };
+  };
+};

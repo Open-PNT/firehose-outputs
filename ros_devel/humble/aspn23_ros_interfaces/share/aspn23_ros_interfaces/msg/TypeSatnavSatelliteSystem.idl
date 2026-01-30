@@ -1,0 +1,40 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/TypeSatnavSatelliteSystem.msg
+// generated code does not contain a copyright notice
+
+
+module aspn23_ros_interfaces {
+  module msg {
+    module TypeSatnavSatelliteSystem_Constants {
+      @verbatim (language="comment", text=
+        "GPS.")
+      const uint8 ASPN23_TYPE_SATNAV_SATELLITE_SYSTEM_SATELLITE_SYSTEM_SYS_GPS = 0;
+      @verbatim (language="comment", text=
+        "Galileo.")
+      const uint8 ASPN23_TYPE_SATNAV_SATELLITE_SYSTEM_SATELLITE_SYSTEM_SYS_GALILEO = 1;
+      @verbatim (language="comment", text=
+        "GLONASS.")
+      const uint8 ASPN23_TYPE_SATNAV_SATELLITE_SYSTEM_SATELLITE_SYSTEM_SYS_GLONASS = 2;
+      @verbatim (language="comment", text=
+        "BeiDou.")
+      const uint8 ASPN23_TYPE_SATNAV_SATELLITE_SYSTEM_SATELLITE_SYSTEM_SYS_BEIDOU = 3;
+      @verbatim (language="comment", text=
+        "SBAS.")
+      const uint8 ASPN23_TYPE_SATNAV_SATELLITE_SYSTEM_SATELLITE_SYSTEM_SYS_SBAS = 4;
+      @verbatim (language="comment", text=
+        "QZSS.")
+      const uint8 ASPN23_TYPE_SATNAV_SATELLITE_SYSTEM_SATELLITE_SYSTEM_SYS_QZSS = 5;
+      @verbatim (language="comment", text=
+        "IRNSS.")
+      const uint8 ASPN23_TYPE_SATNAV_SATELLITE_SYSTEM_SATELLITE_SYSTEM_SYS_IRNSS = 6;
+    };
+    struct TypeSatnavSatelliteSystem {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Satellite system name" "\n"
+        "Enumerated field which describes the Satellite System.")
+      uint8 satellite_system;
+    };
+  };
+};

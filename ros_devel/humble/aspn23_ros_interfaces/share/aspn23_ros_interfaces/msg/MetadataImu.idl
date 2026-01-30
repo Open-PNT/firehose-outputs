@@ -1,0 +1,52 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/MetadataImu.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeMetadataheader.idl"
+#include "aspn23_ros_interfaces/msg/TypeMounting.idl"
+#include "aspn23_ros_interfaces/msg/TypeTimestamp.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    module MetadataImu_Constants {
+      @verbatim (language="comment", text=
+        "All axes are identical and uncorrelated with each other axis (num_error_model_params = 14)." "\n"        "1) accel_bias_sigma, units: m/s/s, description: Standard deviation of constant bias for" "\n"        "accelerometer measurements." "\n"        "2) accel_bias_mean, units: m/s/s, description: Mean of constant bias for accelerometer" "\n"        "measurements." "\n"        "3) accel_time_correlated_bias_sigma, units: m/s/s, description: Standard deviation of" "\n"        "zero-mean time-correlated bias for accelerometer measurement." "\n"        "4) accel_time_correlated_bias_time_constant, units: s, description: Time constant of" "\n"        "zero-mean time-correlated bias for accelerometer measurement." "\n"        "5) accel_scale_factor_mean, units: ppm, description: Mean of accelerometer scale factor" "\n"        "modeled as a constant with Gaussian uncertainty." "\n"        "6) accel_scale_factor_sigma, units: ppm, description: Standard deviation of accelerometer" "\n"        "scale factor modeled as a constant with Gaussian uncertainty." "\n"        "7) velocity_random_walk, units: m/s/sqrt(s), description: Velocity random walk due to" "\n"        "acceleration." "\n"        "8) gyro_bias_sigma, units: rad/s, description: Standard deviation of constant bias for gyro" "\n"        "measurements." "\n"        "9) gyro_bias_mean, units: rad/s, description: Mean of constant bias for gyro measurements." "\n"        "10) gyro_time_correlated_bias_sigma, units: rad/s, description: Standard deviation of" "\n"        "zero-mean time-correlated bias for gyro measurements." "\n"        "11) gyro_time_correlated_bias_time_constant, units: s, description: Time constant of" "\n"        "zero-mean time-correlated bias for gyro measurements." "\n"        "12) gyro_scale_factor_mean, units: ppm, description: Mean of gyro scale factor modeled as a" "\n"        "constant with Gaussian uncertainty." "\n"        "13) gyro_scale_factor_sigma, units: ppm, description: Standard deviation of gyro scale" "\n"        "factor modeled as a constant with Gaussian uncertainty." "\n"        "14) angular_random_walk, units: rad/sqrt(s), description: Angular random walk due to gyros.")
+      const uint8 ASPN23_METADATA_IMU_ERROR_MODEL_BASIC = 0;
+    };
+    struct MetadataImu {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Metadata for inertial measurement unit." "\n"
+        "Description: Standard ASPN metadata header." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeMetadataheader info;
+
+      @verbatim (language="comment", text=
+        "Description: Time at which the measurement is considered to be valid." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeTimestamp time_of_validity;
+
+      @verbatim (language="comment", text=
+        "Description: Standard ASPN mounting information." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeMounting mounting;
+
+      @verbatim (language="comment", text=
+        "Allows the user to select an appropriate error model. Parameters are defined here. The number of" "\n"
+        "parameters and the values for those parameters are included in subsequent fields.")
+      uint8 error_model;
+
+      @verbatim (language="comment", text=
+        "Description: Number of parameters required for the error model chosen." "\n"
+        "Units: none")
+      uint16 num_error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Error model parameters that characterize the optional error model." "\n"
+        "Units: various" "\n"
+        "Note: array length is num_error_model_params")
+      sequence<double> error_model_params;
+    };
+  };
+};

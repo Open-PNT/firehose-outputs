@@ -1,0 +1,78 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aspn23_ros_interfaces/msg/MeasurementAccumulatedDistanceTraveled.msg
+// generated code does not contain a copyright notice
+
+#include "aspn23_ros_interfaces/msg/TypeHeader.idl"
+#include "aspn23_ros_interfaces/msg/TypeIntegrity.idl"
+#include "aspn23_ros_interfaces/msg/TypeTimestamp.idl"
+
+module aspn23_ros_interfaces {
+  module msg {
+    module MeasurementAccumulatedDistanceTraveled_Constants {
+      @verbatim (language="comment", text=
+        "No additional error model provided (num_error_model_params = 0).")
+      const uint8 ASPN23_MEASUREMENT_ACCUMULATED_DISTANCE_TRAVELED_ERROR_MODEL_NONE = 0;
+    };
+    struct MeasurementAccumulatedDistanceTraveled {
+      @verbatim (language="comment", text=
+        "This code is generated via firehose." "\n"
+        "DO NOT hand edit code.  Make any changes required using the firehose repo instead" "\n"
+        "Accumulated distance traveled over the time period from (time_of_validity - delta_t) to" "\n"
+        "time_of_validity. For example, a sensor that travels (over the observation time period) in one" "\n"
+        "direction 1m and reverses course to travel 1m back (and ends at its starting position) would have an" "\n"
+        "accumulated distance traveled of 2m. Sensor examples may include an odometer or a wheel encoder." "\n"
+        "Description: Standard ASPN measurement header." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeHeader header;
+
+      @verbatim (language="comment", text=
+        "Description: Time at which the measurement is considered to be valid." "\n"
+        "Units: none")
+      aspn23_ros_interfaces::msg::TypeTimestamp time_of_validity;
+
+      @verbatim (language="comment", text=
+        "Description: Duration of the observation time interval. The time_of_validity denotes the end of the" "\n"
+        "time interval. The start of the time interval is time_of_validity - delta_t." "\n"
+        "Units: sec")
+      double delta_t;
+
+      @verbatim (language="comment", text=
+        "Description: Accumulated distance traveled over time period." "\n"
+        "Units: m")
+      double obs;
+
+      @verbatim (language="comment", text=
+        "Description: Accumulated distance traveled variance." "\n"
+        "Units: m^2")
+      double variance;
+
+      @verbatim (language="comment", text=
+        "Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).")
+      uint8 error_model;
+
+      @verbatim (language="comment", text=
+        "Description: Number of parameters required for the error model chosen." "\n"
+        "Units: none")
+      uint16 num_error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Error model parameters that characterize the optional error model." "\n"
+        "Units: various" "\n"
+        "Note: array length is num_error_model_params")
+      sequence<double> error_model_params;
+
+      @verbatim (language="comment", text=
+        "Description: Number of integrity values." "\n"
+        "Units: none")
+      uint8 num_integrity;
+
+      @verbatim (language="comment", text=
+        "Description: Measurement integrity. Includes the integrity method used and an integrity value (which" "\n"
+        "is to be interpreted based upon the integrity method). The intent of allowing num_integrity > 1 is" "\n"
+        "to report multiple integrity values based on multiple integrity methods." "\n"
+        "Units: none" "\n"
+        "Note: array length is num_integrity")
+      sequence<aspn23_ros_interfaces::msg::TypeIntegrity> integrity;
+    };
+  };
+};
