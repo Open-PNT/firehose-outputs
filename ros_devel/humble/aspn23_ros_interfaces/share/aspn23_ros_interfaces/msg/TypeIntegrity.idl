@@ -5,6 +5,11 @@
 
 module aspn23_ros_interfaces {
   module msg {
+    module TypeIntegrity_Constants {
+      @verbatim (language="comment", text=
+        "Reserved for future use.")
+      const uint8 ASPN23_TYPE_INTEGRITY_INTEGRITY_METHOD_RESERVED = 17;
+    };
     struct TypeIntegrity {
       @verbatim (language="comment", text=
         "This code is generated via firehose." "\n"

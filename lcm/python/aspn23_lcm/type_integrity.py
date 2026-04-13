@@ -20,9 +20,12 @@ class type_integrity(object):
 
     __slots__ = ["icd_type_integrity", "integrity_method", "integrity_value"]
 
-    __typenames__ = ["int8_t", "int16_t", "double"]
+    __typenames__ = ["int8_t", "int8_t", "double"]
 
     __dimensions__ = [None, None, None]
+
+    INTEGRITY_METHOD_RESERVED = 17
+    """ Reserved for future use. """
 
     def __init__(self):
         self.icd_type_integrity = 0
@@ -40,7 +43,7 @@ class type_integrity(object):
         In the MY_METHOD example, num_integrity = 3 just for the MY_METHOD integrity. If additional
         integrity methods are also reported, then num_integrity would be greater than 3 to include those
         additional methods.
-        LCM Type: int16_t
+        LCM Type: int8_t
         """
 
         self.integrity_value = 0.0
@@ -59,7 +62,7 @@ class type_integrity(object):
         return buf.getvalue()
 
     def _encode_one(self, buf):
-        buf.write(struct.pack(">bhd", self.icd_type_integrity, self.integrity_method, self.integrity_value))
+        buf.write(struct.pack(">bbd", self.icd_type_integrity, self.integrity_method, self.integrity_value))
 
     @staticmethod
     def decode(data: bytes):
@@ -74,13 +77,13 @@ class type_integrity(object):
     @staticmethod
     def _decode_one(buf):
         self = type_integrity()
-        self.icd_type_integrity, self.integrity_method, self.integrity_value = struct.unpack(">bhd", buf.read(11))
+        self.icd_type_integrity, self.integrity_method, self.integrity_value = struct.unpack(">bbd", buf.read(10))
         return self
 
     @staticmethod
     def _get_hash_recursive(parents):
         if type_integrity in parents: return 0
-        tmphash = (0x86a4a70d2a172a6c) & 0xffffffffffffffff
+        tmphash = (0x6c4f1be7420b3c11) & 0xffffffffffffffff
         tmphash  = (((tmphash<<1)&0xffffffffffffffff) + (tmphash>>63)) & 0xffffffffffffffff
         return tmphash
     _packed_fingerprint = None

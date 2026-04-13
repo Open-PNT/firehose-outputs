@@ -32,6 +32,7 @@ constexpr uint32_t aspn23_dds_MeasurementRangeRateToPoint_max_key_cdr_typesize {
 
 
 
+
 namespace eprosima {
 namespace fastcdr {
 

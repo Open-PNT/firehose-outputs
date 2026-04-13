@@ -158,8 +158,14 @@ void add_bindings(pybind11::module& m) {
 	    .def("get_descriptor", &TypeImageFeature::get_descriptor)
 	    .def("set_descriptor", &TypeImageFeature::set_descriptor);
 
+	py::native_enum<Aspn23TypeIntegrityIntegrityMethod>(
+	    m, "AspnTypeIntegrityIntegrityMethod", "enum.Enum")
+	    .value("ASPN_TYPE_INTEGRITY_INTEGRITY_METHOD_RESERVED ",
+	           Aspn23TypeIntegrityIntegrityMethod::ASPN_TYPE_INTEGRITY_INTEGRITY_METHOD_RESERVED)
+	    .finalize();
+
 	py::class_<TypeIntegrity, py::smart_holder>(m, "TypeIntegrity")
-	    .def(py::init<PARAMS(uint8_t, double)>())
+	    .def(py::init<PARAMS(Aspn23TypeIntegrityIntegrityMethod, double)>())
 	    .def("get_integrity_method", &TypeIntegrity::get_integrity_method)
 	    .def("set_integrity_method", &TypeIntegrity::set_integrity_method)
 	    .def("get_integrity_value", &TypeIntegrity::get_integrity_value)

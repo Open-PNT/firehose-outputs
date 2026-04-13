@@ -177,7 +177,7 @@ from aspn23.type_direction_3d_to_point import (
 )
 from aspn23.type_header import TypeHeader
 from aspn23.type_image_feature import TypeImageFeature
-from aspn23.type_integrity import TypeIntegrity
+from aspn23.type_integrity import TypeIntegrity, TypeIntegrityIntegrityMethod
 from aspn23.type_kepler_orbit import TypeKeplerOrbit
 from aspn23.type_metadataheader import TypeMetadataheader
 from aspn23.type_mounting import TypeMounting
@@ -463,7 +463,7 @@ def ros_to_type_image_feature(old: RosTypeImageFeature) -> TypeImageFeature:
 
 def type_integrity_to_ros(old: TypeIntegrity) -> RosTypeIntegrity:
     msg = RosTypeIntegrity()
-    msg.integrity_method = old.integrity_method
+    msg.integrity_method = old.integrity_method.value
     msg.integrity_value = (
         old.integrity_value if old.integrity_value is not None else float()
     )
@@ -473,7 +473,8 @@ def type_integrity_to_ros(old: TypeIntegrity) -> RosTypeIntegrity:
 
 def ros_to_type_integrity(old: RosTypeIntegrity) -> TypeIntegrity:
     return TypeIntegrity(
-        integrity_method=old.integrity_method, integrity_value=old.integrity_value
+        integrity_method=TypeIntegrityIntegrityMethod(old.integrity_method),
+        integrity_value=old.integrity_value,
     )
 
 

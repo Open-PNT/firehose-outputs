@@ -31,6 +31,7 @@ constexpr uint32_t aspn23_dds_MeasurementMagneticFieldMagnitude_max_key_cdr_type
 
 
 
+
 namespace eprosima {
 namespace fastcdr {
 

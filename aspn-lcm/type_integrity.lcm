@@ -19,7 +19,10 @@ struct type_integrity {
     // In the MY_METHOD example, num_integrity = 3 just for the MY_METHOD integrity. If additional
     // integrity methods are also reported, then num_integrity would be greater than 3 to include those
     // additional methods.
-    int16_t integrity_method;
+    int8_t integrity_method;
+
+    // Reserved for future use.
+    const int8_t INTEGRITY_METHOD_RESERVED = 17;
 
     // Description: Measurement integrity value to be interpreted based on the definition in the
     // integrity_type enum.

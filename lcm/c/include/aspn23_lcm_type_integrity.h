@@ -20,6 +20,9 @@
 extern "C" {
 #endif
 
+/// Reserved for future use.
+#define ASPN23_LCM_TYPE_INTEGRITY_INTEGRITY_METHOD_RESERVED 17
+
 
 /**
  * Integrity provides a numerical measure of the trustworthiness of the associated measurement. The
@@ -44,7 +47,7 @@ struct _aspn23_lcm_type_integrity
      * integrity methods are also reported, then num_integrity would be greater than 3 to include those
      * additional methods.
      */
-    int16_t    integrity_method;
+    int8_t     integrity_method;
 
     /**
      * Description: Measurement integrity value to be interpreted based on the definition in the

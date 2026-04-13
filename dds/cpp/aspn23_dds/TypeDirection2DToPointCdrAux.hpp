@@ -28,6 +28,7 @@ constexpr uint32_t aspn23_dds_TypeDirection2DToPoint_max_cdr_typesize {5088UL};
 constexpr uint32_t aspn23_dds_TypeDirection2DToPoint_max_key_cdr_typesize {0UL};
 
 
+
 namespace eprosima {
 namespace fastcdr {
 

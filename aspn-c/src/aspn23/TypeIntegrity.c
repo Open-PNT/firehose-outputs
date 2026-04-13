@@ -6,8 +6,8 @@
 
 #include "TypeIntegrity.h"
 
-Aspn23TypeIntegrity* ASPN_NULLABLE aspn23_type_integrity_new(uint8_t integrity_method,
-                                                             double integrity_value) {
+Aspn23TypeIntegrity* ASPN_NULLABLE aspn23_type_integrity_new(
+    enum Aspn23TypeIntegrityIntegrityMethod integrity_method, double integrity_value) {
 	Aspn23TypeIntegrity* self = (struct Aspn23TypeIntegrity*)malloc(sizeof(Aspn23TypeIntegrity));
 	if (NULL == self) return NULL;
 	self->integrity_method = integrity_method;

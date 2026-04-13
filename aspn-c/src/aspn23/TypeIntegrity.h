@@ -12,6 +12,25 @@ extern "C" {
 #endif
 
 /**
+ * Enumerated field which describes the meaning of the integrity value. Integrity methods may use
+ * multiple enum entries if there is a need to pass multiple integrity values. For example, an
+ * integrity method with 3 parameters may use 3 enum entries (e.g., MY_METHOD_VALUE1,
+ * MY_METHOD_VALUE2, MY_METHOD_VALUE3). When integrity is reported in a message, a vector of
+ * integrity types is passed. In the MY_METHOD example, num_integrity = 3 just for the MY_METHOD
+ * integrity. If additional integrity methods are also reported, then num_integrity would be greater
+ * than 3 to include those additional methods.
+ */
+
+enum Aspn23TypeIntegrityIntegrityMethod {
+
+	/**
+	 * Reserved for future use.
+	 */
+
+	ASPN23_TYPE_INTEGRITY_INTEGRITY_METHOD_RESERVED = 17
+};
+
+/**
  * Integrity provides a numerical measure of the trustworthiness of the associated measurement. The
  * integrity_method enum specifies the integrity method and the appropriate interpretation of the
  * integrity_value.
@@ -29,7 +48,7 @@ typedef struct Aspn23TypeIntegrity {
 	 * greater than 3 to include those additional methods.
 	 */
 
-	uint8_t integrity_method;
+	enum Aspn23TypeIntegrityIntegrityMethod integrity_method;
 
 	/**
 	 * Measurement integrity value to be interpreted based on the definition in the integrity_type
@@ -40,8 +59,8 @@ typedef struct Aspn23TypeIntegrity {
 
 } Aspn23TypeIntegrity;
 
-Aspn23TypeIntegrity* ASPN_NULLABLE aspn23_type_integrity_new(uint8_t integrity_method,
-                                                             double integrity_value);
+Aspn23TypeIntegrity* ASPN_NULLABLE aspn23_type_integrity_new(
+    enum Aspn23TypeIntegrityIntegrityMethod integrity_method, double integrity_value);
 
 Aspn23TypeIntegrity* ASPN_NULLABLE aspn23_type_integrity_copy(Aspn23TypeIntegrity*);
 

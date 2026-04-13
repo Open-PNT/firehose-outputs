@@ -70,6 +70,14 @@ class CdrSizeCalculator;
 
 namespace aspn23_dds {
 
+/*!
+ * @brief This class represents the enumeration TypeIntegrityIntegrityMethodValue defined by the user in the IDL file.
+ * @ingroup TypeIntegrity
+ */
+enum TypeIntegrityIntegrityMethodValue : uint32_t
+{
+    ASPN23_TYPE_INTEGRITY_INTEGRITY_METHOD_RESERVED
+};
 
 
 /*!
@@ -137,19 +145,19 @@ public:
      * @param _integrity_method New value for member integrity_method
      */
     eProsima_user_DllExport void integrity_method(
-            uint8_t _integrity_method);
+            aspn23_dds::TypeIntegrityIntegrityMethodValue _integrity_method);
 
     /*!
      * @brief This function returns the value of member integrity_method
      * @return Value of member integrity_method
      */
-    eProsima_user_DllExport uint8_t integrity_method() const;
+    eProsima_user_DllExport aspn23_dds::TypeIntegrityIntegrityMethodValue integrity_method() const;
 
     /*!
      * @brief This function returns a reference to member integrity_method
      * @return Reference to member integrity_method
      */
-    eProsima_user_DllExport uint8_t& integrity_method();
+    eProsima_user_DllExport aspn23_dds::TypeIntegrityIntegrityMethodValue& integrity_method();
 
 
     /*!
@@ -180,7 +188,7 @@ public:
 
 private:
 
-    uint8_t m_integrity_method{0};
+    aspn23_dds::TypeIntegrityIntegrityMethodValue m_integrity_method{aspn23_dds::ASPN23_TYPE_INTEGRITY_INTEGRITY_METHOD_RESERVED};
     eprosima::fastcdr::optional<double> m_integrity_value;
 
 };

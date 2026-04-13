@@ -110,6 +110,9 @@ static char toplevel_type_raw_source[] =
     "# additional methods.\n"
     "uint8 integrity_method\n"
     "\n"
+    "# Reserved for future use.\n"
+    "uint8 ASPN23_TYPE_INTEGRITY_INTEGRITY_METHOD_RESERVED=17\n"
+    "\n"
     "# Description: Measurement integrity value to be interpreted based on the "
     "definition in the\n"
     "# integrity_type enum.\n"
@@ -127,7 +130,7 @@ aspn23_ros_interfaces__msg__TypeIntegrity__get_individual_type_description_sourc
   static const rosidl_runtime_c__type_description__TypeSource source = {
       {aspn23_ros_interfaces__msg__TypeIntegrity__TYPE_NAME, 39, 39},
       {msg_encoding, 3, 3},
-      {toplevel_type_raw_source, 1128, 1128},
+      {toplevel_type_raw_source, 1213, 1213},
   };
   return &source;
 }

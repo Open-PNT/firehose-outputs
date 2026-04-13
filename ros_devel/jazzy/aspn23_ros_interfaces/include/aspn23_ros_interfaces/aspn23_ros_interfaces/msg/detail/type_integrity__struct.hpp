@@ -9,6 +9,7 @@
 
 #include <algorithm>
 #include <array>
+#include <cstdint>
 #include <memory>
 #include <string>
 #include <vector>
@@ -69,6 +70,8 @@ template <class ContainerAllocator> struct TypeIntegrity_ {
   }
 
   // constant declarations
+  static constexpr uint8_t ASPN23_TYPE_INTEGRITY_INTEGRITY_METHOD_RESERVED =
+      17u;
 
   // pointer types
   using RawPtr =
@@ -129,6 +132,13 @@ using TypeIntegrity =
     aspn23_ros_interfaces::msg::TypeIntegrity_<std::allocator<void>>;
 
 // constant definitions
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and
+// below, deprecated in C++17
+template <typename ContainerAllocator>
+constexpr uint8_t TypeIntegrity_<
+    ContainerAllocator>::ASPN23_TYPE_INTEGRITY_INTEGRITY_METHOD_RESERVED;
+#endif // __cplusplus < 201703L
 
 } // namespace msg
 

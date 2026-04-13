@@ -31,6 +31,7 @@ constexpr uint32_t aspn23_dds_MeasurementTemperature_max_key_cdr_typesize {0UL};
 
 
 
+
 namespace eprosima {
 namespace fastcdr {
 

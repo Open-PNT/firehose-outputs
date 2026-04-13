@@ -8,7 +8,8 @@
 
 namespace aspn23_eigen {
 
-TypeIntegrity::TypeIntegrity(uint8_t integrity_method, double integrity_value) {
+TypeIntegrity::TypeIntegrity(Aspn23TypeIntegrityIntegrityMethod integrity_method,
+                             double integrity_value) {
 
 	this->c_struct = aspn23_type_integrity_new(integrity_method, integrity_value);
 
@@ -73,12 +74,12 @@ void TypeIntegrity::reset_aspn_c(Aspn23TypeIntegrity* replacement_struct, bool t
 	this->c_struct       = replacement_struct;
 }
 
-uint8_t TypeIntegrity::get_integrity_method() const {
+Aspn23TypeIntegrityIntegrityMethod TypeIntegrity::get_integrity_method() const {
 	nullptr_check();
 	return c_struct->integrity_method;
 }
 
-void TypeIntegrity::set_integrity_method(uint8_t integrity_method) {
+void TypeIntegrity::set_integrity_method(Aspn23TypeIntegrityIntegrityMethod integrity_method) {
 	nullptr_check();
 	c_struct->integrity_method = integrity_method;
 }

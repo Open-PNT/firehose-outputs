@@ -15,6 +15,9 @@
 # additional methods.
 uint8 integrity_method
 
+# Reserved for future use.
+uint8 ASPN23_TYPE_INTEGRITY_INTEGRITY_METHOD_RESERVED=17
+
 # Description: Measurement integrity value to be interpreted based on the definition in the
 # integrity_type enum.
 # Units: none

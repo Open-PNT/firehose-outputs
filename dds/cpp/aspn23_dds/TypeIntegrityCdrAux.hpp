@@ -28,6 +28,7 @@ constexpr uint32_t aspn23_dds_TypeIntegrity_max_cdr_typesize {32UL};
 constexpr uint32_t aspn23_dds_TypeIntegrity_max_key_cdr_typesize {0UL};
 
 
+
 namespace eprosima {
 namespace fastcdr {
 

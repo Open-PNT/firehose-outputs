@@ -32,6 +32,7 @@ constexpr uint32_t aspn23_dds_MeasurementAccumulatedDistanceTraveled_max_key_cdr
 
 
 
+
 namespace eprosima {
 namespace fastcdr {
 

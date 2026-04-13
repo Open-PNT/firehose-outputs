@@ -32,6 +32,7 @@ constexpr uint32_t aspn23_dds_MeasurementPositionVelocityAttitude_max_key_cdr_ty
 
 
 
+
 namespace eprosima {
 namespace fastcdr {
 

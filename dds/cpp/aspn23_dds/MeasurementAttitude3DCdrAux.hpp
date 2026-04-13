@@ -28,6 +28,7 @@ constexpr uint32_t aspn23_dds_MeasurementAttitude3D_max_cdr_typesize {4920UL};
 constexpr uint32_t aspn23_dds_MeasurementAttitude3D_max_key_cdr_typesize {0UL};
 
 
+
 namespace eprosima {
 namespace fastcdr {
 

@@ -28,6 +28,7 @@ constexpr uint32_t aspn23_dds_MeasurementAltitude_max_cdr_typesize {4096UL};
 constexpr uint32_t aspn23_dds_MeasurementAltitude_max_key_cdr_typesize {0UL};
 
 
+
 namespace eprosima {
 namespace fastcdr {
 

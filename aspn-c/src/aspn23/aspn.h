@@ -76,6 +76,9 @@ typedef Aspn23TypeIntegrity AspnTypeIntegrity;
 #define aspn_type_integrity_copy aspn23_type_integrity_copy
 #define aspn_type_integrity_free aspn23_type_integrity_free
 #define aspn_type_integrity_free_members aspn23_type_integrity_free_members
+#define ASPN_TYPE_INTEGRITY_INTEGRITY_METHOD_RESERVED \
+	ASPN23_TYPE_INTEGRITY_INTEGRITY_METHOD_RESERVED
+typedef enum Aspn23TypeIntegrityIntegrityMethod AspnTypeIntegrityIntegrityMethod;
 
 typedef Aspn23TypeKeplerOrbit AspnTypeKeplerOrbit;
 #define aspn_type_kepler_orbit_new aspn23_type_kepler_orbit_new

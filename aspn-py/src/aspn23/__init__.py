@@ -273,6 +273,7 @@ from .type_direction_3d_to_point import (
 from .type_header import TypeHeader as TypeHeader
 from .type_image_feature import TypeImageFeature as TypeImageFeature
 from .type_integrity import TypeIntegrity as TypeIntegrity
+from .type_integrity import TypeIntegrityIntegrityMethod as TypeIntegrityIntegrityMethod
 from .type_kepler_orbit import TypeKeplerOrbit as TypeKeplerOrbit
 from .type_metadataheader import TypeMetadataheader as TypeMetadataheader
 from .type_mounting import TypeMounting as TypeMounting

@@ -17,6 +17,15 @@ extern "C" {
 
 // Constants defined in the message
 
+/// Constant 'ASPN23_TYPE_INTEGRITY_INTEGRITY_METHOD_RESERVED'.
+/**
+ * Reserved for future use.
+ */
+enum {
+  aspn23_ros_interfaces__msg__TypeIntegrity__ASPN23_TYPE_INTEGRITY_INTEGRITY_METHOD_RESERVED =
+      17
+};
+
 /// Struct defined in msg/TypeIntegrity in the package aspn23_ros_interfaces.
 typedef struct aspn23_ros_interfaces__msg__TypeIntegrity {
   /// This code is generated via firehose.

@@ -28,6 +28,7 @@ constexpr uint32_t aspn23_dds_MeasurementSatnavSubframe_max_cdr_typesize {3392UL
 constexpr uint32_t aspn23_dds_MeasurementSatnavSubframe_max_key_cdr_typesize {0UL};
 
 
+
 namespace eprosima {
 namespace fastcdr {
 

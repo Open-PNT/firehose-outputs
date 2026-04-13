@@ -6,10 +6,13 @@
 #define __ASPN23_DDS_TYPEINTEGRITY__
 
 module aspn23_dds {
+    enum TypeIntegrityIntegrityMethodValue {
+        @value(17) ASPN23_TYPE_INTEGRITY_INTEGRITY_METHOD_RESERVED
+    };
     
     @topic
     struct TypeIntegrity {
-        uint8 integrity_method;
+        TypeIntegrityIntegrityMethodValue integrity_method;
         @optional double integrity_value;
     };
 };

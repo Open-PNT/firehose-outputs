@@ -99,7 +99,7 @@ bool TypeIntegrity::operator !=(
  * @param _integrity_method New value for member integrity_method
  */
 void TypeIntegrity::integrity_method(
-        uint8_t _integrity_method)
+        aspn23_dds::TypeIntegrityIntegrityMethodValue _integrity_method)
 {
     m_integrity_method = _integrity_method;
 }
@@ -108,7 +108,7 @@ void TypeIntegrity::integrity_method(
  * @brief This function returns the value of member integrity_method
  * @return Value of member integrity_method
  */
-uint8_t TypeIntegrity::integrity_method() const
+aspn23_dds::TypeIntegrityIntegrityMethodValue TypeIntegrity::integrity_method() const
 {
     return m_integrity_method;
 }
@@ -117,7 +117,7 @@ uint8_t TypeIntegrity::integrity_method() const
  * @brief This function returns a reference to member integrity_method
  * @return Reference to member integrity_method
  */
-uint8_t& TypeIntegrity::integrity_method()
+aspn23_dds::TypeIntegrityIntegrityMethodValue& TypeIntegrity::integrity_method()
 {
     return m_integrity_method;
 }

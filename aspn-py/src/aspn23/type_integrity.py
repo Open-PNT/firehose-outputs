@@ -3,11 +3,29 @@ This code is generated via firehose.
 DO NOT hand edit code.  Make any changes required using the firehose repo instead.
 """
 
-
 from dataclasses import dataclass
+from enum import Enum
 from typing import Optional
 
 from numpy.typing import NDArray
+
+
+class TypeIntegrityIntegrityMethod(Enum):
+
+    """
+    Enumerated field which describes the meaning of the integrity value. Integrity methods may use
+    multiple enum entries if there is a need to pass multiple integrity values. For example, an
+    integrity method with 3 parameters may use 3 enum entries (e.g., MY_METHOD_VALUE1, MY_METHOD_VALUE2,
+    MY_METHOD_VALUE3). When integrity is reported in a message, a vector of integrity types is passed.
+    In the MY_METHOD example, num_integrity = 3 just for the MY_METHOD integrity. If additional
+    integrity methods are also reported, then num_integrity would be greater than 3 to include those
+    additional methods.
+    """
+
+    """
+    Reserved for future use.
+    """
+    RESERVED = 17
 
 
 @dataclass
@@ -19,7 +37,7 @@ class TypeIntegrity:
 
     ### Attributes
 
-    integrity_method - int:
+    integrity_method - TypeIntegrityIntegrityMethod:
             Enumerated field which describes the meaning of the integrity value. Integrity
             methods may use multiple enum entries if there is a need to pass multiple integrity
             values. For example, an integrity method with 3 parameters may use 3 enum entries (e.g.,
@@ -33,5 +51,5 @@ class TypeIntegrity:
             integrity_type enum.
     """
 
-    integrity_method: int
+    integrity_method: TypeIntegrityIntegrityMethod
     integrity_value: Optional[float]

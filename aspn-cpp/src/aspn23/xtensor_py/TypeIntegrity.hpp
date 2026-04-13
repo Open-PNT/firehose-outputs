@@ -32,7 +32,7 @@ public:
 	 */
 	TypeIntegrity(Aspn23TypeIntegrity* c_struct, bool take_ownership = true);
 
-	TypeIntegrity(uint8_t integrity_method, double integrity_value);
+	TypeIntegrity(Aspn23TypeIntegrityIntegrityMethod integrity_method, double integrity_value);
 
 	~TypeIntegrity();
 
@@ -64,7 +64,7 @@ public:
 	 * integrity. If additional integrity methods are also reported, then num_integrity would be
 	 * greater than 3 to include those additional methods.
 	 */
-	uint8_t get_integrity_method() const;
+	Aspn23TypeIntegrityIntegrityMethod get_integrity_method() const;
 
 	/**
 	 * Enumerated field which describes the meaning of the integrity value. Integrity methods may
@@ -75,7 +75,7 @@ public:
 	 * integrity. If additional integrity methods are also reported, then num_integrity would be
 	 * greater than 3 to include those additional methods.
 	 */
-	void set_integrity_method(uint8_t);
+	void set_integrity_method(Aspn23TypeIntegrityIntegrityMethod);
 
 	/**
 	 * Measurement integrity value to be interpreted based on the definition in the integrity_type

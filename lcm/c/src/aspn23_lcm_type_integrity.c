@@ -26,9 +26,9 @@ uint64_t __aspn23_lcm_type_integrity_hash_recursive(const __lcm_hash_ptr *p)
     cp.v = __aspn23_lcm_type_integrity_get_hash;
     (void) cp;
 
-    uint64_t hash = (uint64_t)0x86a4a70d2a172a6cLL
+    uint64_t hash = (uint64_t)0x6c4f1be7420b3c11LL
          + __int8_t_hash_recursive(&cp)
-         + __int16_t_hash_recursive(&cp)
+         + __int8_t_hash_recursive(&cp)
          + __double_hash_recursive(&cp)
         ;
 
@@ -55,7 +55,7 @@ int __aspn23_lcm_type_integrity_encode_array(void *buf, int offset, int maxlen, 
         thislen = __int8_t_encode_array(buf, offset + pos, maxlen - pos, &(p[element].icd_type_integrity), 1);
         if (thislen < 0) return thislen; else pos += thislen;
 
-        thislen = __int16_t_encode_array(buf, offset + pos, maxlen - pos, &(p[element].integrity_method), 1);
+        thislen = __int8_t_encode_array(buf, offset + pos, maxlen - pos, &(p[element].integrity_method), 1);
         if (thislen < 0) return thislen; else pos += thislen;
 
         thislen = __double_encode_array(buf, offset + pos, maxlen - pos, &(p[element].integrity_value), 1);
@@ -86,7 +86,7 @@ int __aspn23_lcm_type_integrity_encoded_array_size(const aspn23_lcm_type_integri
 
         size += __int8_t_encoded_array_size(&(p[element].icd_type_integrity), 1);
 
-        size += __int16_t_encoded_array_size(&(p[element].integrity_method), 1);
+        size += __int8_t_encoded_array_size(&(p[element].integrity_method), 1);
 
         size += __double_encoded_array_size(&(p[element].integrity_value), 1);
 
@@ -108,7 +108,7 @@ int __aspn23_lcm_type_integrity_decode_array(const void *buf, int offset, int ma
         thislen = __int8_t_decode_array(buf, offset + pos, maxlen - pos, &(p[element].icd_type_integrity), 1);
         if (thislen < 0) return thislen; else pos += thislen;
 
-        thislen = __int16_t_decode_array(buf, offset + pos, maxlen - pos, &(p[element].integrity_method), 1);
+        thislen = __int8_t_decode_array(buf, offset + pos, maxlen - pos, &(p[element].integrity_method), 1);
         if (thislen < 0) return thislen; else pos += thislen;
 
         thislen = __double_decode_array(buf, offset + pos, maxlen - pos, &(p[element].integrity_value), 1);
@@ -126,7 +126,7 @@ int __aspn23_lcm_type_integrity_decode_array_cleanup(aspn23_lcm_type_integrity *
 
         __int8_t_decode_array_cleanup(&(p[element].icd_type_integrity), 1);
 
-        __int16_t_decode_array_cleanup(&(p[element].integrity_method), 1);
+        __int8_t_decode_array_cleanup(&(p[element].integrity_method), 1);
 
         __double_decode_array_cleanup(&(p[element].integrity_value), 1);
 
@@ -162,7 +162,7 @@ int __aspn23_lcm_type_integrity_clone_array(const aspn23_lcm_type_integrity *p, 
 
         __int8_t_clone_array(&(p[element].icd_type_integrity), &(q[element].icd_type_integrity), 1);
 
-        __int16_t_clone_array(&(p[element].integrity_method), &(q[element].integrity_method), 1);
+        __int8_t_clone_array(&(p[element].integrity_method), &(q[element].integrity_method), 1);
 
         __double_clone_array(&(p[element].integrity_value), &(q[element].integrity_value), 1);
 

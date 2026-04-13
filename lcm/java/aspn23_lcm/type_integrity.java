@@ -35,7 +35,7 @@ public final class type_integrity implements lcm.lcm.LCMEncodable
      * integrity methods are also reported, then num_integrity would be greater than 3 to include those
      * additional methods.
      */
-    public short integrity_method;
+    public byte integrity_method;
 
     /**
      * Description: Measurement integrity value to be interpreted based on the definition in the
@@ -50,8 +50,13 @@ public final class type_integrity implements lcm.lcm.LCMEncodable
     }
  
     public static final long LCM_FINGERPRINT;
-    public static final long LCM_FINGERPRINT_BASE = 0x86a4a70d2a172a6cL;
+    public static final long LCM_FINGERPRINT_BASE = 0x6c4f1be7420b3c11L;
  
+    /**
+     * Reserved for future use.
+     */
+    public static final byte INTEGRITY_METHOD_RESERVED = (byte) 17;
+
     static {
         LCM_FINGERPRINT = _hashRecursive(new ArrayList<Class<?>>());
     }
@@ -78,7 +83,7 @@ public final class type_integrity implements lcm.lcm.LCMEncodable
     {
         outs.writeByte(this.icd_type_integrity); 
  
-        outs.writeShort(this.integrity_method); 
+        outs.writeByte(this.integrity_method); 
  
         outs.writeDouble(this.integrity_value); 
  
@@ -108,7 +113,7 @@ public final class type_integrity implements lcm.lcm.LCMEncodable
     {
         this.icd_type_integrity = ins.readByte();
  
-        this.integrity_method = ins.readShort();
+        this.integrity_method = ins.readByte();
  
         this.integrity_value = ins.readDouble();
  

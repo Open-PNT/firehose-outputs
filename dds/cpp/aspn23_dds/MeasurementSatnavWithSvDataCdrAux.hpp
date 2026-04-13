@@ -31,6 +31,7 @@ constexpr uint32_t aspn23_dds_MeasurementSatnavWithSvData_max_key_cdr_typesize {
 
 
 
+
 namespace eprosima {
 namespace fastcdr {
 

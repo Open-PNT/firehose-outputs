@@ -29,6 +29,7 @@ constexpr uint32_t aspn23_dds_MeasurementDirectionOfMotion2D_max_key_cdr_typesiz
 
 
 
+
 namespace eprosima {
 namespace fastcdr {
 
