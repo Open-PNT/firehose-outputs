@@ -17,7 +17,6 @@ from .type_timestamp import TypeTimestamp
 
 
 class MeasurementPositionReferenceFrame(Enum):
-
     """
     Defines measurement reference.
     """
@@ -44,7 +43,6 @@ class MeasurementPositionReferenceFrame(Enum):
 
 
 class MeasurementPositionErrorModel(Enum):
-
     """
     Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
     """

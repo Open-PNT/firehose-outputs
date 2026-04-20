@@ -17,7 +17,6 @@ from .type_timestamp import TypeTimestamp
 
 
 class MeasurementVelocityReferenceFrame(Enum):
-
     """
     Defines measurement reference.
     """
@@ -49,7 +48,6 @@ class MeasurementVelocityReferenceFrame(Enum):
 
 
 class MeasurementVelocityErrorModel(Enum):
-
     """
     Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
     """

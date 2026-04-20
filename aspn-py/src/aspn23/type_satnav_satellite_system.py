@@ -11,7 +11,6 @@ from numpy.typing import NDArray
 
 
 class TypeSatnavSatelliteSystemSatelliteSystem(Enum):
-
     """
     Enumerated field which describes the Satellite System.
     """

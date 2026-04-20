@@ -15,7 +15,6 @@ from .type_satnav_time import TypeSatnavTime
 
 
 class TypeSatnavSvDataEphemerisType(Enum):
-
     """
     Provides further clarification of which ephemeris was used to generate the satellite information
     provided in this message for systems which have more than one ephemeris representation.
@@ -44,7 +43,6 @@ class TypeSatnavSvDataEphemerisType(Enum):
 
 
 class TypeSatnavSvDataCoordinateFrame(Enum):
-
     """
     Coordinate frame system used to describe satellite position and velocity.
     """
@@ -71,7 +69,6 @@ class TypeSatnavSvDataCoordinateFrame(Enum):
 
 
 class TypeSatnavSvDataGroupDelayEnum(Enum):
-
     """
     Describes how to interpret group delay terms, because they vary by ephemeris type. Descriptions
     assume zero-indexing.

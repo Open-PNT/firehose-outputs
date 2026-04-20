@@ -12,7 +12,6 @@ from numpy.typing import NDArray
 
 
 class TypeRemotePointPositionReferenceFrame(Enum):
-
     """
     Defines position reference.
     """

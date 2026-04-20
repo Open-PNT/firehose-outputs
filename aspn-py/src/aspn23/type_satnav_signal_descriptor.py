@@ -11,7 +11,6 @@ from numpy.typing import NDArray
 
 
 class TypeSatnavSignalDescriptorSignalDescriptor(Enum):
-
     """
     Three letter RINEX Observation Code of signal as given in Table A23 of RINEX 3.05 specification
     (https://files.igs.org/pub/data/format/rinex305.pdf). RINEX Observation Code must be paired with

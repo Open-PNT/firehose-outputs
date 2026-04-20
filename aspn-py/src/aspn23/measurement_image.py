@@ -17,7 +17,6 @@ from .type_timestamp import TypeTimestamp
 
 
 class MeasurementImageImageType(Enum):
-
     """
     Enumerated field which specifies the datatype of the pixels represented in this image.
     Raw images are stored in row-major order. In multi-channel raw images, the first element
@@ -91,7 +90,6 @@ class MeasurementImageImageType(Enum):
 
 
 class MeasurementImageCameraModel(Enum):
-
     """
     The model used to map 3D points in the world to 2D points on the image plane
     """

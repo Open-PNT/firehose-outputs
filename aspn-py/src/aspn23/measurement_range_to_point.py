@@ -18,7 +18,6 @@ from .type_timestamp import TypeTimestamp
 
 
 class MeasurementRangeToPointErrorModel(Enum):
-
     """
     Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
     """

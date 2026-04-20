@@ -11,7 +11,6 @@ from numpy.typing import NDArray
 
 
 class TypeIntegrityIntegrityMethod(Enum):
-
     """
     Enumerated field which describes the meaning of the integrity value. Integrity methods may use
     multiple enum entries if there is a need to pass multiple integrity values. For example, an

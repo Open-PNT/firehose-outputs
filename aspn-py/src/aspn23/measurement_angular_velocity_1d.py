@@ -17,7 +17,6 @@ from .type_timestamp import TypeTimestamp
 
 
 class MeasurementAngularVelocity1DSensorType(Enum):
-
     """
     sensor integration type
     """
@@ -36,7 +35,6 @@ class MeasurementAngularVelocity1DSensorType(Enum):
 
 
 class MeasurementAngularVelocity1DErrorModel(Enum):
-
     """
     Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
     """

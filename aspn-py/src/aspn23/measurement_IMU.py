@@ -17,7 +17,6 @@ from .type_timestamp import TypeTimestamp
 
 
 class MeasurementImuImuType(Enum):
-
     """
     IMU type
     """

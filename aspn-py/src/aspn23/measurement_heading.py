@@ -17,7 +17,6 @@ from .type_timestamp import TypeTimestamp
 
 
 class MeasurementHeadingReference(Enum):
-
     """
     Defines heading reference.
     """
@@ -40,7 +39,6 @@ class MeasurementHeadingReference(Enum):
 
 
 class MeasurementHeadingErrorModel(Enum):
-
     """
     Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
     """

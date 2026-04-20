@@ -16,7 +16,6 @@ from .type_remote_point import TypeRemotePoint
 
 
 class TypeDirection3DToPointReferenceFrame(Enum):
-
     """
     Defines measurement reference frame.
     """
@@ -54,7 +53,6 @@ class TypeDirection3DToPointReferenceFrame(Enum):
 
 
 class TypeDirection3DToPointErrorModel(Enum):
-
     """
     Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
     """

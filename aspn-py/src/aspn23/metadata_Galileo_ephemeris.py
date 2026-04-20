@@ -17,7 +17,6 @@ from .type_timestamp import TypeTimestamp
 
 
 class MetadataGalileoEphemerisNavMsgType(Enum):
-
     """
     Enumerated field which describes the GALILEO message type used to define clock correction
     parameters.
