@@ -17,7 +17,6 @@ from .type_timestamp import TypeTimestamp
 
 
 class MeasurementAttitude3DReferenceFrame(Enum):
-
     """
     Defines measurement reference.
     """
@@ -46,7 +45,6 @@ class MeasurementAttitude3DReferenceFrame(Enum):
 
 
 class MeasurementAttitude3DErrorModel(Enum):
-
     """
     Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
     """

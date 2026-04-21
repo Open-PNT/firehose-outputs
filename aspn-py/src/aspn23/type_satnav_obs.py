@@ -15,7 +15,6 @@ from .type_satnav_signal_descriptor import TypeSatnavSignalDescriptor
 
 
 class TypeSatnavObsPseudorangeRateType(Enum):
-
     """
     Indicates the type of measurement contained in pseudorange_rate.
     """
@@ -33,7 +32,6 @@ class TypeSatnavObsPseudorangeRateType(Enum):
 
 
 class TypeSatnavObsIonoCorrectionSource(Enum):
-
     """
     Enumerated field which describes the source of the ionospheric delay correction.
     """

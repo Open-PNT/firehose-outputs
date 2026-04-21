@@ -17,7 +17,6 @@ from .type_timestamp import TypeTimestamp
 
 
 class MeasurementPositionVelocityAttitudeReferenceFrame(Enum):
-
     """
     Defines measurement reference.
     """
@@ -58,7 +57,6 @@ class MeasurementPositionVelocityAttitudeReferenceFrame(Enum):
 
 
 class MeasurementPositionVelocityAttitudeErrorModel(Enum):
-
     """
     Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
     """

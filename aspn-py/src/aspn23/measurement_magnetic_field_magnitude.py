@@ -17,7 +17,6 @@ from .type_timestamp import TypeTimestamp
 
 
 class MeasurementMagneticFieldMagnitudeErrorModel(Enum):
-
     """
     Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
     """

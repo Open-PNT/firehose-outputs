@@ -16,7 +16,6 @@ from .type_remote_point import TypeRemotePoint
 
 
 class TypeDirection2DToPointReference(Enum):
-
     """
     Specifies measurement reference.
     """
@@ -59,7 +58,6 @@ class TypeDirection2DToPointReference(Enum):
 
 
 class TypeDirection2DToPointErrorModel(Enum):
-
     """
     Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
     """

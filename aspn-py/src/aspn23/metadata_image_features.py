@@ -15,7 +15,6 @@ from .type_timestamp import TypeTimestamp
 
 
 class MetadataImageFeaturesKeypointDetector(Enum):
-
     """
     Enumerated field which provides the type of keypoint detector used.
     """
@@ -87,7 +86,6 @@ class MetadataImageFeaturesKeypointDetector(Enum):
 
 
 class MetadataImageFeaturesDescriptorExtractor(Enum):
-
     """
     Enumerated field which provides the type of descriptor extractor used to generate the
     measurement descriptor vector.
@@ -130,7 +128,6 @@ class MetadataImageFeaturesDescriptorExtractor(Enum):
 
 
 class MetadataImageFeaturesDescriptorType(Enum):
-
     """
     Enumerated field describing the underlying datatype of the provided descriptor vector.
     """

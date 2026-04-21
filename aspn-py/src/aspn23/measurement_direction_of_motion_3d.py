@@ -17,7 +17,6 @@ from .type_timestamp import TypeTimestamp
 
 
 class MeasurementDirectionOfMotion3DReferenceFrame(Enum):
-
     """
     Defines measurement reference.
     """
@@ -49,7 +48,6 @@ class MeasurementDirectionOfMotion3DReferenceFrame(Enum):
 
 
 class MeasurementDirectionOfMotion3DErrorModel(Enum):
-
     """
     Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
     """

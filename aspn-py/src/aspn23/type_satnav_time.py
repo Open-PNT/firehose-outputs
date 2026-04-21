@@ -11,7 +11,6 @@ from numpy.typing import NDArray
 
 
 class TypeSatnavTimeTimeReference(Enum):
-
     """
     Reference time system used to express the data in this message. In a multi-GNSS receiver
     (GPS/GLONASS/Galileo/QZSS/BeiDou) all pseudorange observations must refer to one receiver clock

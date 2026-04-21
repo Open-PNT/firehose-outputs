@@ -17,7 +17,6 @@ from .type_timestamp import TypeTimestamp
 
 
 class MetadataImuErrorModel(Enum):
-
     """
     Allows the user to select an appropriate error model. Parameters are defined here. The number of
     parameters and the values for those parameters are included in subsequent fields.

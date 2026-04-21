@@ -17,7 +17,6 @@ from .type_timestamp import TypeTimestamp
 
 
 class MeasurementAltitudeReference(Enum):
-
     """
     Specifies altitude reference.
     """
@@ -41,7 +40,6 @@ class MeasurementAltitudeReference(Enum):
 
 
 class MeasurementAltitudeErrorModel(Enum):
-
     """
     Defines an optional error model for other than zero-mean, additive, white Gaussian noise (AWGN).
     """
